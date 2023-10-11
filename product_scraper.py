@@ -8,7 +8,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from Product import Product
-from app import refresh_db
+from app import add_to_db
 
 from concurrent.futures import ThreadPoolExecutor
 
@@ -67,9 +67,8 @@ def save_urls_to_txt(urls, base_url):
 
     logging.info(f'Product URLs saved to {file_name}')
 
-def extract_product_urls(base_url, selector, next_button_selector=None, max_pages=None):
+def extract_product_urls(base_url, selector, next_button_selector=None, max_pages=None, max_products=None):
     driver = webdriver.Firefox(options=options)
-
     try:
         urls = []
         page_count = 0
@@ -79,21 +78,24 @@ def extract_product_urls(base_url, selector, next_button_selector=None, max_page
             try:
                 start_time = time.time()
                 driver.get(current_url)
-                
+
                 # Calculate dynamic sleep time based on the website's response time
                 response_time = time.time() - start_time
                 sleep_time = max(1, min(10, response_time * 2))  # Dynamic sleep time (between 1 and 10 seconds)
                 time.sleep(sleep_time)
-                
+
                 elements = driver.find_elements(By.CSS_SELECTOR, selector)
                 urls.extend(element.get_attribute("href") for element in elements)
-                
+
+                if len(urls) >= max_products:
+                    break  # Stop when reaching the maximum number of product URLs
+
                 if next_button_selector:
                     next_button = driver.find_element(By.CSS_SELECTOR, next_button_selector)
                     current_url = next_button.get_attribute("href")
                 else:
                     current_url = None
-                
+
                 page_count += 1
             except NoSuchElementException:
                 logging.info(f"Selector not found on page: {current_url}")
@@ -122,7 +124,7 @@ def scrape_single_product(product_url, selectors):
     for key, selector in selectors.items():
         try:
             if key == "image":
-                value = product.get_images_src(selector)
+                value = product.get_image_url(selector)
             elif key == "brand":
                 value = product.get_brand(selector)
             elif key == "datasheets":
@@ -206,14 +208,16 @@ def print_product_list(product_list):
 
 
 if __name__ == '__main__':
-    #base_url = 'https://www.tro.com.au/enclosures/wall-mount-enclosures/steel-wall-mount-enclosures'
-    #selector = "a.facets-item-cell-grid-title"
-    #next_button_selector = ".global-views-pagination-next > a"
-    #max_pages = 20
-#
-    #product_urls = extract_product_urls(base_url, selector, next_button_selector, max_pages)
-    #logging.info(product_urls)
+    base_url = 'https://www.tro.com.au/industrial-electrical/isolators/enclosed-isolators'
+    selector = "a.facets-item-cell-grid-title"
+    next_button_selector = ".global-views-pagination-next > a"
+    max_pages = 1
+    max_products = 10
+
+    product_urls = extract_product_urls(base_url, selector, next_button_selector, max_pages=max_pages, max_products=max_products)
+    logging.info(product_urls)
 
     product_info_list = scrape_products()
     print_product_list(product_info_list)
    
+    add_to_db()

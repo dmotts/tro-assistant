@@ -3,7 +3,8 @@ from config import setup_logging
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
+from urllib.parse import urljoin 
 
 # Configure logging
 logging = setup_logging()
@@ -74,15 +75,47 @@ class Product:
                 datasheet_links.append((datasheet_name, datasheet_url))
         return datasheet_links
 
-    def get_images_src(self, selector: str):
-        elements = self.wait_for_element_presence_and_clickable(selector)
-        if elements:
-            return [element.get_attribute("src") for element in elements]
-        return []
-
     def get_brand(self, selector: str):
         value = self.get_element_text(selector)
         if value.startswith("BRAND: "):
             value = value[len("BRAND: "):]  # Remove the "BRAND: " prefix
         return value
     
+    def get_image_url(self, selector):
+        if selector == 'meta[property="og:image"]':
+            try:
+                element = self.driver.find_element(By.CSS_SELECTOR, selector)
+                if element:
+                    return element.get_attribute("content")
+            except NoSuchElementException:
+                logging.info(f"Image selector not found on the page")
+        else:
+            elements = self.wait_for_element_presence_and_clickable(selector)
+            image_urls = []
+            
+            if elements:
+                for element in elements:
+                    src = element.get_attribute("src")
+                    if src:
+                        # Check if the image URL is relative (doesn't start with "http" or "www")
+                        if not src.startswith(("http", "www")):
+                            src = urljoin(self.url, src)  # Combine with base URL to make it absolute
+                        image_urls.append(src)
+            
+            return image_urls
+
+
+    def get_images_src(self, selector: str):
+        elements = self.wait_for_element_presence_and_clickable(selector)
+        image_urls = []
+        
+        if elements:
+            for element in elements:
+                src = element.get_attribute("src")
+                if src:
+                    # Check if the image URL is relative (doesn't start with "http" or "www")
+                    if not src.startswith(("http", "www")):
+                        src = urljoin(self.url, src)  # Combine with base URL to make it absolute
+                    image_urls.append(src)
+        
+        return image_urls

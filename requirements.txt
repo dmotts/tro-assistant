@@ -1,0 +1,16 @@
+html2text
+openai
+streamlit
+llama_index
+langchain
+bs4
+nltk
+PyPDF2
+pinecone-client
+tiktoken
+uvicorn
+fastapi
+python-multipart    
+selenium
+selenium-wire
+webdriver-manager

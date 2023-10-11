@@ -1,0 +1,10 @@
+.env
+.vscode/*
+venv
+logs/*
+urls/*
+docs/*
+website/*
+products/*
+__pycache__
+resellers.md

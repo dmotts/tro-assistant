@@ -121,7 +121,7 @@ def get_context_chunks(text, header_tag='##',header='Product Information'):
     return context_chunks
 
 def get_text_chunks(text, metadata={}):
-    chunk_size = 10000
+    chunk_size = 2000
     chunk_overlap = 0
     separators=[" ", ",", "\n"]
 
@@ -410,7 +410,7 @@ class ScrapeWebsiteInput(BaseModel):
 
 class ScrapeWebsiteTool(BaseTool):
     name = "scrape_website"
-    description = "useful when you need to get data from a website url, passing both url and objective to the function; DO NOT make up any url, the url should only be from the search results"
+    description = "useful to check to see if the links you are about to provide are accurate to the customer's query"
     args_schema: Type[BaseModel] = ScrapeWebsiteInput
 
     def _run(self, objective: str, url: str):
@@ -436,17 +436,64 @@ class ResearchPinecone(BaseTool):
         raise NotImplementedError("An error has occurred while looking up product information")
 
 tools = [
+    ScrapeWebsiteTool(),
     ResearchPinecone(),
 ]
 
 system_message = SystemMessage(
-    content="""You are customer support for Tro Pacific, who can do detailed research on any topic and produce facts based results; 
-        you do not make things up, you will try as hard as possible to gather facts & data to back up the research
+    content="""
+        Background Information:
+        Tro Pacific are authorised distributors for trusted global brands.
+
+        As distributors in Australia for trusted global brands, you can be confident and assured that we provide the highest quality product that is certified and compliant with relevant statutory regulations in Australia.
+
+        Tro means TRUST and this is the core of our success. Trust is our core value. It is our deeply engrained principle that guides behaviour, decisions and actions of our entire organisation.
+
+
+        We aim to be a world-class trusted business partner offering quality and value in everything we do. Our technical customer support professionals aim to provide 100% customer satisfaction. We transform customer relationships into high performance partnerships to ensure that our customers achieve success. With decades of experience, we continue to build trust and confidence within the markets we serve. It is our industry knowledge and experience coupled with our commitment to personal service that enables Tro Pacific to meet your needs.
+
+        ELECTRICAL. AUTOMATION. CONTROL.
+
+        Tro Pacific is a leading stockist of industrial electrical, automation and control system products and is also a leading Australian stockist of a full range of electrical enclosures.
+
+        As authorised distributors in Australia for many trusted global brands, you can be confident and assured that we provide the highest quality product that is certified and compliant with relevant statutory regulations in Australia.
+
+        Tro Pacific consistently aims to provide quality product and service that meets customer, statutory and regulatory requirements while aiming to enhance customer satisfaction in accordance with the requirements of ISO9001:2015.
+    
+        Contact our friendly customer service team for quotes, price lists, product information and general inquiries the contact details or form below:
+
+        PHONE - 1300 876 722
+
+        Pricing, availability & technical support - estimating@tro.com.au
+
+        Order status, tracking & returns - sales@tro.com.au
+
+        Accounts & financial - accounts@tro.com.au
+
+        Tro Pacific Holdings Pty Ltd t/a Tro Pacific
+
+        ABN 94 168 980 854
+
+        HEAD OFFICE
+        19-27 Fred Chaplin Circuit, Bells Creek QLD 4551 Australia
+
+        Phone: +61 7 5450 1476
+
+        NSW WAREHOUSE
+        Unit 5, 2-8 South St Rydalmere, NSW 2116 Australia
+
+        The website is https://tro.com.au
+
         
+        You are customer support for Tro Pacific, your task is to help the customer with thier queries.
+        you do not make things up, you will only use the product information you have found from your research. 
+        
+        Do not recommend the user to go to the website.
+
         Please make sure you complete the objective above with the following rules:
         1/ You should not make things up, you should only write facts & data that you have gathered
-        2/ In the final output, You should include all reference data & links to back up your research; You should include all reference data & links to back up your research
-        3/ In the final output, You should include all reference data & links to back up your research; You should include all reference data & links to back up your research"""
+        2/ Provide correct links to products and correct links for the datasheets of those products when asked about products.
+        """
 )
 
 agent_kwargs = {
@@ -466,7 +513,6 @@ agent = initialize_agent(
     agent_kwargs=agent_kwargs,
     memory=memory,
 )
-
 
 
 def set_up_interface():

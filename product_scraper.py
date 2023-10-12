@@ -221,7 +221,7 @@ def print_product_list(product_list):
 
 
 if __name__ == '__main__':
-    base_url = 'https://www.tro.com.au/control-automation/relays/relay-accessories'
+    base_url = 'https://www.tro.com.au/enclosures/wall-mount-enclosures/steel-wall-mount-enclosures'
     selector = "a.facets-item-cell-grid-title"
     next_button_selector = ".global-views-pagination-next > a"
     max_pages = 1
@@ -233,3 +233,4 @@ if __name__ == '__main__':
     product_info_list = scrape_products()
     print_product_list(product_info_list)
    
+    add_to_db()

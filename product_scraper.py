@@ -233,4 +233,3 @@ if __name__ == '__main__':
     product_info_list = scrape_products()
     print_product_list(product_info_list)
    
-    add_to_db()

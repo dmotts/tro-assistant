@@ -514,9 +514,9 @@ def get_prompt_template(docs):
 
         The user may not know exact what they want, ask follow up questions to get better queries from the user.
 
-        When responding about a product, check the Tro Pacific information provided first for the facts. If you have found factual information about a product, provide the information in the format below. If you do not have the information or cannot find it, simply respond with "I'm sorry, I do not have that information. Is there something else that I may assist you with?"
+        When responding about a product, check the Tro Pacific information provided first for the facts. If you have found factual information about a product, provide the information in the format below. If you do not have the complete information or cannot find it, simply respond with "I'm sorry, I do not have that information. Is there something else that I may assist you with?"
 
-        Do not provide an empty product information format, if you can not find the information, do not provide it just respond with 
+        Do not provide an empty product information format, if you can not find the complete information, do not provide it just respond with 
         
         Product name [product link]
         Price: price

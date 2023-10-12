@@ -372,7 +372,7 @@ def scrape_website(objective: str, url: str):
             return text
     else:
         print(f"HTTP request failed with status code {response.status_code}")
-
+    
 
 def summary(objective, content):
     llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-16k-0613")
@@ -419,27 +419,34 @@ class ScrapeWebsiteTool(BaseTool):
     def _arun(self, url: str):
         raise NotImplementedError("error here")
 
+class PineconeInput(BaseModel):
+    query: str = Field(
+        description="The query that the customer asks the agent"
+    )
+
+class ResearchPinecone(BaseTool):
+    name="find_tro_pacific_product_information"
+    description="Useful for when you need product information to answer questions about tro pacific. You should ask targeted questions"
+    args_schema: Type[BaseModel] = PineconeInput
+
+    def _run(self, query: str):
+        return get_texts_from_pinecone(query)
+    
+    def arun(self, query):
+        raise NotImplementedError("An error has occurred while looking up product information")
 
 tools = [
-    Tool(
-        name="Search",
-        func=search,
-        description="useful for when you need to answer questions about current events, data. You should ask targeted questions"
-    ),
-    ScrapeWebsiteTool(),
+    ResearchPinecone(),
 ]
 
 system_message = SystemMessage(
-    content="""You are customer support for Tro Pacificgit , who can do detailed research on any topic and produce facts based results; 
+    content="""You are customer support for Tro Pacific, who can do detailed research on any topic and produce facts based results; 
         you do not make things up, you will try as hard as possible to gather facts & data to back up the research
         
         Please make sure you complete the objective above with the following rules:
-        1/ You should do enough research to gather as much information as possible about the objective
-        2/ If there are url of relevant links & articles, you will scrape it to gather more information
-        3/ After scraping & search, you should think "is there any new things i should search & scraping based on the data I collected to increase research quality?" If answer is yes, continue; But don't do this more than 3 iteratins
-        4/ You should not make things up, you should only write facts & data that you have gathered
-        5/ In the final output, You should include all reference data & links to back up your research; You should include all reference data & links to back up your research
-        6/ In the final output, You should include all reference data & links to back up your research; You should include all reference data & links to back up your research"""
+        1/ You should not make things up, you should only write facts & data that you have gathered
+        2/ In the final output, You should include all reference data & links to back up your research; You should include all reference data & links to back up your research
+        3/ In the final output, You should include all reference data & links to back up your research; You should include all reference data & links to back up your research"""
 )
 
 agent_kwargs = {

@@ -7,6 +7,7 @@ import streamlit as st
 import pinecone
 import json 
 import requests
+import langsmith
 
 from config import setup_logging
 from web_scraper import get_markdown_from_url
@@ -435,10 +436,6 @@ class ResearchPinecone(BaseTool):
     def arun(self, query):
         raise NotImplementedError("An error has occurred while looking up product information")
 
-tools = [
-    ScrapeWebsiteTool(),
-    ResearchPinecone(),
-]
 
 system_message = SystemMessage(
     content="""
@@ -489,7 +486,7 @@ system_message = SystemMessage(
         you do not make things up, you will only use the product information you have found from your research. 
         
         Do not recommend the user to go to the website.
-        Do not provide information about order status.
+        Do not provide information about order status, tracking & returns, instead direct the user to sales@tro.com.au
         Do not check the availability of products.
 
         Please make sure you complete the objective above with the following rules:
@@ -508,6 +505,12 @@ llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-16k-0613")
 memory = ConversationSummaryBufferMemory(
     memory_key="memory", return_messages=True, llm=llm, max_token_limit=1000)
 
+
+tools = [
+    #ScrapeWebsiteTool(),
+    ResearchPinecone(),
+]
+
 agent = initialize_agent(
     tools,
     llm=llm,
@@ -516,6 +519,16 @@ agent = initialize_agent(
     agent_kwargs=agent_kwargs,
     memory=memory,
 )
+
+# Create langsmith client
+#client = langsmith.Client()
+#chain_results = client.run_on_dataset(
+#    dataset_name="tro-queries",
+#    llm_or_chain_factory=llm,
+#    project_name="tro-pacific-assistant",
+#    concurrency_level=5,
+#    verbose=True,
+#)
 
 
 def set_up_interface():
@@ -690,4 +703,6 @@ app = FastAPI()
 def ask_question(query: str = Form(...)):
     response = agent({"input": query})
 
+    logging.info(f'Response: {response}')
+    
     return response['output']

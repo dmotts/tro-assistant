@@ -14,3 +14,4 @@ python-multipart
 selenium
 selenium-wire
 webdriver-manager
+langsmith

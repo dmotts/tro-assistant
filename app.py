@@ -632,4 +632,6 @@ app = FastAPI()
 
 @app.post("/query")
 def ask_question(query: str = Form(...)):
-    return agent({"input": query})
+    response = agent({"input": query})
+
+    return response['output']

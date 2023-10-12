@@ -1,6 +1,8 @@
 import os
 import json
 import time
+import shutil
+import datetime
 
 from config import setup_logging
 from selenium.webdriver.firefox.options import Options
@@ -16,8 +18,8 @@ from concurrent.futures import ThreadPoolExecutor
 logging = setup_logging()
 
 # Set file paths for product URLs and selectors
-PRODUCT_URLS_FILE = 'product-urls.txt'
-SELECTORS_FILE = 'product-selectors.txt'
+PRODUCT_URLS_FILE = 'products/product-urls.txt'
+SELECTORS_FILE = 'products/product-selectors.txt'
 
 # Set header information
 user_agent = 'Mozilla/5.0 (Linux; Android 11; 100011886A Build/RP1A.200720.011) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.69 Safari/537.36'
@@ -33,18 +35,11 @@ options.add_argument('--headless')
 options.add_argument(f'user-agent={user_agent}')
 
 def save_urls_to_txt(urls, base_url):
-    # Parse the base URL to extract the first part
-    base_parts = base_url.split('//')
-    if len(base_parts) > 1:
-        domain = base_parts[1].split('/')[0]
-        parts = domain.split('.')
-        if len(parts) > 1:
-            first_part = parts[0]
-        else:
-            first_part = domain
-        file_name = "product-urls.txt"
-    else:
-        file_name = "product-urls.txt"  # Fallback filename if parsing fails
+    # Create the 'products' directory if it doesn't exist
+    if not os.path.exists("products"):
+        os.makedirs("products")
+
+    file_name = os.path.join("products", "product-urls.txt")  # Fallback filename if parsing fails
 
     # Create a set to store unique URLs
     unique_urls = set()
@@ -86,6 +81,9 @@ def extract_product_urls(base_url, selector, next_button_selector=None, max_page
 
                 elements = driver.find_elements(By.CSS_SELECTOR, selector)
                 urls.extend(element.get_attribute("href") for element in elements)
+
+                if max_products and len(urls) >= max_products:
+                    urls = urls[:max_products]  # Truncate the list to the specified maximum
 
                 if len(urls) >= max_products:
                     break  # Stop when reaching the maximum number of product URLs
@@ -185,7 +183,7 @@ def scrape_products():
 
     # Save product information to a markdown file in the 'products' directory
     base_url = product_urls[0].split('//')[1].split('/')[0]  # Extract the domain name
-    markdown_file_name = f"products/products_info.md"
+    markdown_file_name = f"products/products-info.md"
 
     with open(markdown_file_name, 'w') as md_file:
         for product_info in product_info_list:
@@ -198,6 +196,21 @@ def scrape_products():
                 else:
                     md_file.write(f"**{key.capitalize()}**: {value}\n\n")  # Regular text for other keys
 
+    # Find the product URLs file with the timestamp suffix in the 'uploaded' directory
+    uploaded_files = [f for f in os.listdir("uploaded") if f.startswith("product-urls-processed_")]
+    if uploaded_files:
+        uploaded_file = os.path.join("uploaded", uploaded_files[0])
+
+        # Amend the contents of the product URLs file
+        with open(uploaded_file, 'a') as uploaded_content:
+            for url in product_urls:
+                uploaded_content.write(f"{url}\n")
+
+        # Rename the file with the current time and date suffix
+        current_datetime = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+        renamed_file_name = f"uploaded/product-urls-processed_{current_datetime}.txt"
+        os.replace(uploaded_file, renamed_file_name)
+
     return product_info_list
 
 def print_product_list(product_list):
@@ -208,11 +221,11 @@ def print_product_list(product_list):
 
 
 if __name__ == '__main__':
-    base_url = 'https://www.tro.com.au/industrial-electrical/isolators/enclosed-isolators'
+    base_url = 'https://www.tro.com.au/control-automation/relays/relay-accessories'
     selector = "a.facets-item-cell-grid-title"
     next_button_selector = ".global-views-pagination-next > a"
     max_pages = 1
-    max_products = 10
+    max_products = 5
 
     product_urls = extract_product_urls(base_url, selector, next_button_selector, max_pages=max_pages, max_products=max_products)
     logging.info(product_urls)

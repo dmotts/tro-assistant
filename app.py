@@ -1,6 +1,8 @@
 import os
 import time
 import glob
+import shutil
+import datetime
 import streamlit as st
 import pinecone
 
@@ -9,7 +11,7 @@ from web_scraper import get_markdown_from_url
 from pdf_scraper import get_pdf_text
 from langchain.chains import LLMChain
 from langchain.llms import OpenAI
-from langchain.memory import ConversationBufferMemory
+from langchain.memory import ConversationSummaryBufferMemory, ConversationBufferMemory
 from langchain.memory.chat_message_histories import StreamlitChatMessageHistory
 from langchain.prompts import PromptTemplate, MessagesPlaceholder
 from langchain.schema.document import Document
@@ -17,6 +19,12 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter, MarkdownHead
 from langchain.document_loaders import TextLoader
 from langchain.vectorstores import Pinecone
 from langchain.embeddings.openai import OpenAIEmbeddings
+from langchain.agents import initialize_agent, Tool
+from langchain.agents import AgentType
+from langchain.chat_models import ChatOpenAI
+from langchain.chains.summarize import load_summarize_chain
+from langchain.schema import SystemMessage
+
 from fastapi import FastAPI, Form
 
 # Configure logger 
@@ -110,20 +118,6 @@ def get_text_chunks(text, metadata={}):
 
     logging.info(f'Markdown Text: {text}')
     
-    ## TRY WITH PDF FILES
-    #  """
-    #headers_to_split_on = [
-    #    ('###', "Section") # This is just a placeholder for now
-    #]
-
-    #markdown_splitter = MarkdownHeaderTextSplitter(headers_to_split_on)
-    #md_header_splits = markdown_splitter.split_text(text)
-
-    #logging.info(f'Splits: {md_header_splits}')
-    #"""
-
-    
-    
     data = [
         Document(
             page_content = text,
@@ -139,35 +133,55 @@ def get_text_chunks(text, metadata={}):
     return text_chunks
 
 def store_products_data_to_pinecone():
-    products_directory = os.path.join(os.getcwd(), 'products')  # Assuming 'md' is the directory containing .md files
-    
+    products_directory = os.path.join(os.getcwd(), 'products')
+    uploaded_directory = os.path.join(os.getcwd(), 'uploaded')
+
+    if not os.path.exists(uploaded_directory):
+        os.makedirs(uploaded_directory)
+
     # Get .md files from the 'products' directory
     md_files = glob.glob(os.path.join(products_directory, '*.md'))
-    
+
     p = 1
     total_md_files = len(md_files)
-    
+
     # Get data from .md files and add to Pinecone
     for md_file in md_files:
         with open(md_file, 'r', encoding='utf-8') as file:
             # Perform processing on each .md file
             logging.info(f'Retrieving data from {md_file}...')
-            
+
             # Read the content of the .md file
             md_data = file.read()
-            
+
             # Split data into chunks (if needed)
             md_data_chunks = get_context_chunks(md_data)
 
-            # Add chunks to pinecone index
-            
+            # Add chunks to Pinecone index
             logging.info(f'Adding md data chunks to Pinecone...')
-            
+
             Pinecone.from_documents(md_data_chunks, embeddings, index_name=index_name)
 
             logging.info(f'({p} / {total_md_files})')
 
             p += 1
+
+            # Move the processed .md file to the 'uploaded' directory after processing
+            current_datetime = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+            file_name, file_extension = os.path.splitext(os.path.basename(md_file))
+            new_file_name = f"{file_name}_{current_datetime}{file_extension}"
+            new_file_path = os.path.join(uploaded_directory, new_file_name)
+
+            # Create a new .md file with the same content in the 'uploaded' directory
+            with open(new_file_path, 'w', encoding='utf-8') as new_file:
+                new_file.write(md_data)
+
+            # Delete the original .md file
+            os.remove(md_file)
+
+    # Optional: Return a list of processed file paths
+    processed_files = [os.path.join(uploaded_directory, f"{file_name}_{current_datetime}{file_extension}") for file_name, file_extension in [os.path.splitext(os.path.basename(md_file)) for md_file in md_files]]
+    return processed_files
 
 def store_pdf_data_to_pinecone():
     
@@ -294,46 +308,36 @@ def get_texts_from_pinecone(query):
     return texts    
 
 
-#tools = [
-#    Tool(
-#        name="Search",
-#        func=search,
-#        description="useful for when you need to answer questions about current events, data. You should ask targeted questions"
-#    ),
-#    ScrapeWebsiteTool(),
-#]
-#
-#system_message = SystemMessage(
-#    content="""You are a world class researcher, who can do detailed research on any topic and produce facts based results; 
-#           you do not make things up, you will try as hard as possible to gather facts & data to back up the research
-#            
-#            Please make sure you complete the objective above with the following rules:
-#            1/ You should do enough research to gather as much information as possible about the objective
-#            2/ If there are url of relevant links & articles, you will scrape it to gather more information
-#            3/ After scraping & search, you should think "is there any new things i should search & scraping based on the data I collected to increase research quality?" If answer is yes, continue; But don't do this more than 3 iteratins
-#            4/ You should not make things up, you should only write facts & data that you have gathered
-#            5/ In the final output, You should include all reference data & links to back up your research; You should include all reference data & links to back up your research
-#            6/ In the final output, You should include all reference data & links to back up your research; You should include all reference data & links to back up your research"""
-#)
-#
-#agent_kwargs = {
-#    "extra_prompt_messages": [MessagesPlaceholder(variable_name="memory")],
-#    "system_message": system_message,
-#}
-#
-#llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-16k-0613")
-#memory = ConversationSummaryBufferMemory(
-#    memory_key="memory", return_messages=True, llm=llm, max_token_limit=1000)
-#
-#agent = initialize_agent(
-#    tools,
-#            llm,
-#    agent=AgentType.OPENAI_FUNCTIONS,
-#    verbose=True,
-#    agent_kwargs=agent_kwargs,
-#    memory=memory,
-#)
-#
+system_message = SystemMessage(
+    content="""You are customer support for Tro Pacific, who can do detailed research on any topic and produce facts based results; 
+           you do not make things up, you will try as hard as possible to gather facts & data to back up the research
+            
+            Please make sure you complete the objective above with the following rules:
+            1/ You should do enough research to gather as much information as possible about the objective
+            2/ If there are url of relevant links & articles, you will scrape it to gather more information
+            3/ After scraping & search, you should think "is there any new things i should search & scraping based on the data I collected to increase research quality?" If answer is yes, continue; But don't do this more than 3 iteratins
+            4/ You should not make things up, you should only write facts & data that you have gathered
+            5/ In the final output, You should include all reference data & links to back up your research; You should include all reference data & links to back up your research
+            6/ In the final output, You should include all reference data & links to back up your research; You should include all reference data & links to back up your research"""
+)
+
+agent_kwargs = {
+    "extra_prompt_messages": [MessagesPlaceholder(variable_name="memory")],
+    "system_message": system_message,
+}
+
+llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-16k-0613")
+memory = ConversationSummaryBufferMemory(
+    memory_key="memory", return_messages=True, llm=llm, max_token_limit=1000)
+
+agent = initialize_agent(
+    llm=llm,
+    agent=AgentType.OPENAI_FUNCTIONS,
+    verbose=True,
+    agent_kwargs=agent_kwargs,
+    memory=memory,
+)
+
 
 
 def set_up_interface():

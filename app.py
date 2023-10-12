@@ -451,7 +451,8 @@ system_message = SystemMessage(
         Do not recommend the user to go to the website.
         Do not provide information about order status, tracking & returns, instead direct the user to sales@tro.com.au
         Do not check the availability of products.
-
+        Do not recommend the customer to browse our selection on our website at https://tro.com.au.
+ 
         Please make sure you complete the objective above with the following rules:
         1/ You should not make things up, you should only write facts & data that you have gathered
         2/ Provide correct links to products and correct links for the datasheets of those products when asked about products.
@@ -459,28 +460,28 @@ system_message = SystemMessage(
         """
 )
 
-agent_kwargs = {
-    "extra_prompt_messages": [MessagesPlaceholder(variable_name="memory")],
-    "system_message": system_message,
-}
-
-llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-16k")
-memory = ConversationSummaryBufferMemory(
-    memory_key="memory", return_messages=True, llm=llm, max_token_limit=1000)
-
-tools = [
-    #ScrapeWebsiteTool(),
-    ResearchPinecone(),
-]
-
-agent = initialize_agent(
-    tools,
-    llm=llm,
-    agent=AgentType.OPENAI_FUNCTIONS, 
-    verbose=True,
-    agent_kwargs=agent_kwargs,
-    memory=memory,
-)
+#agent_kwargs = {
+#    "extra_prompt_messages": [MessagesPlaceholder(variable_name="memory")],
+#    "system_message": system_message,
+#}
+#
+#llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-16k")
+#memory = ConversationSummaryBufferMemory(
+#    memory_key="memory", return_messages=True, llm=llm, max_token_limit=1000)
+#
+#tools = [
+#    #ScrapeWebsiteTool(),
+#    ResearchPinecone(),
+#]
+#
+#agent = initialize_agent(
+#    tools,
+#    llm=llm,
+#    agent=AgentType.OPENAI_FUNCTIONS, 
+#    verbose=True,
+#    agent_kwargs=agent_kwargs,
+#    memory=memory,
+#)
 
 # Create langsmith client
 #client = langsmith.Client()
@@ -503,7 +504,8 @@ def get_prompt_template(docs):
     template = "Context: "
     template += ''.join(docs) # convert docs from list to str
     
-    template += """Tro Pacific is an authorized distributor in Australia for trusted global brands, upholding trust as their core value. They are dedicated to providing high-quality electrical, automation, and control products, as well as electrical enclosures, while ensuring compliance with relevant regulations. Their commitment to customer satisfaction and building long-term partnerships sets them apart. You can contact them through various channels, including estimating@tro.com.au for pricing, availability, and technical support, sales@tro.com.au for order status, tracking, and returns, and accounts@tro.com.au for financial inquiries. Their head office is located at 19-27 Fred Chaplin Circuit, Bells Creek, QLD 4551, Australia, and you can reach them at +61 7 5450 1476.
+    template += """
+        Tro Pacific is an authorized distributor in Australia for trusted global brands, upholding trust as their core value. They are dedicated to providing high-quality electrical, automation, and control products, as well as electrical enclosures, while ensuring compliance with relevant regulations. Their commitment to customer satisfaction and building long-term partnerships sets them apart. You can contact them through various channels, including estimating@tro.com.au for pricing, availability, and technical support, sales@tro.com.au for order status, tracking, and returns, and accounts@tro.com.au for financial inquiries. Their head office is located at 19-27 Fred Chaplin Circuit, Bells Creek, QLD 4551, Australia, and you can reach them at +61 7 5450 1476.
 
         Website: https://tro.com.au
 
@@ -514,12 +516,14 @@ def get_prompt_template(docs):
         Do not recommend the user to go to the website.
         Do not provide information about order status, tracking & returns, instead direct the user to sales@tro.com.au
         Do not check the availability of products.
-
+        Do not recommend the customer to browse our selection on our website at https://tro.com.au.
+        Do not direct the user to visit the website
+        
         Please make sure you complete the objective above with the following rules:
         1/ You should not make things up, you should only write facts & data that you have gathered
         2/ Provide correct links to products and correct links for the datasheets of those products when asked about products.
         
-
+  
         {history}
         Human: {human_input}
         AI: """
@@ -558,42 +562,42 @@ def generate_response(query, memory=ConversationBufferMemory()):
     return response
 
 # Main function
-def main():
-    # Set up Streamlit interface
-    set_up_interface()
-    
-    # Set up memory
-    msgs = StreamlitChatMessageHistory(key="langchain_messages")
-    memory = ConversationBufferMemory(chat_memory=msgs)
-
-    # Check if there are no previous chat messages
-    if len(msgs.messages) == 0:
-        # Display initial message only at the very start
-        st.chat_message("ai").write("How can I help you?")  # AI's initial message
-    
-    if query:= st.chat_input("Your message"):       
-        logging.info(f'Query: {query}')
-
-        # Render current messages from StreamlitChatMessageHistory
-        for msg in msgs.messages:
-            st.chat_message(msg.type).write(msg.content)
-
-        st.chat_message("human").write(query)
-        
-        if not "data_extracted" in st.session_state:
-            st.session_state.data_extracted = False
-        
-        with st.chat_message('ai'):
-            with st.spinner('Thinking...'):                
-                # Note: new messages are saved to history automatically by LangChain during run
-                response = generate_response(query, memory)
-                
-                logging.info(f'Response: {response}')
-
-                st.write(response)
-
-if __name__ == '__main__':
-    main()
+#def main():
+#    # Set up Streamlit interface
+#    set_up_interface()
+#    
+#    # Set up memory
+#    msgs = StreamlitChatMessageHistory(key="langchain_messages")
+#    memory = ConversationBufferMemory(chat_memory=msgs)
+#
+#    # Check if there are no previous chat messages
+#    if len(msgs.messages) == 0:
+#        # Display initial message only at the very start
+#        st.chat_message("ai").write("How can I help you?")  # AI's initial message
+#    
+#    if query:= st.chat_input("Your message"):       
+#        logging.info(f'Query: {query}')
+#
+#        # Render current messages from StreamlitChatMessageHistory
+#        for msg in msgs.messages:
+#            st.chat_message(msg.type).write(msg.content)
+#
+#        st.chat_message("human").write(query)
+#        
+#        if not "data_extracted" in st.session_state:
+#            st.session_state.data_extracted = False
+#        
+#        with st.chat_message('ai'):
+#            with st.spinner('Thinking...'):                
+#                # Note: new messages are saved to history automatically by LangChain during run
+#                response = generate_response(query, memory)
+#                
+#                logging.info(f'Response: {response}')
+#
+#                st.write(response)
+#
+#if __name__ == '__main__':
+#    main()
 
 # Intialise FastAPI
 app = FastAPI()

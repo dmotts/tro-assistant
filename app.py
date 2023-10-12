@@ -489,10 +489,13 @@ system_message = SystemMessage(
         you do not make things up, you will only use the product information you have found from your research. 
         
         Do not recommend the user to go to the website.
+        Do not provide information about order status.
+        Do not check the availability of products.
 
         Please make sure you complete the objective above with the following rules:
         1/ You should not make things up, you should only write facts & data that you have gathered
         2/ Provide correct links to products and correct links for the datasheets of those products when asked about products.
+        
         """
 )
 

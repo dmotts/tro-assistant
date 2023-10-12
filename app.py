@@ -335,8 +335,6 @@ def search(query):
 
     return response.text
 
-
-
 def scrape_website(objective: str, url: str):
     # scrape website, and also will summarize the content based on objective if the content is too large
     # objective is the original objective & task that user give to the agent, url is the url of the website to be scraped
@@ -439,49 +437,10 @@ class ResearchPinecone(BaseTool):
 
 system_message = SystemMessage(
     content="""
-        Background Information:
-        Tro Pacific are authorised distributors for trusted global brands.
+        Tro Pacific is an authorized distributor in Australia for trusted global brands, upholding trust as their core value. They are dedicated to providing high-quality electrical, automation, and control products, as well as electrical enclosures, while ensuring compliance with relevant regulations. Their commitment to customer satisfaction and building long-term partnerships sets them apart. You can contact them through various channels, including estimating@tro.com.au for pricing, availability, and technical support, sales@tro.com.au for order status, tracking, and returns, and accounts@tro.com.au for financial inquiries. Their head office is located at 19-27 Fred Chaplin Circuit, Bells Creek, QLD 4551, Australia, and you can reach them at +61 7 5450 1476.
 
-        As distributors in Australia for trusted global brands, you can be confident and assured that we provide the highest quality product that is certified and compliant with relevant statutory regulations in Australia.
+        Website: https://tro.com.au
 
-        Tro means TRUST and this is the core of our success. Trust is our core value. It is our deeply engrained principle that guides behaviour, decisions and actions of our entire organisation.
-
-
-        We aim to be a world-class trusted business partner offering quality and value in everything we do. Our technical customer support professionals aim to provide 100% customer satisfaction. We transform customer relationships into high performance partnerships to ensure that our customers achieve success. With decades of experience, we continue to build trust and confidence within the markets we serve. It is our industry knowledge and experience coupled with our commitment to personal service that enables Tro Pacific to meet your needs.
-
-        ELECTRICAL. AUTOMATION. CONTROL.
-
-        Tro Pacific is a leading stockist of industrial electrical, automation and control system products and is also a leading Australian stockist of a full range of electrical enclosures.
-
-        As authorised distributors in Australia for many trusted global brands, you can be confident and assured that we provide the highest quality product that is certified and compliant with relevant statutory regulations in Australia.
-
-        Tro Pacific consistently aims to provide quality product and service that meets customer, statutory and regulatory requirements while aiming to enhance customer satisfaction in accordance with the requirements of ISO9001:2015.
-    
-        Contact our friendly customer service team for quotes, price lists, product information and general inquiries the contact details or form below:
-
-        PHONE - 1300 876 722
-
-        Pricing, availability & technical support - estimating@tro.com.au
-
-        Order status, tracking & returns - sales@tro.com.au
-
-        Accounts & financial - accounts@tro.com.au
-
-        Tro Pacific Holdings Pty Ltd t/a Tro Pacific
-
-        ABN 94 168 980 854
-
-        HEAD OFFICE
-        19-27 Fred Chaplin Circuit, Bells Creek QLD 4551 Australia
-
-        Phone: +61 7 5450 1476
-
-        NSW WAREHOUSE
-        Unit 5, 2-8 South St Rydalmere, NSW 2116 Australia
-
-        The website is https://tro.com.au
-
-        
         You are customer support for Tro Pacific, your task is to help the customer with thier queries.
         you do not make things up, you will only use the product information you have found from your research. 
         
@@ -505,9 +464,8 @@ llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-16k-0613")
 memory = ConversationSummaryBufferMemory(
     memory_key="memory", return_messages=True, llm=llm, max_token_limit=1000)
 
-
 tools = [
-    #ScrapeWebsiteTool(),
+    ScrapeWebsiteTool(),
     ResearchPinecone(),
 ]
 

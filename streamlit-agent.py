@@ -19,8 +19,13 @@ from langchain.tools import BaseTool
 from pydantic import BaseModel, Field
 from typing import Type
 from app import get_texts_from_pinecone
+from config import setup_logging
 
+# Set browserless api key
 browserless_api_key = os.getenv("BROWSERLESS_API_KEY")
+
+# Configure logger 
+logging = setup_logging()
 
 def set_up_interface():
     # Set up Streamlit interface
@@ -142,11 +147,15 @@ def main():
                     continue
                 with st.status(f"**{step[0].tool}**: {step[0].tool_input}", state="complete"):
                     st.write(step[0].log)
+                    logging.info(f'Step: {step[0].log}')
                     st.write(step[1])
+                    logging.info(f'Step: {step[1]}')
+                    
             st.write(msg.content)
 
     if prompt := st.chat_input():
         st.chat_message("user").write(prompt)
+        logging.info(f'User: {prompt}')
 
         llm = ChatOpenAI(model_name="gpt-3.5-turbo-16k", openai_api_key=openai_api_key, streaming=True)
         
@@ -206,7 +215,9 @@ def main():
         with st.chat_message("assistant"):
             st_cb = StreamlitCallbackHandler(st.container(), expand_new_thoughts=False)
             response = executor(prompt, callbacks=[st_cb])
+            logging.info(f'Agent Response: {response}')
             st.write(response["output"])
+            logging.info(f'Agent Answer: {response["output"]}')
             st.session_state.steps[str(len(msgs.messages) - 1)] = response["intermediate_steps"]
 
 if __name__== '__main__':

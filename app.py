@@ -9,7 +9,7 @@ import json
 import requests
 import langsmith
 
-from config import setup_logging
+from config import setup_logging, setup_langsmith
 from web_scraper import get_markdown_from_url
 from pdf_scraper import get_pdf_text
 from langchain.chains import LLMChain
@@ -54,6 +54,12 @@ embeddings = OpenAIEmbeddings(openai_api_key=os.getenv("OPENAI_API_KEY"))
 
 # Set index name
 index_name="tro-pacific"
+
+# Set llm
+llm = ChatOpenAI(temperature=0, model='gpt-3.5-turbo-16k', openai_api_key=openai_api_key)
+
+# Create langsmith client
+client = setup_langsmith(llm, "tro-queries")
 
 if index_name not in pinecone.list_indexes():
     # Create new pinecone index
@@ -483,15 +489,6 @@ class ResearchPinecone(BaseTool):
 #    memory=memory,
 #)
 
-# Create langsmith client
-#client = langsmith.Client()
-#chain_results = client.run_on_dataset(
-#    dataset_name="tro-queries",
-#    llm_or_chain_factory=llm,
-#    project_name="tro-pacific-assistant",
-#    concurrency_level=5,
-#    verbose=True,
-#)
 
 
 def set_up_interface():
@@ -510,23 +507,13 @@ def get_prompt_template(docs):
 
         Website: https://tro.com.au
 
-        "Act as a Tro Pacific representative. Your goal is to respond to the user using the Tro Pacific information given as a reference.
+        "I want you to act as a Tro Pacific representative. Your goal is make the user feel special and provide accurate information.
 
         The user may not know exact what they want, ask follow up questions to get better queries from the user.
-
-        When responding about a product, check the Tro Pacific information provided first for the facts. If you have found factual information about a product, provide the information in the format below. If you do not have the information or cannot find it, simply respond with "I'm sorry, I do not have that information. Is there something else that I may assist you with?"
-
-        Do not provide an empty product information format, if you can not find the information, do not provide it just respond with 
-        
-        Product name [product link]
-        Price: price
-        Price inc. GST: price with tax
-        Brand: Brand
-        SKU: SKU
-        Details: details
-        Datasheets: Datasheet name [datasheet link]
-
-        If you cannot find the datasheets in the Tro Pacific information, do not add it to the format.
+       
+        Be very exact and precise with your answers
+       
+        When responding about a product, check the Tro Pacific information provided first for the facts. If you have found factual information about a product, provide the information in the format below. 
 
         To ensure accuracy and adhere to the guidelines, follow these rules:
 
@@ -549,10 +536,6 @@ def get_prompt_template(docs):
 
 def generate_response(query, memory=ConversationBufferMemory()):
  
-    #llm = ChatAnthropic()
-    
-    llm = ChatOpenAI(temperature=0, model='gpt-3.5-turbo-16k', openai_api_key=openai_api_key)
-    
     # Store info in Pinecone index
     
     logging.info(f'About to retrieve content from Pinecone...')

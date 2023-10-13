@@ -15,3 +15,4 @@ selenium
 selenium-wire
 webdriver-manager
 langsmith
+duckduckgo-search

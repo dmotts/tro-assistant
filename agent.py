@@ -23,26 +23,6 @@ serper_api_key = os.getenv("SERP_API_KEY")
 # 1. Tool for search
 
 
-def search(query):
-    url = "https://google.serper.dev/search"
-
-    payload = json.dumps({
-        "q": query
-    })
-
-    headers = {
-        'X-API-KEY': serper_api_key,
-        'Content-Type': 'application/json'
-    }
-
-    response = requests.request("POST", url, headers=headers, data=payload)
-
-    print(response.text)
-
-    return response.text
-
-
-# 2. Tool for scraping
 def scrape_website(objective: str, url: str):
     # scrape website, and also will summarize the content based on objective if the content is too large
     # objective is the original objective & task that user give to the agent, url is the url of the website to be scraped
@@ -63,7 +43,7 @@ def scrape_website(objective: str, url: str):
     data_json = json.dumps(data)
 
     # Send the POST request
-    post_url = f"https://chrome.browserless.io/content?token={browserless_api_key}"
+    post_url = f"https://chrome.browserless.io/content?token={brwoserless_api_key}"
     response = requests.post(post_url, headers=headers, data=data_json)
 
     # Check the response status code
@@ -79,7 +59,7 @@ def scrape_website(objective: str, url: str):
             return text
     else:
         print(f"HTTP request failed with status code {response.status_code}")
-
+    
 
 def summary(objective, content):
     llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-16k-0613")
@@ -117,7 +97,7 @@ class ScrapeWebsiteInput(BaseModel):
 
 class ScrapeWebsiteTool(BaseTool):
     name = "scrape_website"
-    description = "useful when you need to get data from a website url, passing both url and objective to the function; DO NOT make up any url, the url should only be from the search results"
+    description = "useful to check to see if the links you are about to provide are accurate to the customer's query"
     args_schema: Type[BaseModel] = ScrapeWebsiteInput
 
     def _run(self, objective: str, url: str):
@@ -126,28 +106,43 @@ class ScrapeWebsiteTool(BaseTool):
     def _arun(self, url: str):
         raise NotImplementedError("error here")
 
+class PineconeInput(BaseModel):
+    query: str = Field(
+        description="The query that the customer asks the agent"
+    )
 
-# 3. Create langchain agent with the tools above
-tools = [
-    Tool(
-        name="Search",
-        func=search,
-        description="useful for when you need to answer questions about current events, data. You should ask targeted questions"
-    ),
-    ScrapeWebsiteTool(),
-]
+class ResearchPinecone(BaseTool):
+    name="find_tro_pacific_product_information"
+    description="Useful for when you need product information to answer questions about tro pacific. You should ask targeted questions"
+    args_schema: Type[BaseModel] = PineconeInput
+
+    def _run(self, query: str):
+        return get_texts_from_pinecone(query)
+    
+    def arun(self, query):
+        raise NotImplementedError("An error has occurred while looking up product information")
+
 
 system_message = SystemMessage(
-    content="""You are a world class researcher, who can do detailed research on any topic and produce facts based results; 
-            you do not make things up, you will try as hard as possible to gather facts & data to back up the research
-            
-            Please make sure you complete the objective above with the following rules:
-            1/ You should do enough research to gather as much information as possible about the objective
-            2/ If there are url of relevant links & articles, you will scrape it to gather more information
-            3/ After scraping & search, you should think "is there any new things i should search & scraping based on the data I collected to increase research quality?" If answer is yes, continue; But don't do this more than 3 iteratins
-            4/ You should not make things up, you should only write facts & data that you have gathered
-            5/ In the final output, You should include all reference data & links to back up your research; You should include all reference data & links to back up your research
-            6/ In the final output, You should include all reference data & links to back up your research; You should include all reference data & links to back up your research"""
+    content="""
+        Tro Pacific is an authorized distributor in Australia for trusted global brands, upholding trust as their core value. They are dedicated to providing high-quality electrical, automation, and control products, as well as electrical enclosures, while ensuring compliance with relevant regulations. Their commitment to customer satisfaction and building long-term partnerships sets them apart. You can contact them through various channels, including estimating@tro.com.au for pricing, availability, and technical support, sales@tro.com.au for order status, tracking, and returns, and accounts@tro.com.au for financial inquiries. Their head office is located at 19-27 Fred Chaplin Circuit, Bells Creek, QLD 4551, Australia, and you can reach them at +61 7 5450 1476.
+
+        Website: https://tro.com.au
+
+        You are customer support for Tro Pacific, your main task is to help the customer with thier queries about products. 
+        You can not help with order status, tracking, and returns. If you have any financial inquiries, pricing, availability, technical support.
+        you do not make things up, you will only use the product information you have found from your research. 
+        
+        Do not recommend the user to go to the website.
+        Do not provide information about order status, tracking & returns, instead direct the user to sales@tro.com.au
+        Do not check the availability of products.
+        Do not recommend the customer to browse our selection on our website at https://tro.com.au.
+ 
+        Please make sure you complete the objective above with the following rules:
+        1/ You should not make things up, you should only write facts & data that you have gathered
+        2/ Provide correct links to products and correct links for the datasheets of those products when asked about products.
+        
+        """
 )
 
 agent_kwargs = {
@@ -155,46 +150,31 @@ agent_kwargs = {
     "system_message": system_message,
 }
 
-llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-16k-0613")
+llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-16k")
 memory = ConversationSummaryBufferMemory(
     memory_key="memory", return_messages=True, llm=llm, max_token_limit=1000)
 
-agent = initialize_agent(
-    tools,
-    llm,
-    agent=AgentType.OPENAI_FUNCTIONS,
-    verbose=True,
-    agent_kwargs=agent_kwargs,
-    memory=memory,
-)
+tools = [
+    #ScrapeWebsiteTool(),
+    ResearchPinecone(),
+]
 
+def get_agent(llm=llm, memory=memory):
+    agent = initialize_agent(
+        tools,
+        llm=llm,
+        agent=AgentType.OPENAI_FUNCTIONS, 
+        verbose=True,
+        agent_kwargs=agent_kwargs,
+        memory=memory,
+    )
 
-# 4. Use streamlit to create a web app
-def main():
-    st.set_page_config(page_title="AI research agent", page_icon=":bird:")
+    return agent
 
-    st.header("AI research agent :bird:")
-    query = st.text_input("Research goal")
+agent = get_agent()
 
-    if query:
-        st.write("Doing research for ", query)
-
-        result = agent({"input": query})
-
-        st.info(result['output'])
-
-
-if __name__ == '__main__':
-    main()
-
-
-# 5. Set this as an API endpoint via FastAPI
+# Intialise FastAPI
 app = FastAPI()
-
-
-class Query(BaseModel):
-    query: str
-
 @app.get("/")
 #def researchAgent(query: Query):
 def researchAgent():
@@ -205,7 +185,7 @@ def researchAgent():
         On this website, you should find a link to [Device]_Electric_Product_EN_C19912-63-202309.pdf(18.91MB). Can you confirm an provide the href link?
         
         """
-
+    
     content = agent({"input": query})
     actual_content = content['output']
     return actual_content

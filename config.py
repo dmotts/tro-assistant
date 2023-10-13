@@ -15,7 +15,7 @@ def setup_langsmith(llm, dataset="tro-queries"):
         verbose=True,
     )
 
-    return langsmith
+    return client
 
 def setup_logging():
 

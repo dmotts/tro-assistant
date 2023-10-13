@@ -59,7 +59,7 @@ index_name="tro-pacific"
 llm = ChatOpenAI(temperature=0, model='gpt-3.5-turbo-16k', openai_api_key=openai_api_key)
 
 # Create langsmith client
-client = setup_langsmith(llm, "tro-queries")
+#client = setup_langsmith(llm, "tro-queries")
 
 if index_name not in pinecone.list_indexes():
     # Create new pinecone index
@@ -310,8 +310,7 @@ def get_texts_from_pinecone(query):
     #texts = docs[0].page_content 
     #embedding_vector = OpenAIEmbeddings().embed_query(query)
   
-
-    retriever = vectorstore.as_retriever(search_type="mmr" )
+    retriever  = vectorstore.as_retriever(search_type="mmr", search_kwargs={"k": 1})
     matched_docs = retriever.get_relevant_documents(query)
  
     joined_docs = ""
@@ -343,6 +342,86 @@ def search(query):
     print(response.text)
 
     return response.text
+
+def set_up_interface():
+    # Set up Streamlit interface
+    st.markdown("<div style='text-align:center;'> <img style='width:340px;' src='https://www.ipenclosures.com.au/wp-content/uploads/IP-EnclosuresNZ-Logo-.png.webp' /></div>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align:center;'>IP Enclosures AI Assistant</h1>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align:center;'>Welcome to IP Enclosures AI Assistant! Please feel free to ask any question.</p>", unsafe_allow_html=True)
+
+def get_prompt_template(docs):
+    template = "Tro Pacific Information: "
+    template += ''.join(docs) # convert docs from list to str
+    
+    template += """
+
+        Tro Pacific is an authorized distributor in Australia for trusted global brands, upholding trust as their core value. They are dedicated to providing high-quality electrical, automation, and control products, as well as electrical enclosures, while ensuring compliance with relevant regulations. Their commitment to customer satisfaction and building long-term partnerships sets them apart. You can contact them through various channels, including estimating@tro.com.au for pricing, availability, and technical support, sales@tro.com.au for order status, tracking, and returns, and accounts@tro.com.au for financial inquiries. Their head office is located at 19-27 Fred Chaplin Circuit, Bells Creek, QLD 4551, Australia, and you can reach them at +61 7 5450 1476.
+
+        Website: https://tro.com.au
+
+        "I want you to act as a Tro Pacific representative. Your goal is make the user feel special and provide accurate information.
+
+        The user may not know exact what they want, ask follow up questions to get better queries from the user.
+
+        When responding about a product, check the Tro Pacific information provided first for the facts. If you have found factual information about a product, provide the information in the format below. If you do not have the information or cannot find it, simply respond with "I'm sorry, I do not have that information. Is there something else that I may assist you with?"
+
+        Do not provide an empty product information format, if you can not find the information, do not provide it just respond with 
+        
+        Product name [product link]
+        Price: price
+        Price inc. GST: price with tax
+        Brand: Brand
+        SKU: SKU
+        Details: details
+        Datasheets: Datasheet name [datasheet link]
+
+        If you cannot find the datasheets in the Tro Pacific information, do not add it to the format.
+
+        To ensure accuracy and adhere to the guidelines, follow these rules:
+
+        Always ask follow-up questions.
+        Do not make up information; provide only facts based on the context given.
+        Provide correct links to products and datasheets when asked about products.
+        Do not recommend the user to visit the website.
+        Do not check the availability of products.
+        Do not suggest browsing our selection on our website at https://tro.com.au.
+        Do not direct the user to visit the website."
+        Do not direct the user to contact Tro Pacific directly in any way
+        Only if asked about contact information, then provide that information only if you can find it in the Tro Pacific information provided. If not, respond with 
+        "I'm sorry, I do not have that information. Is there anything else that I may assist you with?"
+
+        {history}
+        User: {human_input}
+        AI: """
+        
+    return template
+
+def generate_response(query, memory=ConversationBufferMemory()):
+ 
+    # Store info in Pinecone index
+    
+    logging.info(f'About to retrieve content from Pinecone...')
+    
+    texts = get_texts_from_pinecone(query)    
+
+    # IF new info
+        # Add info to pinecone
+    
+    logging.info(f'Retrieved content from Pinecone...{texts}    ')
+
+    template = get_prompt_template(texts)
+    logging.info(f'Created prompt from template...')
+    prompt = PromptTemplate(input_variables=["history", "human_input"], template=template)
+    logging.info(f'Prompt: {prompt}')
+    llm_chain = LLMChain(llm=llm, prompt=prompt, memory=memory)
+    logging.info(f'Running llm chain...')
+
+    response = llm_chain.run(query)
+
+    logging.info(f'Query: {query}')
+    logging.info(f'Response: {response}')
+    
+    return response
 
 def scrape_website(objective: str, url: str):
     # scrape website, and also will summarize the content based on objective if the content is too large
@@ -444,174 +523,119 @@ class ResearchPinecone(BaseTool):
         raise NotImplementedError("An error has occurred while looking up product information")
 
 
-#system_message = SystemMessage(
-#    content="""
-#        Tro Pacific is an authorized distributor in Australia for trusted global brands, upholding trust as their core value. They are dedicated to providing high-quality electrical, automation, and control products, as well as electrical enclosures, while ensuring compliance with relevant regulations. Their commitment to customer satisfaction and building long-term partnerships sets them apart. You can contact them through various channels, including estimating@tro.com.au for pricing, availability, and technical support, sales@tro.com.au for order status, tracking, and returns, and accounts@tro.com.au for financial inquiries. Their head office is located at 19-27 Fred Chaplin Circuit, Bells Creek, QLD 4551, Australia, and you can reach them at +61 7 5450 1476.
-#
-#        Website: https://tro.com.au
-#
-#        You are customer support for Tro Pacific, your main task is to help the customer with thier queries about products. 
-#        You can not help with order status, tracking, and returns. If you have any financial inquiries, pricing, availability, technical support.
-#        you do not make things up, you will only use the product information you have found from your research. 
-#        
-#        Do not recommend the user to go to the website.
-#        Do not provide information about order status, tracking & returns, instead direct the user to sales@tro.com.au
-#        Do not check the availability of products.
-#        Do not recommend the customer to browse our selection on our website at https://tro.com.au.
-# 
-#        Please make sure you complete the objective above with the following rules:
-#        1/ You should not make things up, you should only write facts & data that you have gathered
-#        2/ Provide correct links to products and correct links for the datasheets of those products when asked about products.
-#        
-#        """
-#)
-
-#agent_kwargs = {
-#    "extra_prompt_messages": [MessagesPlaceholder(variable_name="memory")],
-#    "system_message": system_message,
-#}
-#
-#llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-16k")
-#memory = ConversationSummaryBufferMemory(
-#    memory_key="memory", return_messages=True, llm=llm, max_token_limit=1000)
-#
-#tools = [
-#    #ScrapeWebsiteTool(),
-#    ResearchPinecone(),
-#]
-#
-#agent = initialize_agent(
-#    tools,
-#    llm=llm,
-#    agent=AgentType.OPENAI_FUNCTIONS, 
-#    verbose=True,
-#    agent_kwargs=agent_kwargs,
-#    memory=memory,
-#)
-
-
-
-def set_up_interface():
-    # Set up Streamlit interface
-    st.markdown("<div style='text-align:center;'> <img style='width:340px;' src='https://www.ipenclosures.com.au/wp-content/uploads/IP-EnclosuresNZ-Logo-.png.webp' /></div>", unsafe_allow_html=True)
-    st.markdown("<h1 style='text-align:center;'>IP Enclosures AI Assistant</h1>", unsafe_allow_html=True)
-    st.markdown("<p style='text-align:center;'>Welcome to IP Enclosures AI Assistant! Please feel free to ask any question.</p>", unsafe_allow_html=True)
-
-def get_prompt_template(docs):
-    template = "Tro Pacific Information: "
-    template += ''.join(docs) # convert docs from list to str
-    
-    template += """
-
+system_message = SystemMessage(
+    content="""
         Tro Pacific is an authorized distributor in Australia for trusted global brands, upholding trust as their core value. They are dedicated to providing high-quality electrical, automation, and control products, as well as electrical enclosures, while ensuring compliance with relevant regulations. Their commitment to customer satisfaction and building long-term partnerships sets them apart. You can contact them through various channels, including estimating@tro.com.au for pricing, availability, and technical support, sales@tro.com.au for order status, tracking, and returns, and accounts@tro.com.au for financial inquiries. Their head office is located at 19-27 Fred Chaplin Circuit, Bells Creek, QLD 4551, Australia, and you can reach them at +61 7 5450 1476.
 
         Website: https://tro.com.au
 
-        "I want you to act as a Tro Pacific representative. Your goal is make the user feel special and provide accurate information.
-
-        The user may not know exact what they want, ask follow up questions to get better queries from the user.
-
-        When responding about a product, check the Tro Pacific information provided first for the facts. If you have found factual information about a product, provide the information in the format below. If you do not have the information or cannot find it, simply respond with "I'm sorry, I do not have that information. Is there something else that I may assist you with?"
-
-        Do not provide an empty product information format, if you can not find the information, do not provide it just respond with 
+        You are customer support for Tro Pacific, your main task is to help the customer with thier queries about products. 
+        You can not help with order status, tracking, and returns. If you have any financial inquiries, pricing, availability, technical support.
+        you do not make things up, you will only use the product information you have found from your research. 
         
-        Product name [product link]
-        Price: price
-        Price inc. GST: price with tax
-        Brand: Brand
-        SKU: SKU
-        Details: details
-        Datasheets: Datasheet name [datasheet link]
-
-        If you cannot find the datasheets in the Tro Pacific information, do not add it to the format.
-
-        To ensure accuracy and adhere to the guidelines, follow these rules:
-
-        Always ask follow-up questions.
-        Do not make up information; provide only facts based on the context given.
-        Provide correct links to products and datasheets when asked about products.
-        Do not recommend the user to visit the website.
+        Do not recommend the user to go to the website.
+        Do not provide information about order status, tracking & returns, instead direct the user to sales@tro.com.au
         Do not check the availability of products.
-        Do not suggest browsing our selection on our website at https://tro.com.au.
-        Do not direct the user to visit the website."
-        Do not direct the user to contact Tro Pacific directly in any way
-        Only if asked about contact information, then provide that information only if you can find it in the Tro Pacific information provided. If not, respond with 
-        "I'm sorry, I do not have that information. Is there anything else that I may assist you with?"
-
-        {history}
-        User: {human_input}
-        AI: """
-        
-    return template
-
-def generate_response(query, memory=ConversationBufferMemory()):
+        Do not recommend the customer to browse our selection on our website at https://tro.com.au.
  
-    # Store info in Pinecone index
-    
-    logging.info(f'About to retrieve content from Pinecone...')
+        Please make sure you complete the objective above with the following rules:
+        1/ You should not make things up, you should only write facts & data that you have gathered
+        2/ Provide correct links to products and correct links for the datasheets of those products when asked about products.
+        
+        """
+)
 
-    # IF new info
-        # Add info to pinecone
-    
-    texts = get_texts_from_pinecone(query)    
+agent_kwargs = {
+    "extra_prompt_messages": [MessagesPlaceholder(variable_name="memory")],
+    "system_message": system_message,
+}
 
-    logging.info(f'Retrieved content from Pinecone...{texts}    ')
+llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-16k")
+memory = ConversationSummaryBufferMemory(
+    memory_key="memory", return_messages=True, llm=llm, max_token_limit=1000)
 
-    template = get_prompt_template(texts)
-    logging.info(f'Created prompt from template...')
-    prompt = PromptTemplate(input_variables=["history", "human_input"], template=template)
-    logging.info(f'Prompt: {prompt}')
-    llm_chain = LLMChain(llm=llm, prompt=prompt, memory=memory)
-    logging.info(f'Running llm chain...')
+tools = [
+    #ScrapeWebsiteTool(),
+    ResearchPinecone(),
+]
 
-    response = llm_chain.run(query)
 
-    logging.info(f'Query: {query}')
-    logging.info(f'Response: {response}')
-    
-    return response
+def get_agent_response(query, memory):
 
+    agent = initialize_agent(
+        tools,
+        llm=llm,
+        agent=AgentType.OPENAI_FUNCTIONS, 
+        verbose=True,
+        agent_kwargs=agent_kwargs,
+        memory=memory,
+    )
+
+    agent_reply = agent({"input": query})
+    response = agent_reply['output']
+
+    return response; 
+
+agent = initialize_agent(
+        tools,
+        llm=llm,
+        agent=AgentType.OPENAI_FUNCTIONS, 
+        verbose=True,
+        agent_kwargs=agent_kwargs,
+        memory=memory,
+    )
 # Main function
-#def main():
-#    # Set up Streamlit interface
-#    set_up_interface()
-#    
-#    # Set up memory
-#    msgs = StreamlitChatMessageHistory(key="langchain_messages")
-#    memory = ConversationBufferMemory(chat_memory=msgs)
-#
-#    # Check if there are no previous chat messages
-#    if len(msgs.messages) == 0:
-#        # Display initial message only at the very start
-#        st.chat_message("ai").write("How can I help you?")  # AI's initial message
-#    
-#    if query:= st.chat_input("Your message"):       
-#        logging.info(f'Query: {query}')
-#
-#        # Render current messages from StreamlitChatMessageHistory
-#        for msg in msgs.messages:
-#            st.chat_message(msg.type).write(msg.content)
-#
-#        st.chat_message("human").write(query)
-#        
-#        if not "data_extracted" in st.session_state:
-#            st.session_state.data_extracted = False
-#        
-#        with st.chat_message('ai'):
-#            with st.spinner('Thinking...'):                
-#                # Note: new messages are saved to history automatically by LangChain during run
-#                response = generate_response(query, memory)
-#                
-#                logging.info(f'Response: {response}')
-#
-#                st.write(response)
-#
-#if __name__ == '__main__':
-#    main()
+def main():
+    # Set up Streamlit interface
+    set_up_interface()
+    
+    # Set up memory
+    msgs = StreamlitChatMessageHistory(key="langchain_messages")
+    memory = ConversationBufferMemory(chat_memory=msgs)
+    
+    # Check if there are no previous chat messages
+    if len(msgs.messages) == 0:
+        # Display initial message only at the very start
+        st.chat_message("ai").write("How can I help you?")  # AI's initial message
+    
+    if query:= st.chat_input("Your message"):       
+        logging.info(f'Query: {query}')
+
+        # Render current messages from StreamlitChatMessageHistory
+        for msg in msgs.messages:
+            st.chat_message(msg.type).write(msg.content)
+
+        st.chat_message("human").write(query)
+        
+        if not "data_extracted" in st.session_state:
+            st.session_state.data_extracted = False
+        
+        with st.chat_message('ai'):
+            #with st.spinner('Retrieving data...'):
+                
+            #    texts = get_texts_from_pinecone(query)    
+
+            with st.spinner('Thinking...'):                
+                # Note: new messages are saved to history automatically by LangChain during run
+                
+                # Get response from LLM
+                # response = generate_response(query, memory)
+
+                # Get response from agent  
+                response = get_agent_response(query, memory)
+         
+                logging.info(f'Response: {response}')
+
+                st.write(response)
+
+if __name__ == '__main__':
+    main()
 
 # Intialise FastAPI
 app = FastAPI()
 
 @app.post("/query")
 def ask_question(query: str = Form(...)):
+
+
     return generate_response(query)

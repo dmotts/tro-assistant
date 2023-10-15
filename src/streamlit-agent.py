@@ -18,8 +18,8 @@ from bs4 import BeautifulSoup
 from langchain.tools import BaseTool
 from pydantic import BaseModel, Field
 from typing import Type
-from app import get_texts_from_pinecone
-from config import setup_logging
+from src.app import get_texts_from_pinecone
+from src.config import setup_logging
 
 # Set browserless api key
 browserless_api_key = os.getenv("BROWSERLESS_API_KEY")
@@ -151,7 +151,7 @@ class PineconeInput(BaseModel):
 
 class ResearchPinecone(BaseTool):
     name = "Searching for"
-    description = "Only use this tool for looking up product information to answer questions about Tro Pacific products."
+    description = "Useful for looking up product information to answer questions about Tro Pacific. Ask targeted questions."
     args_schema: Type[BaseModel] = PineconeInput
 
     def _run(self, query: str):

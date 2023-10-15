@@ -1,4 +1,4 @@
-# Tro Pacific Customer Support Assistant
+#  ![Tro Pacific Logo](https://terrapinn-cdn.com/tres/pa-images/10660/a0A4G00001foQKaUAM_org.png?20221213020720) Tro Pacific Customer Support Assistant
 
 
 ## Setup instructions
@@ -19,7 +19,7 @@ $ touch .env
 
 ```shell
 $ docker image build -t streamlit-agent:1.0 .
-$ docker container run -p 8503:8503 -d streamlit-agent:1.0
+$ docker container run -p 8503:8503 -d --env-file .env streamlit-agent:1.0
 ```
 
 Then, the web app will be available at `http://localhost:8503/`

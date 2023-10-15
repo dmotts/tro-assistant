@@ -1,43 +1,31 @@
-# base image
-# a little overkill but need it to install dot cli for dtreeviz
+# Use a specific version of Ubuntu as the base image (e.g., 20.04 LTS)
 FROM ubuntu:22.04
 
-# ubuntu installing - python, pip, graphviz, nano, libpq (for psycopg2)
-RUN apt-get update &&\
-    apt-get install python3.10 -y &&\
-    apt-get install python3-pip -y &&\
-    apt-get install graphviz -y
+# Update the package list and install required packages
+RUN apt-get update && \
+    apt-get install -y python3.10 python3-pip graphviz
 
-# exposing default port for streamlit
+# Expose the default Streamlit port
 EXPOSE 8503
 
-# making directory of app
+# Set the working directory within the container
 WORKDIR /tro-assistant
 
-# copy over requirements
+# Copy the requirements file and install dependencies
 COPY requirements.txt ./requirements.txt
-
-# install pip then packages
 RUN pip3 install -r requirements.txt
 
-# copying all files over
+# Copy the application files into the container
 COPY . .
 
-# set environment variables 
-
-# cmd to launch app when container is run
-CMD streamlit run -p 8503 streamlit_agent.py
-
-# streamlit-specific commands for config
+# Set environment variables for Streamlit
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
-RUN mkdir -p /root/.streamlit
-RUN bash -c 'echo -e "\
-[general]\n\
-email = \"\"\n\
-" > /root/.streamlit/credentials.toml'
 
-RUN bash -c 'echo -e "\
-[server]\n\
-enableCORS = false\n\
-" > /root/.streamlit/config.toml'
+# Configure Streamlit (if needed)
+RUN mkdir -p /root/.streamlit
+RUN bash -c 'echo -e "[general]\nemail = \"\"\n" > /root/.streamlit/credentials.toml'
+RUN bash -c 'echo -e "[server]\nenableCORS = false\n" > /root/.streamlit/config.toml'
+
+# Define the command to run the Streamlit app
+CMD ["streamlit", "run", "--server.port", "8503", "streamlit_agent.py"]

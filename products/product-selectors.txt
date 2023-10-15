@@ -1,0 +1,9 @@
+{
+    "name": "h1.product-details-full-content-header-title",
+    "price": "span.product-views-price-lead",
+    "price w/ tax": "span[itemprop='price']",
+    "sku": "span.product-line-sku-value",
+    "brand": "span.custom-pdp-fields-label",
+    "details": "div#product-details-information-tab-content-container-0",
+    "datasheets": ".documents-pdp-container .document-info a"
+}

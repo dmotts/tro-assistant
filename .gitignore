@@ -11,7 +11,7 @@ venv
 logs/*
 
 # Include product-selectors.txt in the products directory
-!products/product-selectors.txt
+#!products/product-selectors.txt
 
 # Include the docs directory and its contents
 docs/*
@@ -20,7 +20,7 @@ docs/*
 website/*
 
 # Ignore all other contents of the products directory
-products/*
+#products/*
 
 # Ignore Python compiled files
 __pycache__

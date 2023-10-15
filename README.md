@@ -45,7 +45,7 @@ You can set these environment variables by:
 
 ```shell
 $ docker build -t streamlit-agent:1.0 .
-$ docker container run -p 8503:8503 -d --env-file .env streamlit-agent:1.0
+$ docker run -p 8503:8503 --env-file .env streamlit-agent:1.0
 ```
 
 Then, the web app will be available at `http://localhost:8503/`

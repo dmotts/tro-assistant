@@ -26,7 +26,9 @@ To run this application, you need to set the following environment variables:
 - `LANGCHAIN_ENDPOINT`: Your Langchain endpoint.
 - `LANGCHAIN_API_KEY`: Your Langchain API key.
 
-Create a `.env` file in the project root directory and add your environment variables like this:
+You can set these environment variables by:
+
+- **Using a .env File**: Create a `.env` file in the project root directory and add your environment variables like this:
 
    ```plaintext
    FIREFOX_LOCATION=/path/to/firefox
@@ -37,7 +39,7 @@ Create a `.env` file in the project root directory and add your environment vari
    SERPER_API_KEY=your-serper-api-key
    LANGCHAIN_ENDPOINT=your-langchain-endpoint
    LANGCHAIN_API_KEY=your-langchain-api-key
-    
+    ```
 
 ### Install and run using [Docker](https://www.docker.com/)
 

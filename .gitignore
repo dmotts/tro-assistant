@@ -10,17 +10,17 @@ venv
 # Ignore log files
 logs/*
 
-# Include product-selectors.txt in the products directory
-#!products/product-selectors.txt
-
 # Include the docs directory and its contents
-docs/*
+docs/**
 
 # Include the website directory and its contents
 website/*
 
 # Ignore all other contents of the products directory
-#products/*
+products/*
+
+# Include product-selectors.txt in the products directory
+!/products/product-selectors.txt
 
 # Ignore Python compiled files
 __pycache__

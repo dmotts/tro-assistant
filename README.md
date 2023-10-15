@@ -1,4 +1,7 @@
-#  ![Tro Pacific Logo](https://terrapinn-cdn.com/tres/pa-images/10660/a0A4G00001foQKaUAM_org.png?20221213020720) Tro Pacific Customer Support Assistant
+<div style="text-align:center">
+  <img src="https://terrapinn-cdn.com/tres/pa-images/10660/a0A4G00001foQKaUAM_org.png?20221213020720" alt="Tro Pacific Logo" />
+</div>
+# Tro Pacific Customer Support Assistant
 
 
 ## Setup instructions
@@ -35,6 +38,9 @@ Then stop that process with the following command.
 
 ```shell
 $ docker kill <weird_name>
-<weird_name>
-$
+```
+
+To view the logs
+```shell
+$ docker logs <weird_name>
 ```

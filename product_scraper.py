@@ -219,7 +219,6 @@ def print_product_list(product_list):
         for key, value in product_info.items():
             logging.info(f"{key.capitalize()}: {value}")
 
-
 if __name__ == '__main__':
     base_url = 'https://www.tro.com.au/enclosures/wall-mount-enclosures/steel-wall-mount-enclosures'
     selector = "a.facets-item-cell-grid-title"

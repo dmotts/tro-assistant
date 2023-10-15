@@ -1,8 +1,21 @@
 import os
 import logging
 import time
+import langsmith
 
 from logging.handlers import TimedRotatingFileHandler
+
+def setup_langsmith(llm, dataset="tro-queries"):
+    client = langsmith.Client()
+    chain_results = client.run_on_dataset(
+        dataset_name="tro-queries",
+        llm_or_chain_factory=llm,
+        project_name="tro-pacific-assistant",
+        concurrency_level=5,
+        verbose=True,
+    )
+
+    return client
 
 def setup_logging():
 

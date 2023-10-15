@@ -26,9 +26,9 @@ To run this application, you need to set the following environment variables:
 - `LANGCHAIN_ENDPOINT`: Your Langchain endpoint.
 - `LANGCHAIN_API_KEY`: Your Langchain API key.
 
-You can set these environment variables by
+You can set these environment variables by:
 
-1. **Using a .env File**: Create a `.env` file in the project root directory and add your environment variables like this:
+- **Using a .env File**: Create a `.env` file in the project root directory and add your environment variables like this:
 
    ```plaintext
    FIREFOX_LOCATION=/path/to/firefox

@@ -18,8 +18,8 @@ from bs4 import BeautifulSoup
 from langchain.tools import BaseTool
 from pydantic import BaseModel, Field
 from typing import Type
-from app import get_texts_from_pinecone
-from config import setup_logging
+from src.app import get_texts_from_pinecone
+from src.config import setup_logging
 
 # Set browserless api key
 browserless_api_key = os.getenv("BROWSERLESS_API_KEY")
@@ -28,14 +28,24 @@ browserless_api_key = os.getenv("BROWSERLESS_API_KEY")
 logging = setup_logging()
 
 def set_up_interface():
-    # Set up Streamlit interface
+    """
+    Sets up the Streamlit interface for the Tro Pacific Customer Support Assistant.
+    """
     st.set_page_config(page_title="Tro Pacific Customer Support Assistant")
     st.markdown(" <div style='display:flex;align-items: center;'><img style='height:70px;margin-left: 15px;margin-right:20px;' src='https://terrapinn-cdn.com/tres/pa-images/10660/a0A4G00001foQKaUAM_org.png?20221213020720' /><div style='text-align:left;font-weight: 600;font-size:29px'>Tro Pacific Customer Support Assistant</div></div>", unsafe_allow_html=True)
 
-def scrape_website(objective: str, url: str):
-    # scrape website, and also will summarize the content based on objective if the content is too large
-    # objective is the original objective & task that user give to the agent, url is the url of the website to be scraped
-
+def scrape_website(objective: str, url: str, browserless_api_key: str):
+    """
+    Scrapes a website and provides a summary based on the objective if the content is too large.
+    
+    Args:
+        objective (str): The original objective & task that the user gives to the agent.
+        url (str): The URL of the website to be scraped.
+        browserless_api_key (str): The API key for browserless.io.
+    
+    Returns:
+        str: The scraped website content or a summary based on the objective.
+    """
     print("Scraping website...")
     # Define the headers for the request
     headers = {
@@ -65,18 +75,28 @@ def scrape_website(objective: str, url: str):
     else:
         print(f"HTTP request failed with status code {response.status_code}")
 
-def summary(objective, content):
+def summary(objective: str, content: str):
+    """
+    Generates a summary of the provided content based on the given objective.
+    
+    Args:
+        objective (str): The objective or task.
+        content (str): The content to be summarized.
+    
+    Returns:
+        str: The generated summary.
+    """
     llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo-16k-0613")
     text_splitter = RecursiveCharacterTextSplitter(
         separators=["\n\n", "\n"], chunk_size=10000, chunk_overlap=500)
     docs = text_splitter.create_documents([content])
-    map_prompt = """
+    map_prompt = f"""
     Write a summary of the following text for {objective}:
-    "{text}"
+    "{content}"
     SUMMARY:
     """
     map_prompt_template = PromptTemplate(
-        template=map_prompt, input_variables=["text", "objective"])
+        template=map_prompt, input_variables=["text"])
     summary_chain = load_summarize_chain(
         llm=llm,
         chain_type='map_reduce',
@@ -84,45 +104,76 @@ def summary(objective, content):
         combine_prompt=map_prompt_template,
         verbose=True
     )
-    output = summary_chain.run(input_documents=docs, objective=objective)
+    output = summary_chain.run(input_documents=docs)
     return output
-
 class ScrapeWebsiteInput(BaseModel):
-        """Inputs for scrape_website"""
-        objective: str = Field(
-            description="The objective & task that users give to the agent")
-        url: str = Field(description="The url of the website to be scraped")
-
+    """
+    Inputs for the 'scrape_website' tool.
+    
+    Args:
+        objective (str): The objective & task that users give to the agent.
+        url (str): The URL of the website to be scraped.
+    """
+    objective: str = Field(
+        description="The objective & task that users give to the agent")
+    url: str = Field(description="The URL of the website to be scraped")
 
 class ScrapeWebsiteTool(BaseTool):
     name = "scrape_website"
-    description = "useful to check to see if the links you are about to provide are accurate to the customer's query"
+    description = "Useful for checking the accuracy of provided links in response to customer queries."
     args_schema: Type[BaseModel] = ScrapeWebsiteInput
 
     def _run(self, objective: str, url: str):
+        """
+        Executes the 'scrape_website' tool with the provided objective and URL.
+
+        Args:
+            objective (str): The objective & task.
+            url (str): The URL to be scraped.
+
+        Returns:
+            Any: The result of the 'scrape_website' operation.
+        """
         return scrape_website(objective, url)
 
     def _arun(self, url: str):
-        raise NotImplementedError("error here")
+        raise NotImplementedError("This method is not implemented yet.")
 
 class PineconeInput(BaseModel):
+    """
+    Inputs for 'ResearchPinecone' tool.
+    
+    Args:
+        query (str): The query that the customer asks the agent.
+    """
     query: str = Field(
-        description="The query that the customer asks the agent"
-    )
+        description="The query that the customer asks the agent")
 
 class ResearchPinecone(BaseTool):
-    name="Searching for"
-    description="Useful for when you need product information to answer questions about tro pacific. You should ask targeted questions"
+    name = "Searching for"
+    description = "Useful for looking up product information to answer questions about Tro Pacific. Ask targeted questions."
     args_schema: Type[BaseModel] = PineconeInput
 
     def _run(self, query: str):
+        """
+        Executes the 'ResearchPinecone' tool with the provided query.
+
+        Args:
+            query (str): The customer's query.
+
+        Returns:
+            Any: The result of the 'ResearchPinecone' operation.
+        """
         return get_texts_from_pinecone(query)
 
     def arun(self, query):
-        raise NotImplementedError("An error has occurred while looking up product information")
+        raise NotImplementedError("An error has occurred while looking up product information.")
 
 
 def main():
+    """
+    Main function for the Tro Pacific Customer Support Assistant.
+    """
     # Set up Streamlit interface
     set_up_interface()
     

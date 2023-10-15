@@ -10,15 +10,6 @@ venv
 # Ignore log files
 logs/*
 
-docs/.gitignore
-website/.gitignore
-
-# Include the docs directory and its contents
-/docs/
-
-# Include the website directory and its contents
-/website/
-
 # Ignore all other contents of the products directory
 products/*
 

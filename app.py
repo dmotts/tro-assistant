@@ -39,21 +39,19 @@ from fastapi import FastAPI, Form
 logging = setup_logging()
 
 # Configure OpenAI api key
-openai_api_key = os.getenv("OPENAI_API_KEY")
-
-print(f'OpenAI API KEY: ${openai_api_key}')
+openai_api_key = os.environ.get('OPENAI_API_KEY', os.getenv('OPENAI_API_KEY'))
 
 # Configure Serper api key
-serper_api_key = os.getenv("SERPER_API_KEY")
+serper_api_key = os.environ.get('SERPER_API_KEY', os.getenv('SERPER_API_KEY'))
 
 # Intialise Pinecone
 pinecone.init(
-    api_key=os.getenv("PINECONE_API_KEY"),
-    environment=os.getenv("PINECONE_ENVIRONMENT")
+    api_key = os.environ.get('PINECONE_API_KEY', os.getenv('PINECONE_API_KEY')),
+    environment=os.environ.get('PINECONE_ENVIRONMENT', os.getenv('PINECONE_ENVIRONMENT'))
 )
 
 # Set embeddings
-embeddings = OpenAIEmbeddings(openai_api_key=os.getenv("OPENAI_API_KEY"))
+embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
 
 # Set index name
 index_name="tro-pacific"

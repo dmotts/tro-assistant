@@ -30,7 +30,7 @@ cache_control = 'no-cache'
 content_type = 'application/json'
 
 # Set up Firefox WebDriver with headless mode
-FIREFOX_LOCATION = os.getenv('FIREFOX_LOCATION')
+FIREFOX_LOCATION = os.environ.get('FIREFOX_LOCATION', os.getenv('FIREFOX_LOCATION'))
 options = Options()
 options.add_argument('--headless')
 options.add_argument(f'user-agent={user_agent}')

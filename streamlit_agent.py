@@ -22,7 +22,7 @@ from app import get_texts_from_pinecone
 from config import setup_logging
 
 # Set browserless api key
-browserless_api_key = os.getenv("BROWSERLESS_API_KEY")
+browserless_api_key = os.environ.get('BROWSERLESS_API_KEY', os.getenv('BROWSERLESS_API_KEY'))
 
 # Configure logger 
 logging = setup_logging()
@@ -177,7 +177,7 @@ def main():
     # Set up Streamlit interface
     set_up_interface()
     
-    openai_api_key = os.getenv('OPENAI_API_KEY')
+    openai_api_key = os.environ.get('OPENAI_API_KEY', os.getenv('OPENAI_API_KEY'))
 
     msgs = StreamlitChatMessageHistory()
     memory = ConversationBufferMemory(

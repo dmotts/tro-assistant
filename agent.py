@@ -17,8 +17,11 @@ import json
 from langchain.schema import SystemMessage
 from fastapi import FastAPI
 
-browserless_api_key = os.getenv("BROWSERLESS_API_KEY")
-serper_api_key = os.getenv("SERP_API_KEY")
+# Set browserless api key
+browserless_api_key = os.environ.get('BROWSERLESS_API_KEY', os.getenv('BROWSERLESS_API_KEY'))
+
+# Set Serper API Key
+browserless_api_key = os.environ.get('SERP_API_KEY', os.getenv('SERP_API_KEY'))
 
 # 1. Tool for search
 

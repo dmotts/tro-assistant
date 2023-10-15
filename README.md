@@ -13,12 +13,7 @@ $ git clone https://github.com/dmotts/tro-assistant.git
 $ cd tro-assistant/
 ```
 
-### Create .env file
-```shell
-$ touch .env
-```
-
-## Environment Variable Configuration
+### Configure the environment variables
 
 To run this application, you need to set the following environment variables:
 
@@ -31,9 +26,7 @@ To run this application, you need to set the following environment variables:
 - `LANGCHAIN_ENDPOINT`: Your Langchain endpoint.
 - `LANGCHAIN_API_KEY`: Your Langchain API key.
 
-You can set these environment variables in several ways:
-
-1. **Using a .env File**: Create a `.env` file in the project root directory and add your environment variables like this:
+Create a `.env` file in the project root directory and add your environment variables like this:
 
    ```plaintext
    FIREFOX_LOCATION=/path/to/firefox

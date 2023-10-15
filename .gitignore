@@ -16,5 +16,10 @@ products/*
 # Include product-selectors.txt in the products directory
 !/products/product-selectors.txt
 
+docs/*
+
+!/docs/.gitignore
+
+
 # Ignore Python compiled files
 __pycache__

@@ -37,7 +37,7 @@ Create a `.env` file in the project root directory and add your environment vari
    SERPER_API_KEY=your-serper-api-key
    LANGCHAIN_ENDPOINT=your-langchain-endpoint
    LANGCHAIN_API_KEY=your-langchain-api-key
-    ```
+    
 
 ### Install and run using [Docker](https://www.docker.com/)
 

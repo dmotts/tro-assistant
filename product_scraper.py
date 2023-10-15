@@ -14,6 +14,7 @@ from app import add_to_db
 
 from concurrent.futures import ThreadPoolExecutor
 
+
 # Configure logging
 logging = setup_logging()
 

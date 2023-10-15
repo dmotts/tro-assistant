@@ -34,11 +34,14 @@ from bs4 import BeautifulSoup
 
 from fastapi import FastAPI, Form
 
+
 # Configure logger 
 logging = setup_logging()
 
 # Configure OpenAI api key
 openai_api_key = os.getenv("OPENAI_API_KEY")
+
+print(f'OpenAI API KEY: ${openai_api_key}')
 
 # Configure Serper api key
 serper_api_key = os.getenv("SERPER_API_KEY")
@@ -303,8 +306,6 @@ def store_data_to_pinecone():
     store_website_data_to_pinecone()
 
 def get_texts_from_pinecone(query):
-
-
     docs = vectorstore.similarity_search(query)
     
     #texts = docs[0].page_content 

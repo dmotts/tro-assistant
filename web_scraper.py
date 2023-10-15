@@ -11,7 +11,6 @@ from selenium.webdriver.firefox.options import Options
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 
-
 #set firefox location
 FIREFOX_LOCATION = os.getenv('FIREFOX_LOCATION')
 

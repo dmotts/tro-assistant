@@ -611,7 +611,7 @@ def get_prompt_template(docs):
         IF YOUR RESPONSE INCLUDES A PRODUCT, PROVIDE THE LINK TO THE PRODUCT AND THE LINKS FOR ALL OF THE DATA SHEETS FOR THAT PRODUCT
 
         {history}
-        Human: {human_input}
+        User: {human_input}
         AI: """
         
     return template

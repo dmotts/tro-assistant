@@ -7,9 +7,6 @@
 # Ignore Python virtual environment
 venv
 
-# Ignore log files
-logs/*
-
 # Ignore all other contents of the products directory
 products/*
 
@@ -18,6 +15,7 @@ products/*
 
 # Ignore Python compiled files
 __pycache__
+
 
 # Ignore all other contents of the docs directory
 docs/*

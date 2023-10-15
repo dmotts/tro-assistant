@@ -1,8 +1,4 @@
-<div style="text-align:center">
-  <img src="https://terrapinn-cdn.com/tres/pa-images/10660/a0A4G00001foQKaUAM_org.png?20221213020720" alt="Tro Pacific Logo" />
-</div>
-
-# Tro Pacific Customer Support Assistant
+<div style='display:flex;align-items: center;'><img style='height:70px;margin-left: 15px;margin-right:20px;' src='https://terrapinn-cdn.com/tres/pa-images/10660/a0A4G00001foQKaUAM_org.png?20221213020720' /><div style='text-align:left;font-weight: 600;font-size:29px'>Tro Pacific Customer Support Assistant</div></div>
 
 ## Setup instructions
 

@@ -1,4 +1,4 @@
-<div style="text-align:center">
+<div style="width:100%;text-align:center">
   <img src="https://terrapinn-cdn.com/tres/pa-images/10660/a0A4G00001foQKaUAM_org.png?20221213020720" alt="Tro Pacific Logo" />
 </div>
 

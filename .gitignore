@@ -1,5 +1,5 @@
-!products/product-selectors.txt
-!docs/
+!*/products/product-selectors.txt
+!*/docs/
 
 .env
 .vscode/*

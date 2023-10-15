@@ -1,8 +1,11 @@
+!products/product-selectors.txt
+!docs/
+
 .env
 .vscode/*
 venv
 logs/*
-urls/*
+urlss/*
 docs/*
 website/*
 products/*

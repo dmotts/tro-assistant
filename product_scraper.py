@@ -219,6 +219,7 @@ def print_product_list(product_list):
         for key, value in product_info.items():
             logging.info(f"{key.capitalize()}: {value}")
 
+
 if __name__ == '__main__':
     base_url = 'https://www.tro.com.au/enclosures/wall-mount-enclosures/steel-wall-mount-enclosures'
     selector = "a.facets-item-cell-grid-title"
@@ -226,8 +227,18 @@ if __name__ == '__main__':
     max_pages = 1
     max_products = 5
 
-    product_urls = extract_product_urls(base_url, selector, next_button_selector, max_pages=max_pages, max_products=max_products)
-    logging.info(product_urls)
+    urls = [
+        'https://www.tro.com.au/enclosures/sloping-roof-enclosures/heavy-duty-stainless-steel-sloping-roof-enclosures',
+        'https://www.tro.com.au/control-automation/relays/safety-relays',
+        'https://www.tro.com.au/control-automation/pushbuttons-panel-switches/legend-plates',
+        'https://www.tro.com.au/brands/icotek/cable-entry-systems',
+        'https://www.tro.com.au/brands/giovenzana/pushbuttons-panel-switches',
+        'https://www.tro.com.au/brands/elettrocanali/slotted-duct'
+    ]
+
+    for base_url in urls:
+        product_urls = extract_product_urls(base_url, selector, next_button_selector, max_pages=max_pages, max_products=max_products)
+        logging.info(product_urls)
 
     product_info_list = scrape_products()
     print_product_list(product_info_list)

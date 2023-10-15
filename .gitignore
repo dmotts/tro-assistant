@@ -1,13 +1,26 @@
-!products/product-selectors.txt
-!docs/
-
+# Ignore .env file
 .env
+
+# Ignore Visual Studio Code settings
 .vscode/*
+
+# Ignore Python virtual environment
 venv
+
+# Ignore log files
 logs/*
-urlss/*
+
+# Include product-selectors.txt in the products directory
+!products/product-selectors.txt
+
+# Include the docs directory and its contents
 docs/*
+
+# Include the website directory and its contents
 website/*
+
+# Ignore all other contents of the products directory
 products/*
+
+# Ignore Python compiled files
 __pycache__
-resellers.md

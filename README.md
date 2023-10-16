@@ -25,6 +25,8 @@ To run this application, you need to set the following environment variables:
 - `SERPER_API_KEY`: Your Serper API key.
 - `LANGCHAIN_ENDPOINT`: Your Langchain endpoint.
 - `LANGCHAIN_API_KEY`: Your Langchain API key.
+- `LANGCHAIN_TRACING_V2`: true
+- `LANGCHAIN_PROJECT`: Your Langchain project name.
 
 You can set these environment variables by:
 
@@ -39,6 +41,8 @@ You can set these environment variables by:
    SERPER_API_KEY=your-serper-api-key
    LANGCHAIN_ENDPOINT=your-langchain-endpoint
    LANGCHAIN_API_KEY=your-langchain-api-key
+   LANGCHAIN_TRACING_V2=true
+   LANGCHAIN_PROJECT=your-langchain-project-name
     ```
 
 ### Install and run using [Docker](https://www.docker.com/)

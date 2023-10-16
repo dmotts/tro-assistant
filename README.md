@@ -52,6 +52,12 @@ $ docker-compose up --build
 $ docker run -p 8503:8503 --env-file .env streamlit-agent:1.0
 ```
 
+Otherwise, to run the web app in the background use the `-d` flag as shown in the command line below
+
+```shell
+$ docker run -p 8503:8503 --env-file .env -d streamlit-agent:1.0
+```
+
 Then, the web app will be available at `http://localhost:8503/`
 
 To shut down the web app when you're done, you can find the process running your container with

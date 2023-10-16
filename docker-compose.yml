@@ -1,8 +1,21 @@
-FIREFOX_LOCATION=${FIREFOX_LOCATION}
-OPENAI_API_KEY=${OPENAI_API_KEY}
-BROWSERLESS_API_KEY=${BROWSERLESS_API_KEY}
-PINECONE_API_KEY=${PINECONE_API_KEY}
-PINECONE_ENVIRONMENT=${PINECONE_ENVIRONMENT}
-SERPER_API_KEY=${SERPER_API_KEY}
-LANGCHAIN_ENDPOINT=${LANGCHAIN_ENDPOINT}
-LANGCHAIN_API_KEY=${LANGCHAIN_API_KEY}
+version: '3'
+services:
+tro-assistant:
+image: tro-assistant:latest
+build:
+  context: .
+  dockerfile: Dockerfile  # Use your Dockerfile
+networks:
+  - host
+command: streamlit run streamlit-agent.py --server.port 8503
+environment:
+  OPENAI_API_KEY: ${OPENAI_API_KEY}
+  BROWSERLESS_API_KEY: ${BROWSERLESS_API_KEY}
+  PINECONE_API_KEY: ${PINECONE_API_KEY}
+  PINECONE_ENVIRONMENT: ${PINECONE_ENVIRONMENT}
+  SERPER_API_KEY: ${SERPER_API_KEY}
+    
+volumes:
+- ./app:/tro-assistant  # Mount your app directory
+ports:
+- 8503:8503

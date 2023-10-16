@@ -44,7 +44,7 @@ You can set these environment variables by:
 ### Install and run using [Docker](https://www.docker.com/)
 
 ```shell
-$ docker build -t streamlit-agent:1.0 .
+$ docker-compose up --build
 $ docker run -p 8503:8503 --env-file .env streamlit-agent:1.0
 ```
 

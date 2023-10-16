@@ -31,6 +31,7 @@ from langchain.tools import BaseTool
 from pydantic import BaseModel, Field
 from typing import Type
 from bs4 import BeautifulSoup
+from pinecone.core.client.configuration import Configuration as OpenApiConfiguration
 
 from fastapi import FastAPI, Form
 
@@ -44,10 +45,14 @@ openai_api_key = os.environ.get('OPENAI_API_KEY', os.getenv('OPENAI_API_KEY'))
 # Configure Serper api key
 serper_api_key = os.environ.get('SERPER_API_KEY', os.getenv('SERPER_API_KEY'))
 
+openapi_config = OpenApiConfiguration.get_default_copy()
+openapi_config.proxy = "http://proxy.server:3128"
+
 # Intialise Pinecone
 pinecone.init(
     api_key = os.environ.get('PINECONE_API_KEY', os.getenv('PINECONE_API_KEY')),
-    environment=os.environ.get('PINECONE_ENVIRONMENT', os.getenv('PINECONE_ENVIRONMENT'))
+    environment=os.environ.get('PINECONE_ENVIRONMENT', os.getenv('PINECONE_ENVIRONMENT')),
+ #   openapi_config=openapi_config
 )
 
 # Set embeddings
@@ -309,8 +314,10 @@ def get_texts_from_pinecone(query):
     #texts = docs[0].page_content 
     #embedding_vector = OpenAIEmbeddings().embed_query(query)
   
-    retriever  = vectorstore.as_retriever(search_type="mmr", search_kwargs={"k": 1})
-    matched_docs = retriever.get_relevant_documents(query)
+    #retriever  = vectorstore.as_retriever(search_type="mmr", search_kwargs={"k": 1})
+    retriever  = vectorstore.max_marginal_relevance_search(query, k=1, fetch_k=1)
+    #matched_docs = retriever.get_relevant_documents(query)
+    matched_docs = retriever
  
     joined_docs = ""
     for i, d in enumerate(matched_docs):

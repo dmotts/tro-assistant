@@ -52,7 +52,7 @@ $ docker build -t streamlit-agent:1.0 .
 $ docker run -p 8503:8503 --env-file .env streamlit-agent:1.0
 ```
 
-Otherwise, to run the web app in the background use the `-d` flag as shown in the command line below
+Alternatively, you can use the -d flag in the command line below to run the web app in the background.
 
 ```shell
 $ docker run -p 8503:8503 --env-file .env -d streamlit-agent:1.0

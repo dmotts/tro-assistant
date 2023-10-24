@@ -582,8 +582,15 @@ def download_pdf(url):
         # Get the file name from the URL
         file_name = url.split("/")[-1]
 
-        # Open the file in write-binary mode and write the response content to it
-        with open(f'docs/{file_name}', 'wb') as file:
+        # Create the 'docs' directory if it doesn't exist
+        if not os.path.exists('docs'):
+            os.makedirs('docs')
+
+        # Create the path for the new file
+        file_path = os.path.join('docs', file_name)
+
+        # Open the new file in write-binary mode and write the response content to it
+        with open(file_path, 'wb') as file:
             file.write(response.content)
     else:
         print(f"Failed to download file. HTTP response code: {response.status_code}")

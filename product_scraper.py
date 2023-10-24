@@ -110,7 +110,18 @@ def extract_product_urls(base_url, selector, next_button_selector=None, max_page
     finally:
         driver.quit()
 
-def scrape_single_product(product_url, selectors):
+def scrape_single_product(product_url, selectors, download_directory='docs'):
+    """
+    Scrapes product information from a given URL and downloads datasheets if available.
+
+    Args:
+        product_url (str): The URL of the product to scrape.
+        selectors (dict): A dictionary of selectors for different attributes of the product.
+        download_directory (str, optional): The directory to save downloaded datasheets. Defaults to 'docs'.
+        
+    Returns:
+        dict: A dictionary containing scraped product information.
+    """
     options = Options()
     options.add_argument(f'user-agent={user_agent}')
     options.add_argument('--headless')
@@ -129,10 +140,12 @@ def scrape_single_product(product_url, selectors):
             elif key == "datasheets":
                 datasheets = product.get_datasheet_links(selector)
                 value = []
-                for datasheet in datasheets:
+                for datasheet_name, datasheet_url in datasheets:
                     # Modify each datasheet link to be a clickable name
-                    datasheet_name, datasheet_url = datasheet
-                    value.append(f"[{datasheet_name}]({datasheet_url})")
+                    datasheet_link = f"[{datasheet_name}]({datasheet_url})"
+                    value.append(datasheet_link)
+                    # Download the datasheet using the download_datasheet method
+                    product.download_datasheet(datasheet_url, download_directory)
             else:
                 value = product.get_attribute(key)
                 # Modify the 'name' key to be a clickable link to the product URL
@@ -229,12 +242,9 @@ if __name__ == '__main__':
     max_products = 5
 
     urls = [
-        'https://www.tro.com.au/enclosures/sloping-roof-enclosures/heavy-duty-stainless-steel-sloping-roof-enclosures',
-        'https://www.tro.com.au/control-automation/relays/safety-relays',
-        'https://www.tro.com.au/control-automation/pushbuttons-panel-switches/legend-plates',
-        'https://www.tro.com.au/brands/icotek/cable-entry-systems',
-        'https://www.tro.com.au/brands/giovenzana/pushbuttons-panel-switches',
-        'https://www.tro.com.au/brands/elettrocanali/slotted-duct'
+        'https://www.tro.com.au/control-automation/relays/relay-accessories',
+        'https://www.tro.com.au/control-automation/pushbuttons-panel-switches/emergency-stops',
+        'https://www.tro.com.au/enclosures/wall-mount-enclosures/ip69k-hygienic-wall-mount-enclosures',
     ]
 
     for base_url in urls:
@@ -244,4 +254,4 @@ if __name__ == '__main__':
     product_info_list = scrape_products()
     print_product_list(product_info_list)
    
-    add_to_db()
+    #add_to_db()

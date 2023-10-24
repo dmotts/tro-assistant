@@ -27,6 +27,7 @@ referer = 'https://www.google.com'
 cache_control = 'no-cache'
 content_type = 'application/json'
 
+# This function intercepts a request and modifies its headers
 def interceptor(request):
     # delete the "User-Agent" header and
     # set a new one
@@ -35,6 +36,7 @@ def interceptor(request):
     request.headers["sec-ch-ua"] = sec_ch_ua
     request.headers["referer"] = referer
 
+# This function scrapes a given URL and returns its raw HTML
 def scrape(url): 
     try:        
         headers = {
@@ -65,6 +67,7 @@ def scrape(url):
         logging.info(f"HTTP request failed with status code {source.status_code}")
         return ''    
 
+# This function uses the Browserless API to scrape a given URL and returns its HTML content
 def browserless_scrape(url: str):
     print(f"Attempting to scrape {url}...")
     # Define the headers for the request
@@ -111,10 +114,11 @@ def browserless_scrape(url: str):
     else:
         print(f'{url} - Failed scraped')
         print(f"HTTP request failed with status code {response.status_code}")
-        return '';    
+        return ''    
 
 # 2. Convert html to markdown
 
+# This function converts HTML content to Markdown
 def convert_html_to_markdown(html):
 
     # Create an html2text converter
@@ -128,6 +132,7 @@ def convert_html_to_markdown(html):
 
     return markdown
 
+# This function extracts the base URL from a given URL
 def get_base_url(url):
     parsed_url = urlparse(url)
 
@@ -137,6 +142,7 @@ def get_base_url(url):
 
 # Turn relative url to absolute url in html
 
+# This function converts all relative URLs in the HTML content to absolute URLs
 def convert_to_absolute_url(html, base_url):
     soup = BeautifulSoup(html, 'html.parser')
 
@@ -165,6 +171,7 @@ def convert_to_absolute_url(html, base_url):
 
     return updated_html
     
+# This function scrapes a given URL, converts the HTML content to Markdown, and returns it
 def get_markdown_from_url(url):
     base_url = get_base_url(url)
     html = browserless_scrape(url)  
@@ -177,6 +184,7 @@ def get_markdown_from_url(url):
     else:
         return ''
         
+# This function scrapes a list of URLs and returns their Markdown content
 def scrape_websites(urls):
     info = ""
     n = 0
@@ -187,4 +195,3 @@ def scrape_websites(urls):
         n = n + 1
         time.sleep(3)
     return info    
-    

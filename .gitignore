@@ -22,3 +22,4 @@ docs/*
 
 # Include .gitignore in the docs directory
 !/docs/.gitignore
+.aider*

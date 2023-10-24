@@ -33,6 +33,7 @@ from typing import Type
 from bs4 import BeautifulSoup
 from pinecone.core.client.configuration import Configuration as OpenApiConfiguration
 
+import requests
 from fastapi import FastAPI, Form
 
 

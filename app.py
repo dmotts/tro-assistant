@@ -68,11 +68,13 @@ llm = ChatOpenAI(temperature=0, model='gpt-3.5-turbo-16k', openai_api_key=openai
 #client = setup_langsmith(llm, "tro-queries")
 
 if index_name not in pinecone.list_indexes():
+    print(f'Creating Pinecone index: {index_name}')
+
     # Create new pinecone index
     pinecone.create_index(
         name=index_name,
         metric="cosine",
-        dimension=1536
+        dimension=512
     )
 else:
     print(f'Pinecone {index_name} exists!')
@@ -128,10 +130,18 @@ def get_context_chunks(text, header_tag='##',header='Product Information'):
 
     markdown_splitter = MarkdownHeaderTextSplitter(headers_to_split_on)
     context_chunks = markdown_splitter.split_text(text)
+    chunk_size = 250
+    chunk_overlap = 30
+    text_splitter = RecursiveCharacterTextSplitter(
+        chunk_size=chunk_size, chunk_overlap=chunk_overlap
+    )
 
-    logging.info(f'context chunks: {context_chunks}')
+    # Split
+    splits = text_splitter.split_documents(context_chunks)
+    
+    logging.info(f'context splits: {splits}')
 
-    return context_chunks
+    return splits
 
 def get_text_chunks(text, metadata={}):
     chunk_size = 2000

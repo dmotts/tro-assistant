@@ -1,4 +1,5 @@
 import os
+import requests
 from config import setup_logging
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -119,3 +120,32 @@ class Product:
                     image_urls.append(src)
         
         return image_urls
+    
+    def download_datasheet(self, pdf_url, target_directory='docs'):
+        """
+        Downloads a PDF file from a given URL and saves it in the 'docs' directory.
+
+        Args:
+            url (str): The URL of the PDF file to download.
+        """
+        # Create the target directory if it doesn't exist
+        if not os.path.exists(target_directory):
+            os.makedirs(target_directory)
+
+        # Extract the PDF file name from the URL
+        pdf_filename = os.path.join(target_directory, pdf_url.split("/")[-1])
+
+        try:
+            # Send a GET request to the PDF URL
+            response = requests.get(pdf_url)
+
+            # Check if the request was successful (status code 200)
+            if response.status_code == 200:
+                with open(pdf_filename, 'wb') as pdf_file:
+                    pdf_file.write(response.content)
+                print(f"PDF saved as '{pdf_filename}'")
+            else:
+                print(f"Failed to download PDF. Status code: {response.status_code}")
+        except Exception as e:
+            print(f"An error occurred: {str(e)}")
+

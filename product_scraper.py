@@ -242,12 +242,9 @@ if __name__ == '__main__':
     max_products = 5
 
     urls = [
-        'https://www.tro.com.au/enclosures/sloping-roof-enclosures/heavy-duty-stainless-steel-sloping-roof-enclosures',
-        'https://www.tro.com.au/control-automation/relays/safety-relays',
-        'https://www.tro.com.au/control-automation/pushbuttons-panel-switches/legend-plates',
-        'https://www.tro.com.au/brands/icotek/cable-entry-systems',
-        'https://www.tro.com.au/brands/giovenzana/pushbuttons-panel-switches',
-        'https://www.tro.com.au/brands/elettrocanali/slotted-duct'
+        'https://www.tro.com.au/control-automation/relays/relay-accessories',
+        'https://www.tro.com.au/control-automation/pushbuttons-panel-switches/emergency-stops',
+        'https://www.tro.com.au/enclosures/wall-mount-enclosures/ip69k-hygienic-wall-mount-enclosures',
     ]
 
     for base_url in urls:
@@ -257,4 +254,4 @@ if __name__ == '__main__':
     product_info_list = scrape_products()
     print_product_list(product_info_list)
    
-    add_to_db()
+    #add_to_db()

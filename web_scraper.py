@@ -114,7 +114,7 @@ def browserless_scrape(url: str):
     else:
         print(f'{url} - Failed scraped')
         print(f"HTTP request failed with status code {response.status_code}")
-        return '';    
+        return ''    
 
 # 2. Convert html to markdown
 
@@ -195,5 +195,3 @@ def scrape_websites(urls):
         n = n + 1
         time.sleep(3)
     return info    
-    
-git 

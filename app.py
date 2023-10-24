@@ -125,6 +125,18 @@ def get_urls(directory_path='website'):
     return urls    
 
 def get_context_chunks(text, header_tag='##',header='Product Information', metadata={}):
+    """
+    Split the input text into context chunks based on specified header markers.
+
+    Args:
+        text (str): The text to be split into chunks.
+        header_tag (str): The markdown header tag to split on. Defaults to '##'.
+        header (str): The header content to match when splitting. Defaults to 'Product Information'.
+        metadata (dict): Metadata to associate with the chunks. Defaults to an empty dictionary.
+
+    Returns:
+        list: A list of context chunks.
+    """
     headers_to_split_on = [
         (header_tag, header) 
     ]
@@ -152,6 +164,16 @@ def get_context_chunks(text, header_tag='##',header='Product Information', metad
     return splits
 
 def get_text_chunks(text, metadata={}):
+    """
+    Split the input text into text chunks.
+
+    Args:
+        text (str): The text to be split into chunks.
+        metadata (dict): Metadata to associate with the chunks. Defaults to an empty dictionary.
+
+    Returns:
+        list: A list of text chunks.
+    """
     chunk_size = 2000
     chunk_overlap = 0
     separators=[" ", ",", "\n"]
@@ -173,6 +195,12 @@ def get_text_chunks(text, metadata={}):
     return text_chunks
 
 def store_products_data_to_pinecone():
+    """
+    Process and store product data from .md files to Pinecone and move the processed files to 'uploaded' with a timestamp.
+
+    Returns:
+        list: A list of processed file paths in the 'uploaded' directory.
+    """
     products_directory = os.path.join(os.getcwd(), 'products')
     uploaded_directory = os.path.join(os.getcwd(), 'uploaded')
 
@@ -282,6 +310,13 @@ def store_pdf_data_to_pinecone(docs_directory='docs', uploaded_directory='upload
     return processed_files
 
 def store_website_data_to_pinecone():
+    """
+    Scrapes data from a list of URLs, splits the webpage content into chunks, and stores them in Pinecone.
+
+    The function retrieves webpage data from a list of URLs, splits the data into chunks, and stores the chunks in a Pinecone index. Successful scrapes and failed scrapes are tracked and logged.
+
+    Returns: None
+    """
 
     # Get Urls for scrapping
     urls = get_urls()

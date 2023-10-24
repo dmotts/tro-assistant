@@ -75,7 +75,7 @@ if index_name not in pinecone.list_indexes():
     pinecone.create_index(
         name=index_name,
         metric="cosine",
-        dimension=512
+        dimension=1536
     )
 else:
     print(f'Pinecone {index_name} exists!')
@@ -141,27 +141,12 @@ def get_context_chunks(text, header_tag='##',header='Product Information', metad
         (header_tag, header) 
     ]
 
-    data = [
-        Document(
-            page_content = text,
-            metadata = metadata
-        )   
-    ]
-
     markdown_splitter = MarkdownHeaderTextSplitter(headers_to_split_on)
     context_chunks = markdown_splitter.split_text(text)
-    chunk_size = 250
-    chunk_overlap = 30
-    text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=chunk_size, chunk_overlap=chunk_overlap
-    )
-
-    # Split
-    splits = text_splitter.split_documents(context_chunks)
     
-    logging.info(f'context splits: {splits}')
-
-    return splits
+    logging.info(f"Context Chunks: {context_chunks}")
+    
+    return context_chunks
 
 def get_text_chunks(text, metadata={}):
     """
@@ -280,11 +265,13 @@ def store_pdf_data_to_pinecone(docs_directory='docs', uploaded_directory='upload
 
             pdf_data = get_pdf_text([file])
 
+            print(f"PDF Text: {pdf_data}")
+
             # Split data to chunks
 
             logging.info(f'Splitting pdf file data into chunks...')
 
-            pdf_data_chunks = get_context_chunks(pdf_data, header_tag='##', header='Product Information', metadata={'Document Type': 'Datasheet'})
+            pdf_data_chunks = get_context_chunks(pdf_data, header_tag='###', header='Datasheet', metadata={'Document Type': 'Datasheet'})
 
             # Add chunks to Pinecone index
 
@@ -295,7 +282,7 @@ def store_pdf_data_to_pinecone(docs_directory='docs', uploaded_directory='upload
             logging.info(f'({p} / {total_pdfs})')
 
             p = p + 1
-
+            
             # Move the processed PDF file to 'uploaded/docs' with a timestamp
             current_datetime = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
             file_name, file_extension = os.path.splitext(os.path.basename(pdf_file))
@@ -308,12 +295,15 @@ def store_pdf_data_to_pinecone(docs_directory='docs', uploaded_directory='upload
             processed_files.append(new_file_path)
 
     return processed_files
-
+    
 def store_website_data_to_pinecone():
     """
-    Scrapes data from a list of URLs, splits the webpage content into chunks, and stores them in Pinecone.
+    Scrapes data from a list of URLs, splits the webpage content into chunks, 
+    and stores them in Pinecone.
 
-    The function retrieves webpage data from a list of URLs, splits the data into chunks, and stores the chunks in a Pinecone index. Successful scrapes and failed scrapes are tracked and logged.
+    The function retrieves webpage data from a list of URLs, splits the data into chunks, 
+    and stores the chunks in a Pinecone index. 
+    Successful scrapes and failed scrapes are tracked and logged.
 
     Returns: None
     """
@@ -378,11 +368,11 @@ def store_website_data_to_pinecone():
 
 def store_data_to_pinecone(): 
 
-    store_products_data_to_pinecone()
+    #store_products_data_to_pinecone()
 
     store_pdf_data_to_pinecone()
 
-    store_website_data_to_pinecone()
+    #store_website_data_to_pinecone()
 
 def get_texts_from_pinecone(query):
     docs = vectorstore.similarity_search(query)
@@ -718,6 +708,5 @@ app = FastAPI()
 
 @app.post("/query")
 def ask_question(query: str = Form(...)):
-
 
     return generate_response(query)

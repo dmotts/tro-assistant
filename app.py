@@ -437,23 +437,10 @@ def get_prompt_template(docs):
 
         When responding about a product, check the Tro Pacific information provided first for the facts. If you have found factual information about a product, provide the information in the format below. If you do not have the information or cannot find it, simply respond with "I'm sorry, I do not have that information. Is there something else that I may assist you with?"
 
-        Do not provide an empty product information format, if you can not find the information, do not provide it just respond with 
-        
-        Product name [product link]
-        Price: price
-        Price inc. GST: price with tax
-        Brand: Brand
-        SKU: SKU
-        Details: details
-        Datasheets: Datasheet name [datasheet link]
-
-        If you cannot find the datasheets in the Tro Pacific information, do not add it to the format.
-
         To ensure accuracy and adhere to the guidelines, follow these rules:
 
         Always ask follow-up questions.
         Do not make up information; provide only facts based on the context given.
-        Provide correct links to products and datasheets when asked about products.
         Do not recommend the user to visit the website.
         Do not check the availability of products.
         Do not suggest browsing our selection on our website at https://tro.com.au.

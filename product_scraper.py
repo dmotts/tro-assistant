@@ -110,7 +110,18 @@ def extract_product_urls(base_url, selector, next_button_selector=None, max_page
     finally:
         driver.quit()
 
-def scrape_single_product(product_url, selectors):
+def scrape_single_product(product_url, selectors, download_directory='docs'):
+    """
+    Scrapes product information from a given URL and downloads datasheets if available.
+
+    Args:
+        product_url (str): The URL of the product to scrape.
+        selectors (dict): A dictionary of selectors for different attributes of the product.
+        download_directory (str, optional): The directory to save downloaded datasheets. Defaults to 'docs'.
+        
+    Returns:
+        dict: A dictionary containing scraped product information.
+    """
     options = Options()
     options.add_argument(f'user-agent={user_agent}')
     options.add_argument('--headless')
@@ -129,10 +140,12 @@ def scrape_single_product(product_url, selectors):
             elif key == "datasheets":
                 datasheets = product.get_datasheet_links(selector)
                 value = []
-                for datasheet in datasheets:
+                for datasheet_name, datasheet_url in datasheets:
                     # Modify each datasheet link to be a clickable name
-                    datasheet_name, datasheet_url = datasheet
-                    value.append(f"[{datasheet_name}]({datasheet_url})")
+                    datasheet_link = f"[{datasheet_name}]({datasheet_url})"
+                    value.append(datasheet_link)
+                    # Download the datasheet using the download_datasheet method
+                    product.download_datasheet(datasheet_url, download_directory)
             else:
                 value = product.get_attribute(key)
                 # Modify the 'name' key to be a clickable link to the product URL

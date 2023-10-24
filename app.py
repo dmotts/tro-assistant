@@ -124,9 +124,16 @@ def get_urls(directory_path='website'):
 
     return urls    
 
-def get_context_chunks(text, header_tag='##',header='Product Information'):
+def get_context_chunks(text, header_tag='##',header='Product Information', metadata={}):
     headers_to_split_on = [
         (header_tag, header) 
+    ]
+
+    data = [
+        Document(
+            page_content = text,
+            metadata = metadata
+        )   
     ]
 
     markdown_splitter = MarkdownHeaderTextSplitter(headers_to_split_on)
@@ -216,39 +223,63 @@ def store_products_data_to_pinecone():
     processed_files = [os.path.join(uploaded_directory, f"{file_name}_{current_datetime}{file_extension}") for file_name, file_extension in [os.path.splitext(os.path.basename(md_file)) for md_file in md_files]]
     return processed_files
 
-def store_pdf_data_to_pinecone():
-    
-    docs_directory = os.path.join(os.getcwd(), '/docs')  
-    
+def store_pdf_data_to_pinecone(docs_directory='docs', uploaded_directory='uploaded'):
+    """
+    Store PDF data to Pinecone, add a timestamp, and move the documents from 'docs' to 'uploaded/docs'.
+
+    Args:
+        docs_directory (str): The directory where PDF documents are stored. Defaults to 'docs'.
+        uploaded_directory (str): The directory where uploaded documents will be moved. Defaults to 'uploaded'.
+    """
+    docs_directory = os.path.join(os.getcwd(), docs_directory)
+    uploaded_directory = os.path.join(os.getcwd(), uploaded_directory, 'docs')
+
+    if not os.path.exists(uploaded_directory):
+        os.makedirs(uploaded_directory)
+
     # Get pdf documents from 'docs' directory
     pdf_files = glob.glob(os.path.join(docs_directory, '*.pdf'))
-    
+
     p = 1
     total_pdfs = len(pdf_files)
+    processed_files = []
+
     # Get data from pdf files
     for pdf_file in pdf_files:
         with open(pdf_file, 'rb') as file:
             # Perform processing on each PDF file
-        
             logging.info(f'Retrieving pdf file data...')
-        
+
             pdf_data = get_pdf_text([file])
-            
+
             # Split data to chunks
 
             logging.info(f'Splitting pdf file data into chunks...')
-            
-            pdf_data_chunks = get_text_chunks(pdf_data, metadata={'Document Type': 'PDF'})
 
-            # Add chunks to pinecone index
-            
+            pdf_data_chunks = get_context_chunks(pdf_data, header_tag='##', header='Product Information', metadata={'Document Type': 'Datasheet'})
+
+            # Add chunks to Pinecone index
+
             logging.info(f'Adding pdf data chunks to Pinecone...')
-            
+
             Pinecone.from_documents(pdf_data_chunks, embeddings, index_name=index_name)
-            
+
             logging.info(f'({p} / {total_pdfs})')
-            
+
             p = p + 1
+
+            # Move the processed PDF file to 'uploaded/docs' with a timestamp
+            current_datetime = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+            file_name, file_extension = os.path.splitext(os.path.basename(pdf_file))
+            new_file_name = f"{file_name}_{current_datetime}{file_extension}"
+            new_file_path = os.path.join(uploaded_directory, new_file_name)
+
+            # Create a new PDF file with the same content in 'uploaded/docs'
+            shutil.move(pdf_file, new_file_path)
+
+            processed_files.append(new_file_path)
+
+    return processed_files
 
 def store_website_data_to_pinecone():
 
@@ -257,7 +288,6 @@ def store_website_data_to_pinecone():
     success_scrapes = []
     failed_scrapes = []
 
-    # Get data from pdf files
     n = 1
     s = 0
     f = 0

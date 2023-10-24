@@ -33,6 +33,7 @@ from typing import Type
 from bs4 import BeautifulSoup
 from pinecone.core.client.configuration import Configuration as OpenApiConfiguration
 
+import requests
 from fastapi import FastAPI, Form
 
 
@@ -565,6 +566,27 @@ tools = [
     ResearchPinecone(),
 ]
 
+
+def download_pdf(url):
+    """
+    Downloads a PDF file from a given URL and saves it in the 'docs' directory.
+
+    Args:
+        url (str): The URL of the PDF file to download.
+    """
+    # Send a GET request to the URL
+    response = requests.get(url)
+
+    # Check if the request was successful
+    if response.status_code == 200:
+        # Get the file name from the URL
+        file_name = url.split("/")[-1]
+
+        # Open the file in write-binary mode and write the response content to it
+        with open(f'docs/{file_name}', 'wb') as file:
+            file.write(response.content)
+    else:
+        print(f"Failed to download file. HTTP response code: {response.status_code}")
 
 def get_agent_response(query, memory):
 

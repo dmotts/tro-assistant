@@ -123,17 +123,23 @@ class Product:
     
     def download_datasheet(self, pdf_url, target_directory='docs'):
         """
-        Downloads a PDF file from a given URL and saves it in the 'docs' directory.
+        Downloads a PDF file from a given URL and saves it in the 'docs' directory if it is a .pdf file.
 
         Args:
-            url (str): The URL of the PDF file to download.
+            pdf_url (str): The URL of the file to download.
+            target_directory (str): Directory where the file will be saved.
         """
+        # Check if URL ends with '.pdf'
+        if not pdf_url.lower().endswith(".pdf"):
+            print("The URL does not point to a .pdf file.")
+            return
+
         # Create the target directory if it doesn't exist
         if not os.path.exists(target_directory):
             os.makedirs(target_directory)
 
         # Extract the PDF file name from the URL
-        pdf_filename = os.path.join(target_directory, pdf_url.split("/")[-1])
+        pdf_filename = os.path.join(target_directory, os.path.basename(pdf_url))
 
         try:
             # Send a GET request to the PDF URL

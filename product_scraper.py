@@ -10,7 +10,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import NoSuchElementException, TimeoutException
+from selenium.common.exceptions import NoSuchElementException, TimeoutException, StaleElementReferenceException
 from Product import Product
 from app import add_to_db
 
@@ -82,17 +82,22 @@ def extract_category_urls(page="https://tro.com.au", selector="a.header-menu-lev
     try:
         driver.get(page)
         
-        # Wait for the elements to be loaded and find them by CSS selector
-        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, selector)))
+        # Wait for the elements to be fully loaded
+        WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, selector)))
+        
+        # Re-find and get the href attribute immediately to avoid stale references
         elements = driver.find_elements(By.CSS_SELECTOR, selector)
-
-        # Use a generator expression to get all "href" attributes from the elements
-        urls.extend(element.get_attribute("href") for element in elements if element.get_attribute("href"))
+        for element in elements:
+            href = element.get_attribute("href")
+            if href:
+                urls.append(href)
         
     except NoSuchElementException:
         logging.info(f"Selector not found on page: {page}")
     except TimeoutException:
         logging.info(f"Page load timed out for URL: {page}")
+    except StaleElementReferenceException:
+        logging.info(f"A web element became stale while extracting URLs from the page: {page}")
     finally:
         driver.quit()
 
@@ -158,9 +163,6 @@ def scrape_single_product(product_url, selectors, download_directory='docs'):
     Returns:
         dict: A dictionary containing scraped product information.
     """
-    options = Options()
-    options.add_argument(f'user-agent={user_agent}')
-    options.add_argument('--headless')
 
     driver = webdriver.Firefox(options=options)
     product = Product(driver, product_url, **selectors)
@@ -276,16 +278,13 @@ if __name__ == '__main__':
     max_pages = 1
     max_products = 5
 
-    urls = [
-        'https://www.tro.com.au/industrial-electrical/contactors-overloads/thermal-overloads'
-    ]
+    urls = extract_category_urls()
 
-  #  for base_url in urls:
-  #      product_urls = extract_product_urls(base_url, selector, next_button_selector, max_pages=max_pages, max_products=max_products)
-  #      logging.info(product_urls)
-#
-  #  product_info_list = scrape_products()
-  #  print_product_list(product_info_list)
-  # 
-  #  add_to_db()
-    extract_category_urls()
+    for base_url in urls:
+        product_urls = extract_product_urls(base_url, selector, next_button_selector, max_pages=max_pages, max_products=max_products)
+        logging.info(product_urls)
+
+    product_info_list = scrape_products()
+    print_product_list(product_info_list)
+   
+    #add_to_db()

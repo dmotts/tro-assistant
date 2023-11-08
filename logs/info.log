@@ -1227,3 +1227,431 @@ Kit Includes:
 2023-11-08T19:41:51Z info: Category Urls: ['https://www.tro.com.au/enclosures/wall-mount-enclosures', 'https://www.tro.com.au/enclosures/sloping-roof-enclosures']
 2023-11-08T19:41:51Z info: Category Urls: ['https://www.tro.com.au/enclosures/wall-mount-enclosures', 'https://www.tro.com.au/enclosures/sloping-roof-enclosures']
 2023-11-08T19:41:51Z info: Category Urls: ['https://www.tro.com.au/enclosures/wall-mount-enclosures', 'https://www.tro.com.au/enclosures/sloping-roof-enclosures']
+2023-11-08T19:46:35Z info: Category URLs: ['https://www.tro.com.au/enclosures/wall-mount-enclosures', 'https://www.tro.com.au/enclosures/sloping-roof-enclosures', 'https://www.tro.com.au/enclosures/floor-standing-cabinets', 'https://www.tro.com.au/enclosures/data-rack-cabinets', 'https://www.tro.com.au/enclosures/field-cabinets', 'https://www.tro.com.au/enclosures/terminal-boxes', 'https://www.tro.com.au/enclosures/enclosure-accessories', 'https://www.tro.com.au/enclosures/pushbutton-enclosures', 'https://www.tro.com.au/enclosures/cooling-heating', 'https://www.tro.com.au/enclosures/enclosure-assemblies', 'https://www.tro.com.au/enclosures/hmi-enclosures', 'https://www.tro.com.au/enclosures/enclosure-support-arm-systems', 'https://www.tro.com.au/enclosures/consoles', 'https://www.tro.com.au/control-automation/pushbuttons-panel-switches', 'https://www.tro.com.au/control-automation/relays', 'https://www.tro.com.au/control-automation/motor-control', 'https://www.tro.com.au/control-automation/monitoring', 'https://www.tro.com.au/control-automation/remote-io', 'https://www.tro.com.au/control-automation/hmi-touchscreens', 'https://www.tro.com.au/control-automation/limit-switches', 'https://www.tro.com.au/control-automation/potentiometer', 'https://www.tro.com.au/industrial-electrical/power-supply-ups', 'https://www.tro.com.au/industrial-electrical/circuit-protection', 'https://www.tro.com.au/industrial-electrical/contactors-overloads', 'https://www.tro.com.au/industrial-electrical/din-terminals', 'https://www.tro.com.au/industrial-electrical/industrial-switchgear', 'https://www.tro.com.au/industrial-electrical/cable-accessories', 'https://www.tro.com.au/industrial-electrical/changeover-switches', 'https://www.tro.com.au/industrial-electrical/isolators', 'https://www.tro.com.au/industrial-electrical/multipole-connectors', 'https://www.tro.com.au/industrial-electrical/signaling-devices', 'https://www.tro.com.au/industrial-electrical/din-rail', 'https://www.tro.com.au/industrial-electrical/mcb-chassis', 'https://www.tro.com.au/industrial-electrical/industrial-printers', 'https://www.tro.com.au/data/network-switches', 'https://www.tro.com.au/data/data-rack-cabinets', 'https://www.tro.com.au/data/industrial-ethernet-routers', 'https://www.tro.com.au/data/data-converters', 'https://www.tro.com.au/data/network-cable-accessories', 'https://www.tro.com.au/data/data-plugs-connectors', 'https://www.tro.com.au/data/data-surge-protection', 'https://www.tro.com.au/data/wireless-access-points', 'https://www.tro.com.au/solar/solar-enclosures', 'https://www.tro.com.au/solar/dc-circuit-breakers', 'https://www.tro.com.au/solar/dc-fuses-holders', 'https://www.tro.com.au/solar/dc-surge-protection', 'https://www.tro.com.au/solar/solar-accessories-tools', 'https://www.tro.com.au/solar/dc-isolators', 'https://www.tro.com.au/tools/cable-cutters-strippers', 'https://www.tro.com.au/tools/crimpers-pliers', 'https://www.tro.com.au/tools/screwdrivers', 'https://www.tro.com.au/tools/meters-testers', 'https://www.tro.com.au/tools/din-rail-cutters', 'https://www.tro.com.au/tools/slotted-duct-cutters', 'https://www.tro.com.au/tools/tool-sets', 'https://www.tro.com.au/tools/banding-strap-buckles', 'https://www.tro.com.au/tools/spoolkart', 'https://www.tro.com.au/tools/manual-handling', 'https://www.tro.com.au/tools/storage', 'https://www.tro.com.au/tools/work-platforms', 'https://www.tro.com.au/brands/ip-enclosures', 'https://www.tro.com.au/brands/ls-electric', 'https://www.tro.com.au/brands/weidmuller', 'https://www.tro.com.au/brands/brady', 'https://www.tro.com.au/brands/allbro', 'https://www.tro.com.au/brands/armorgard', 'https://www.tro.com.au/brands/auer-signal', 'https://www.tro.com.au/brands/bridex', 'https://www.tro.com.au/brands/broyce-control', 'https://www.tro.com.au/brands/c-and-s-switches', 'https://www.tro.com.au/brands/delta-electronics', 'https://www.tro.com.au/brands/elettrocanali', 'https://www.tro.com.au/brands/gen3', 'https://www.tro.com.au/brands/giovenzana', 'https://www.tro.com.au/brands/icotek', 'https://www.tro.com.au/brands/fibox']
+2023-11-08T19:46:35Z info: Category URLs: ['https://www.tro.com.au/enclosures/wall-mount-enclosures', 'https://www.tro.com.au/enclosures/sloping-roof-enclosures', 'https://www.tro.com.au/enclosures/floor-standing-cabinets', 'https://www.tro.com.au/enclosures/data-rack-cabinets', 'https://www.tro.com.au/enclosures/field-cabinets', 'https://www.tro.com.au/enclosures/terminal-boxes', 'https://www.tro.com.au/enclosures/enclosure-accessories', 'https://www.tro.com.au/enclosures/pushbutton-enclosures', 'https://www.tro.com.au/enclosures/cooling-heating', 'https://www.tro.com.au/enclosures/enclosure-assemblies', 'https://www.tro.com.au/enclosures/hmi-enclosures', 'https://www.tro.com.au/enclosures/enclosure-support-arm-systems', 'https://www.tro.com.au/enclosures/consoles', 'https://www.tro.com.au/control-automation/pushbuttons-panel-switches', 'https://www.tro.com.au/control-automation/relays', 'https://www.tro.com.au/control-automation/motor-control', 'https://www.tro.com.au/control-automation/monitoring', 'https://www.tro.com.au/control-automation/remote-io', 'https://www.tro.com.au/control-automation/hmi-touchscreens', 'https://www.tro.com.au/control-automation/limit-switches', 'https://www.tro.com.au/control-automation/potentiometer', 'https://www.tro.com.au/industrial-electrical/power-supply-ups', 'https://www.tro.com.au/industrial-electrical/circuit-protection', 'https://www.tro.com.au/industrial-electrical/contactors-overloads', 'https://www.tro.com.au/industrial-electrical/din-terminals', 'https://www.tro.com.au/industrial-electrical/industrial-switchgear', 'https://www.tro.com.au/industrial-electrical/cable-accessories', 'https://www.tro.com.au/industrial-electrical/changeover-switches', 'https://www.tro.com.au/industrial-electrical/isolators', 'https://www.tro.com.au/industrial-electrical/multipole-connectors', 'https://www.tro.com.au/industrial-electrical/signaling-devices', 'https://www.tro.com.au/industrial-electrical/din-rail', 'https://www.tro.com.au/industrial-electrical/mcb-chassis', 'https://www.tro.com.au/industrial-electrical/industrial-printers', 'https://www.tro.com.au/data/network-switches', 'https://www.tro.com.au/data/data-rack-cabinets', 'https://www.tro.com.au/data/industrial-ethernet-routers', 'https://www.tro.com.au/data/data-converters', 'https://www.tro.com.au/data/network-cable-accessories', 'https://www.tro.com.au/data/data-plugs-connectors', 'https://www.tro.com.au/data/data-surge-protection', 'https://www.tro.com.au/data/wireless-access-points', 'https://www.tro.com.au/solar/solar-enclosures', 'https://www.tro.com.au/solar/dc-circuit-breakers', 'https://www.tro.com.au/solar/dc-fuses-holders', 'https://www.tro.com.au/solar/dc-surge-protection', 'https://www.tro.com.au/solar/solar-accessories-tools', 'https://www.tro.com.au/solar/dc-isolators', 'https://www.tro.com.au/tools/cable-cutters-strippers', 'https://www.tro.com.au/tools/crimpers-pliers', 'https://www.tro.com.au/tools/screwdrivers', 'https://www.tro.com.au/tools/meters-testers', 'https://www.tro.com.au/tools/din-rail-cutters', 'https://www.tro.com.au/tools/slotted-duct-cutters', 'https://www.tro.com.au/tools/tool-sets', 'https://www.tro.com.au/tools/banding-strap-buckles', 'https://www.tro.com.au/tools/spoolkart', 'https://www.tro.com.au/tools/manual-handling', 'https://www.tro.com.au/tools/storage', 'https://www.tro.com.au/tools/work-platforms', 'https://www.tro.com.au/brands/ip-enclosures', 'https://www.tro.com.au/brands/ls-electric', 'https://www.tro.com.au/brands/weidmuller', 'https://www.tro.com.au/brands/brady', 'https://www.tro.com.au/brands/allbro', 'https://www.tro.com.au/brands/armorgard', 'https://www.tro.com.au/brands/auer-signal', 'https://www.tro.com.au/brands/bridex', 'https://www.tro.com.au/brands/broyce-control', 'https://www.tro.com.au/brands/c-and-s-switches', 'https://www.tro.com.au/brands/delta-electronics', 'https://www.tro.com.au/brands/elettrocanali', 'https://www.tro.com.au/brands/gen3', 'https://www.tro.com.au/brands/giovenzana', 'https://www.tro.com.au/brands/icotek', 'https://www.tro.com.au/brands/fibox']
+2023-11-08T19:46:35Z info: Category URLs: ['https://www.tro.com.au/enclosures/wall-mount-enclosures', 'https://www.tro.com.au/enclosures/sloping-roof-enclosures', 'https://www.tro.com.au/enclosures/floor-standing-cabinets', 'https://www.tro.com.au/enclosures/data-rack-cabinets', 'https://www.tro.com.au/enclosures/field-cabinets', 'https://www.tro.com.au/enclosures/terminal-boxes', 'https://www.tro.com.au/enclosures/enclosure-accessories', 'https://www.tro.com.au/enclosures/pushbutton-enclosures', 'https://www.tro.com.au/enclosures/cooling-heating', 'https://www.tro.com.au/enclosures/enclosure-assemblies', 'https://www.tro.com.au/enclosures/hmi-enclosures', 'https://www.tro.com.au/enclosures/enclosure-support-arm-systems', 'https://www.tro.com.au/enclosures/consoles', 'https://www.tro.com.au/control-automation/pushbuttons-panel-switches', 'https://www.tro.com.au/control-automation/relays', 'https://www.tro.com.au/control-automation/motor-control', 'https://www.tro.com.au/control-automation/monitoring', 'https://www.tro.com.au/control-automation/remote-io', 'https://www.tro.com.au/control-automation/hmi-touchscreens', 'https://www.tro.com.au/control-automation/limit-switches', 'https://www.tro.com.au/control-automation/potentiometer', 'https://www.tro.com.au/industrial-electrical/power-supply-ups', 'https://www.tro.com.au/industrial-electrical/circuit-protection', 'https://www.tro.com.au/industrial-electrical/contactors-overloads', 'https://www.tro.com.au/industrial-electrical/din-terminals', 'https://www.tro.com.au/industrial-electrical/industrial-switchgear', 'https://www.tro.com.au/industrial-electrical/cable-accessories', 'https://www.tro.com.au/industrial-electrical/changeover-switches', 'https://www.tro.com.au/industrial-electrical/isolators', 'https://www.tro.com.au/industrial-electrical/multipole-connectors', 'https://www.tro.com.au/industrial-electrical/signaling-devices', 'https://www.tro.com.au/industrial-electrical/din-rail', 'https://www.tro.com.au/industrial-electrical/mcb-chassis', 'https://www.tro.com.au/industrial-electrical/industrial-printers', 'https://www.tro.com.au/data/network-switches', 'https://www.tro.com.au/data/data-rack-cabinets', 'https://www.tro.com.au/data/industrial-ethernet-routers', 'https://www.tro.com.au/data/data-converters', 'https://www.tro.com.au/data/network-cable-accessories', 'https://www.tro.com.au/data/data-plugs-connectors', 'https://www.tro.com.au/data/data-surge-protection', 'https://www.tro.com.au/data/wireless-access-points', 'https://www.tro.com.au/solar/solar-enclosures', 'https://www.tro.com.au/solar/dc-circuit-breakers', 'https://www.tro.com.au/solar/dc-fuses-holders', 'https://www.tro.com.au/solar/dc-surge-protection', 'https://www.tro.com.au/solar/solar-accessories-tools', 'https://www.tro.com.au/solar/dc-isolators', 'https://www.tro.com.au/tools/cable-cutters-strippers', 'https://www.tro.com.au/tools/crimpers-pliers', 'https://www.tro.com.au/tools/screwdrivers', 'https://www.tro.com.au/tools/meters-testers', 'https://www.tro.com.au/tools/din-rail-cutters', 'https://www.tro.com.au/tools/slotted-duct-cutters', 'https://www.tro.com.au/tools/tool-sets', 'https://www.tro.com.au/tools/banding-strap-buckles', 'https://www.tro.com.au/tools/spoolkart', 'https://www.tro.com.au/tools/manual-handling', 'https://www.tro.com.au/tools/storage', 'https://www.tro.com.au/tools/work-platforms', 'https://www.tro.com.au/brands/ip-enclosures', 'https://www.tro.com.au/brands/ls-electric', 'https://www.tro.com.au/brands/weidmuller', 'https://www.tro.com.au/brands/brady', 'https://www.tro.com.au/brands/allbro', 'https://www.tro.com.au/brands/armorgard', 'https://www.tro.com.au/brands/auer-signal', 'https://www.tro.com.au/brands/bridex', 'https://www.tro.com.au/brands/broyce-control', 'https://www.tro.com.au/brands/c-and-s-switches', 'https://www.tro.com.au/brands/delta-electronics', 'https://www.tro.com.au/brands/elettrocanali', 'https://www.tro.com.au/brands/gen3', 'https://www.tro.com.au/brands/giovenzana', 'https://www.tro.com.au/brands/icotek', 'https://www.tro.com.au/brands/fibox']
+2023-11-08T19:46:35Z info: Category URLs: ['https://www.tro.com.au/enclosures/wall-mount-enclosures', 'https://www.tro.com.au/enclosures/sloping-roof-enclosures', 'https://www.tro.com.au/enclosures/floor-standing-cabinets', 'https://www.tro.com.au/enclosures/data-rack-cabinets', 'https://www.tro.com.au/enclosures/field-cabinets', 'https://www.tro.com.au/enclosures/terminal-boxes', 'https://www.tro.com.au/enclosures/enclosure-accessories', 'https://www.tro.com.au/enclosures/pushbutton-enclosures', 'https://www.tro.com.au/enclosures/cooling-heating', 'https://www.tro.com.au/enclosures/enclosure-assemblies', 'https://www.tro.com.au/enclosures/hmi-enclosures', 'https://www.tro.com.au/enclosures/enclosure-support-arm-systems', 'https://www.tro.com.au/enclosures/consoles', 'https://www.tro.com.au/control-automation/pushbuttons-panel-switches', 'https://www.tro.com.au/control-automation/relays', 'https://www.tro.com.au/control-automation/motor-control', 'https://www.tro.com.au/control-automation/monitoring', 'https://www.tro.com.au/control-automation/remote-io', 'https://www.tro.com.au/control-automation/hmi-touchscreens', 'https://www.tro.com.au/control-automation/limit-switches', 'https://www.tro.com.au/control-automation/potentiometer', 'https://www.tro.com.au/industrial-electrical/power-supply-ups', 'https://www.tro.com.au/industrial-electrical/circuit-protection', 'https://www.tro.com.au/industrial-electrical/contactors-overloads', 'https://www.tro.com.au/industrial-electrical/din-terminals', 'https://www.tro.com.au/industrial-electrical/industrial-switchgear', 'https://www.tro.com.au/industrial-electrical/cable-accessories', 'https://www.tro.com.au/industrial-electrical/changeover-switches', 'https://www.tro.com.au/industrial-electrical/isolators', 'https://www.tro.com.au/industrial-electrical/multipole-connectors', 'https://www.tro.com.au/industrial-electrical/signaling-devices', 'https://www.tro.com.au/industrial-electrical/din-rail', 'https://www.tro.com.au/industrial-electrical/mcb-chassis', 'https://www.tro.com.au/industrial-electrical/industrial-printers', 'https://www.tro.com.au/data/network-switches', 'https://www.tro.com.au/data/data-rack-cabinets', 'https://www.tro.com.au/data/industrial-ethernet-routers', 'https://www.tro.com.au/data/data-converters', 'https://www.tro.com.au/data/network-cable-accessories', 'https://www.tro.com.au/data/data-plugs-connectors', 'https://www.tro.com.au/data/data-surge-protection', 'https://www.tro.com.au/data/wireless-access-points', 'https://www.tro.com.au/solar/solar-enclosures', 'https://www.tro.com.au/solar/dc-circuit-breakers', 'https://www.tro.com.au/solar/dc-fuses-holders', 'https://www.tro.com.au/solar/dc-surge-protection', 'https://www.tro.com.au/solar/solar-accessories-tools', 'https://www.tro.com.au/solar/dc-isolators', 'https://www.tro.com.au/tools/cable-cutters-strippers', 'https://www.tro.com.au/tools/crimpers-pliers', 'https://www.tro.com.au/tools/screwdrivers', 'https://www.tro.com.au/tools/meters-testers', 'https://www.tro.com.au/tools/din-rail-cutters', 'https://www.tro.com.au/tools/slotted-duct-cutters', 'https://www.tro.com.au/tools/tool-sets', 'https://www.tro.com.au/tools/banding-strap-buckles', 'https://www.tro.com.au/tools/spoolkart', 'https://www.tro.com.au/tools/manual-handling', 'https://www.tro.com.au/tools/storage', 'https://www.tro.com.au/tools/work-platforms', 'https://www.tro.com.au/brands/ip-enclosures', 'https://www.tro.com.au/brands/ls-electric', 'https://www.tro.com.au/brands/weidmuller', 'https://www.tro.com.au/brands/brady', 'https://www.tro.com.au/brands/allbro', 'https://www.tro.com.au/brands/armorgard', 'https://www.tro.com.au/brands/auer-signal', 'https://www.tro.com.au/brands/bridex', 'https://www.tro.com.au/brands/broyce-control', 'https://www.tro.com.au/brands/c-and-s-switches', 'https://www.tro.com.au/brands/delta-electronics', 'https://www.tro.com.au/brands/elettrocanali', 'https://www.tro.com.au/brands/gen3', 'https://www.tro.com.au/brands/giovenzana', 'https://www.tro.com.au/brands/icotek', 'https://www.tro.com.au/brands/fibox']
+2023-11-08T19:47:04Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:47:04Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:47:04Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:47:04Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:47:06Z info: ['https://www.tro.com.au/Stainless-Steel-Wall-Spacers-for-IP69K-Hygienic-Enclosures-Set-of-2', 'https://www.tro.com.au/Galvanised-Steel-Electrical-Enclosure-300H-x-200W-x-150D-IP66', 'https://www.tro.com.au/Galvanised-Steel-Electrical-Enclosure-300H-x-250W-x-150D-IP66', 'https://www.tro.com.au/Galvanised-Steel-Electrical-Enclosure-300H-x-300W-x-150D-IP66', 'https://www.tro.com.au/Galvanised-Steel-Electrical-Enclosure-300H-x-300W-x-150D-IP66-RAL2000-Orange']
+2023-11-08T19:47:06Z info: ['https://www.tro.com.au/Stainless-Steel-Wall-Spacers-for-IP69K-Hygienic-Enclosures-Set-of-2', 'https://www.tro.com.au/Galvanised-Steel-Electrical-Enclosure-300H-x-200W-x-150D-IP66', 'https://www.tro.com.au/Galvanised-Steel-Electrical-Enclosure-300H-x-250W-x-150D-IP66', 'https://www.tro.com.au/Galvanised-Steel-Electrical-Enclosure-300H-x-300W-x-150D-IP66', 'https://www.tro.com.au/Galvanised-Steel-Electrical-Enclosure-300H-x-300W-x-150D-IP66-RAL2000-Orange']
+2023-11-08T19:47:06Z info: ['https://www.tro.com.au/Stainless-Steel-Wall-Spacers-for-IP69K-Hygienic-Enclosures-Set-of-2', 'https://www.tro.com.au/Galvanised-Steel-Electrical-Enclosure-300H-x-200W-x-150D-IP66', 'https://www.tro.com.au/Galvanised-Steel-Electrical-Enclosure-300H-x-250W-x-150D-IP66', 'https://www.tro.com.au/Galvanised-Steel-Electrical-Enclosure-300H-x-300W-x-150D-IP66', 'https://www.tro.com.au/Galvanised-Steel-Electrical-Enclosure-300H-x-300W-x-150D-IP66-RAL2000-Orange']
+2023-11-08T19:47:06Z info: ['https://www.tro.com.au/Stainless-Steel-Wall-Spacers-for-IP69K-Hygienic-Enclosures-Set-of-2', 'https://www.tro.com.au/Galvanised-Steel-Electrical-Enclosure-300H-x-200W-x-150D-IP66', 'https://www.tro.com.au/Galvanised-Steel-Electrical-Enclosure-300H-x-250W-x-150D-IP66', 'https://www.tro.com.au/Galvanised-Steel-Electrical-Enclosure-300H-x-300W-x-150D-IP66', 'https://www.tro.com.au/Galvanised-Steel-Electrical-Enclosure-300H-x-300W-x-150D-IP66-RAL2000-Orange']
+2023-11-08T19:47:50Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:47:50Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:47:50Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:47:50Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:47:53Z info: ['https://www.tro.com.au/Steel-Sloping-Roof-Enclosure-300H-x-200W-x-150D-IP66-Orange', 'https://www.tro.com.au/Steel-Sloping-Roof-Enclosure-300H-x-300W-x-150D-IP66-Orange', 'https://www.tro.com.au/Steel-Sloping-Roof-Enclosure-400H-x-300W-x-200D-IP66-Orange', 'https://www.tro.com.au/Steel-Sloping-Roof-Enclosure-400H-x-400W-x-200D-IP66-Orange', 'https://www.tro.com.au/Steel-Sloping-Roof-Enclosure-400H-x-300W-x-200D-IP66-Orange-with-Sun-Shield']
+2023-11-08T19:47:53Z info: ['https://www.tro.com.au/Steel-Sloping-Roof-Enclosure-300H-x-200W-x-150D-IP66-Orange', 'https://www.tro.com.au/Steel-Sloping-Roof-Enclosure-300H-x-300W-x-150D-IP66-Orange', 'https://www.tro.com.au/Steel-Sloping-Roof-Enclosure-400H-x-300W-x-200D-IP66-Orange', 'https://www.tro.com.au/Steel-Sloping-Roof-Enclosure-400H-x-400W-x-200D-IP66-Orange', 'https://www.tro.com.au/Steel-Sloping-Roof-Enclosure-400H-x-300W-x-200D-IP66-Orange-with-Sun-Shield']
+2023-11-08T19:47:53Z info: ['https://www.tro.com.au/Steel-Sloping-Roof-Enclosure-300H-x-200W-x-150D-IP66-Orange', 'https://www.tro.com.au/Steel-Sloping-Roof-Enclosure-300H-x-300W-x-150D-IP66-Orange', 'https://www.tro.com.au/Steel-Sloping-Roof-Enclosure-400H-x-300W-x-200D-IP66-Orange', 'https://www.tro.com.au/Steel-Sloping-Roof-Enclosure-400H-x-400W-x-200D-IP66-Orange', 'https://www.tro.com.au/Steel-Sloping-Roof-Enclosure-400H-x-300W-x-200D-IP66-Orange-with-Sun-Shield']
+2023-11-08T19:47:53Z info: ['https://www.tro.com.au/Steel-Sloping-Roof-Enclosure-300H-x-200W-x-150D-IP66-Orange', 'https://www.tro.com.au/Steel-Sloping-Roof-Enclosure-300H-x-300W-x-150D-IP66-Orange', 'https://www.tro.com.au/Steel-Sloping-Roof-Enclosure-400H-x-300W-x-200D-IP66-Orange', 'https://www.tro.com.au/Steel-Sloping-Roof-Enclosure-400H-x-400W-x-200D-IP66-Orange', 'https://www.tro.com.au/Steel-Sloping-Roof-Enclosure-400H-x-300W-x-200D-IP66-Orange-with-Sun-Shield']
+2023-11-08T19:48:40Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:48:40Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:48:40Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:48:40Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:48:44Z info: ['https://www.tro.com.au/Galvanised-Steel-Electrical-Cabinet-1620H-x-400W-x-400D-IP55', 'https://www.tro.com.au/Galvanised-Steel-Electrical-Cabinet-1860H-x-400W-x-400D-IP55', 'https://www.tro.com.au/Galvanised-Steel-Electrical-Cabinet-2020H-x-400W-x-400D-IP55', 'https://www.tro.com.au/Galvanised-Steel-Electrical-Cabinet-1620H-x-600W-x-400D-IP55', 'https://www.tro.com.au/Galvanised-Steel-Electrical-Cabinet-1860H-x-400W-x-600D-IP55']
+2023-11-08T19:48:44Z info: ['https://www.tro.com.au/Galvanised-Steel-Electrical-Cabinet-1620H-x-400W-x-400D-IP55', 'https://www.tro.com.au/Galvanised-Steel-Electrical-Cabinet-1860H-x-400W-x-400D-IP55', 'https://www.tro.com.au/Galvanised-Steel-Electrical-Cabinet-2020H-x-400W-x-400D-IP55', 'https://www.tro.com.au/Galvanised-Steel-Electrical-Cabinet-1620H-x-600W-x-400D-IP55', 'https://www.tro.com.au/Galvanised-Steel-Electrical-Cabinet-1860H-x-400W-x-600D-IP55']
+2023-11-08T19:48:44Z info: ['https://www.tro.com.au/Galvanised-Steel-Electrical-Cabinet-1620H-x-400W-x-400D-IP55', 'https://www.tro.com.au/Galvanised-Steel-Electrical-Cabinet-1860H-x-400W-x-400D-IP55', 'https://www.tro.com.au/Galvanised-Steel-Electrical-Cabinet-2020H-x-400W-x-400D-IP55', 'https://www.tro.com.au/Galvanised-Steel-Electrical-Cabinet-1620H-x-600W-x-400D-IP55', 'https://www.tro.com.au/Galvanised-Steel-Electrical-Cabinet-1860H-x-400W-x-600D-IP55']
+2023-11-08T19:48:44Z info: ['https://www.tro.com.au/Galvanised-Steel-Electrical-Cabinet-1620H-x-400W-x-400D-IP55', 'https://www.tro.com.au/Galvanised-Steel-Electrical-Cabinet-1860H-x-400W-x-400D-IP55', 'https://www.tro.com.au/Galvanised-Steel-Electrical-Cabinet-2020H-x-400W-x-400D-IP55', 'https://www.tro.com.au/Galvanised-Steel-Electrical-Cabinet-1620H-x-600W-x-400D-IP55', 'https://www.tro.com.au/Galvanised-Steel-Electrical-Cabinet-1860H-x-400W-x-600D-IP55']
+2023-11-08T19:49:13Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:49:13Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:49:13Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:49:13Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:49:16Z info: ['https://www.tro.com.au/4RU-19-Data-Rack-Wall-Mounted-600W-x-300D-IP66', 'https://www.tro.com.au/4RU-19-Data-Rack-Wall-Mounted-600W-x-300D-Black', 'https://www.tro.com.au/6RU-19-Data-Rack-Wall-Mounted-600W-x-300D-IP66', 'https://www.tro.com.au/6RU-19-Data-Rack-Wall-Mounted-600W-x-300D-IP66-Black', 'https://www.tro.com.au/6RU-19-Data-Rack-Wall-Mounted-600W-x-400D-IP66']
+2023-11-08T19:49:16Z info: ['https://www.tro.com.au/4RU-19-Data-Rack-Wall-Mounted-600W-x-300D-IP66', 'https://www.tro.com.au/4RU-19-Data-Rack-Wall-Mounted-600W-x-300D-Black', 'https://www.tro.com.au/6RU-19-Data-Rack-Wall-Mounted-600W-x-300D-IP66', 'https://www.tro.com.au/6RU-19-Data-Rack-Wall-Mounted-600W-x-300D-IP66-Black', 'https://www.tro.com.au/6RU-19-Data-Rack-Wall-Mounted-600W-x-400D-IP66']
+2023-11-08T19:49:16Z info: ['https://www.tro.com.au/4RU-19-Data-Rack-Wall-Mounted-600W-x-300D-IP66', 'https://www.tro.com.au/4RU-19-Data-Rack-Wall-Mounted-600W-x-300D-Black', 'https://www.tro.com.au/6RU-19-Data-Rack-Wall-Mounted-600W-x-300D-IP66', 'https://www.tro.com.au/6RU-19-Data-Rack-Wall-Mounted-600W-x-300D-IP66-Black', 'https://www.tro.com.au/6RU-19-Data-Rack-Wall-Mounted-600W-x-400D-IP66']
+2023-11-08T19:49:16Z info: ['https://www.tro.com.au/4RU-19-Data-Rack-Wall-Mounted-600W-x-300D-IP66', 'https://www.tro.com.au/4RU-19-Data-Rack-Wall-Mounted-600W-x-300D-Black', 'https://www.tro.com.au/6RU-19-Data-Rack-Wall-Mounted-600W-x-300D-IP66', 'https://www.tro.com.au/6RU-19-Data-Rack-Wall-Mounted-600W-x-300D-IP66-Black', 'https://www.tro.com.au/6RU-19-Data-Rack-Wall-Mounted-600W-x-400D-IP66']
+2023-11-08T19:49:52Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:49:52Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:49:52Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:49:52Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:49:59Z info: ['https://www.tro.com.au/450H-x-350W-x-225D-Field-Enclosure-Non-Ventilated-T33-Smoke-Blue', 'https://www.tro.com.au/450H-x-350W-x-225D-Field-Enclosure-T33-Smoke-Blue', 'https://www.tro.com.au/650H-x-450W-x-325D-Field-Enclosure-Non-Ventilated-T33-Smoke-Blue', 'https://www.tro.com.au/650H-x-450W-x-325D-Field-Enclosure-T33-Smoke-Blue', 'https://www.tro.com.au/450H-x-350W-x-225D-Field-Enclosure-Non-Ventilated-Aluminium-T33-Smoke-Blue']
+2023-11-08T19:49:59Z info: ['https://www.tro.com.au/450H-x-350W-x-225D-Field-Enclosure-Non-Ventilated-T33-Smoke-Blue', 'https://www.tro.com.au/450H-x-350W-x-225D-Field-Enclosure-T33-Smoke-Blue', 'https://www.tro.com.au/650H-x-450W-x-325D-Field-Enclosure-Non-Ventilated-T33-Smoke-Blue', 'https://www.tro.com.au/650H-x-450W-x-325D-Field-Enclosure-T33-Smoke-Blue', 'https://www.tro.com.au/450H-x-350W-x-225D-Field-Enclosure-Non-Ventilated-Aluminium-T33-Smoke-Blue']
+2023-11-08T19:49:59Z info: ['https://www.tro.com.au/450H-x-350W-x-225D-Field-Enclosure-Non-Ventilated-T33-Smoke-Blue', 'https://www.tro.com.au/450H-x-350W-x-225D-Field-Enclosure-T33-Smoke-Blue', 'https://www.tro.com.au/650H-x-450W-x-325D-Field-Enclosure-Non-Ventilated-T33-Smoke-Blue', 'https://www.tro.com.au/650H-x-450W-x-325D-Field-Enclosure-T33-Smoke-Blue', 'https://www.tro.com.au/450H-x-350W-x-225D-Field-Enclosure-Non-Ventilated-Aluminium-T33-Smoke-Blue']
+2023-11-08T19:49:59Z info: ['https://www.tro.com.au/450H-x-350W-x-225D-Field-Enclosure-Non-Ventilated-T33-Smoke-Blue', 'https://www.tro.com.au/450H-x-350W-x-225D-Field-Enclosure-T33-Smoke-Blue', 'https://www.tro.com.au/650H-x-450W-x-325D-Field-Enclosure-Non-Ventilated-T33-Smoke-Blue', 'https://www.tro.com.au/650H-x-450W-x-325D-Field-Enclosure-T33-Smoke-Blue', 'https://www.tro.com.au/450H-x-350W-x-225D-Field-Enclosure-Non-Ventilated-Aluminium-T33-Smoke-Blue']
+2023-11-08T19:50:33Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:50:33Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:50:33Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:50:33Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:50:37Z info: ['https://www.tro.com.au/Polycarbonate-Enclosure-Clear-Lid-IP66-80H-x-80W-x-55D', 'https://www.tro.com.au/Polycarbonate-Enclosure-Grey-Lid-IP66-80H-x-80W-x-55D', 'https://www.tro.com.au/Polycarbonate-Enclosure-Grey-Lid-IP66-120H-x-80W-x-55D', 'https://www.tro.com.au/Polycarbonate-Enclosure-Clear-Lid-IP66-120H-x-80W-x-55D', 'https://www.tro.com.au/Polycarbonate-Enclosure-Clear-Lid-IP66-120H-x-120W-x-55D']
+2023-11-08T19:50:37Z info: ['https://www.tro.com.au/Polycarbonate-Enclosure-Clear-Lid-IP66-80H-x-80W-x-55D', 'https://www.tro.com.au/Polycarbonate-Enclosure-Grey-Lid-IP66-80H-x-80W-x-55D', 'https://www.tro.com.au/Polycarbonate-Enclosure-Grey-Lid-IP66-120H-x-80W-x-55D', 'https://www.tro.com.au/Polycarbonate-Enclosure-Clear-Lid-IP66-120H-x-80W-x-55D', 'https://www.tro.com.au/Polycarbonate-Enclosure-Clear-Lid-IP66-120H-x-120W-x-55D']
+2023-11-08T19:50:37Z info: ['https://www.tro.com.au/Polycarbonate-Enclosure-Clear-Lid-IP66-80H-x-80W-x-55D', 'https://www.tro.com.au/Polycarbonate-Enclosure-Grey-Lid-IP66-80H-x-80W-x-55D', 'https://www.tro.com.au/Polycarbonate-Enclosure-Grey-Lid-IP66-120H-x-80W-x-55D', 'https://www.tro.com.au/Polycarbonate-Enclosure-Clear-Lid-IP66-120H-x-80W-x-55D', 'https://www.tro.com.au/Polycarbonate-Enclosure-Clear-Lid-IP66-120H-x-120W-x-55D']
+2023-11-08T19:50:37Z info: ['https://www.tro.com.au/Polycarbonate-Enclosure-Clear-Lid-IP66-80H-x-80W-x-55D', 'https://www.tro.com.au/Polycarbonate-Enclosure-Grey-Lid-IP66-80H-x-80W-x-55D', 'https://www.tro.com.au/Polycarbonate-Enclosure-Grey-Lid-IP66-120H-x-80W-x-55D', 'https://www.tro.com.au/Polycarbonate-Enclosure-Clear-Lid-IP66-120H-x-80W-x-55D', 'https://www.tro.com.au/Polycarbonate-Enclosure-Clear-Lid-IP66-120H-x-120W-x-55D']
+2023-11-08T19:51:00Z info: Selector not found on page: https://www.tro.com.au/enclosures/enclosure-accessories
+2023-11-08T19:51:00Z info: Selector not found on page: https://www.tro.com.au/enclosures/enclosure-accessories
+2023-11-08T19:51:00Z info: Selector not found on page: https://www.tro.com.au/enclosures/enclosure-accessories
+2023-11-08T19:51:00Z info: Selector not found on page: https://www.tro.com.au/enclosures/enclosure-accessories
+2023-11-08T19:51:00Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:51:00Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:51:00Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:51:00Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:51:03Z info: []
+2023-11-08T19:51:03Z info: []
+2023-11-08T19:51:03Z info: []
+2023-11-08T19:51:03Z info: []
+2023-11-08T19:51:26Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:51:26Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:51:26Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:51:26Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:51:28Z info: ['https://www.tro.com.au/Giovenzana-Pushbutton-Enclosure-1-Hole-Grey', 'https://www.tro.com.au/Giovenzana-Pushbutton-Enclosure-1-Hole-Yellow', 'https://www.tro.com.au/IDEC-Push-Button-Station-200mm-5-Hole-Beige-30mmC', 'https://www.tro.com.au/Giovenzana-Pushbutton-Enclosure-2-Hole-Grey', 'https://www.tro.com.au/Giovenzana-Pushbutton-Enclosure-2-Hole-Yellow']
+2023-11-08T19:51:28Z info: ['https://www.tro.com.au/Giovenzana-Pushbutton-Enclosure-1-Hole-Grey', 'https://www.tro.com.au/Giovenzana-Pushbutton-Enclosure-1-Hole-Yellow', 'https://www.tro.com.au/IDEC-Push-Button-Station-200mm-5-Hole-Beige-30mmC', 'https://www.tro.com.au/Giovenzana-Pushbutton-Enclosure-2-Hole-Grey', 'https://www.tro.com.au/Giovenzana-Pushbutton-Enclosure-2-Hole-Yellow']
+2023-11-08T19:51:28Z info: ['https://www.tro.com.au/Giovenzana-Pushbutton-Enclosure-1-Hole-Grey', 'https://www.tro.com.au/Giovenzana-Pushbutton-Enclosure-1-Hole-Yellow', 'https://www.tro.com.au/IDEC-Push-Button-Station-200mm-5-Hole-Beige-30mmC', 'https://www.tro.com.au/Giovenzana-Pushbutton-Enclosure-2-Hole-Grey', 'https://www.tro.com.au/Giovenzana-Pushbutton-Enclosure-2-Hole-Yellow']
+2023-11-08T19:51:28Z info: ['https://www.tro.com.au/Giovenzana-Pushbutton-Enclosure-1-Hole-Grey', 'https://www.tro.com.au/Giovenzana-Pushbutton-Enclosure-1-Hole-Yellow', 'https://www.tro.com.au/IDEC-Push-Button-Station-200mm-5-Hole-Beige-30mmC', 'https://www.tro.com.au/Giovenzana-Pushbutton-Enclosure-2-Hole-Grey', 'https://www.tro.com.au/Giovenzana-Pushbutton-Enclosure-2-Hole-Yellow']
+2023-11-08T19:51:50Z info: Selector not found on page: https://www.tro.com.au/enclosures/cooling-heating
+2023-11-08T19:51:50Z info: Selector not found on page: https://www.tro.com.au/enclosures/cooling-heating
+2023-11-08T19:51:50Z info: Selector not found on page: https://www.tro.com.au/enclosures/cooling-heating
+2023-11-08T19:51:50Z info: Selector not found on page: https://www.tro.com.au/enclosures/cooling-heating
+2023-11-08T19:51:50Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:51:50Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:51:50Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:51:50Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:51:52Z info: []
+2023-11-08T19:51:52Z info: []
+2023-11-08T19:51:52Z info: []
+2023-11-08T19:51:52Z info: []
+2023-11-08T19:52:18Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:52:18Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:52:18Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:52:18Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:52:20Z info: ['https://www.tro.com.au/300H-x-200W-x-150D-Electrical-Enclosure-with-Padlockable-Handle', 'https://www.tro.com.au/300H-x-300W-x-150D-Electrical-Enclosure-with-Padlockable-Handle', 'https://www.tro.com.au/300H-x-300W-x-200D-Electrical-Enclosure-with-Padlockable-Handle', 'https://www.tro.com.au/400H-x-300W-x-150D-Electrical-Enclosure-with-Padlockable-Handle', 'https://www.tro.com.au/400H-x-300W-x-200D-Electrical-Enclosure-with-Padlockable-Handle']
+2023-11-08T19:52:20Z info: ['https://www.tro.com.au/300H-x-200W-x-150D-Electrical-Enclosure-with-Padlockable-Handle', 'https://www.tro.com.au/300H-x-300W-x-150D-Electrical-Enclosure-with-Padlockable-Handle', 'https://www.tro.com.au/300H-x-300W-x-200D-Electrical-Enclosure-with-Padlockable-Handle', 'https://www.tro.com.au/400H-x-300W-x-150D-Electrical-Enclosure-with-Padlockable-Handle', 'https://www.tro.com.au/400H-x-300W-x-200D-Electrical-Enclosure-with-Padlockable-Handle']
+2023-11-08T19:52:20Z info: ['https://www.tro.com.au/300H-x-200W-x-150D-Electrical-Enclosure-with-Padlockable-Handle', 'https://www.tro.com.au/300H-x-300W-x-150D-Electrical-Enclosure-with-Padlockable-Handle', 'https://www.tro.com.au/300H-x-300W-x-200D-Electrical-Enclosure-with-Padlockable-Handle', 'https://www.tro.com.au/400H-x-300W-x-150D-Electrical-Enclosure-with-Padlockable-Handle', 'https://www.tro.com.au/400H-x-300W-x-200D-Electrical-Enclosure-with-Padlockable-Handle']
+2023-11-08T19:52:20Z info: ['https://www.tro.com.au/300H-x-200W-x-150D-Electrical-Enclosure-with-Padlockable-Handle', 'https://www.tro.com.au/300H-x-300W-x-150D-Electrical-Enclosure-with-Padlockable-Handle', 'https://www.tro.com.au/300H-x-300W-x-200D-Electrical-Enclosure-with-Padlockable-Handle', 'https://www.tro.com.au/400H-x-300W-x-150D-Electrical-Enclosure-with-Padlockable-Handle', 'https://www.tro.com.au/400H-x-300W-x-200D-Electrical-Enclosure-with-Padlockable-Handle']
+2023-11-08T19:52:56Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:52:56Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:52:56Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:52:56Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:53:02Z info: ['https://www.tro.com.au/HMI-Enclosure-300H-x-300W-x-150D-Grey', 'https://www.tro.com.au/Galvanised-Steel-HMI-Enclosure-300H-x-400W-x-150D', 'https://www.tro.com.au/Galvanised-Steel-HMI-Enclosure-350H-x-450W-x-150D', 'https://www.tro.com.au/Galvanised-Steel-HMI-Enclosure-300H-x-400W-x-250D', 'https://www.tro.com.au/Galvanised-Steel-HMI-Enclosure-350H-x-450W-x-250D']
+2023-11-08T19:53:02Z info: ['https://www.tro.com.au/HMI-Enclosure-300H-x-300W-x-150D-Grey', 'https://www.tro.com.au/Galvanised-Steel-HMI-Enclosure-300H-x-400W-x-150D', 'https://www.tro.com.au/Galvanised-Steel-HMI-Enclosure-350H-x-450W-x-150D', 'https://www.tro.com.au/Galvanised-Steel-HMI-Enclosure-300H-x-400W-x-250D', 'https://www.tro.com.au/Galvanised-Steel-HMI-Enclosure-350H-x-450W-x-250D']
+2023-11-08T19:53:02Z info: ['https://www.tro.com.au/HMI-Enclosure-300H-x-300W-x-150D-Grey', 'https://www.tro.com.au/Galvanised-Steel-HMI-Enclosure-300H-x-400W-x-150D', 'https://www.tro.com.au/Galvanised-Steel-HMI-Enclosure-350H-x-450W-x-150D', 'https://www.tro.com.au/Galvanised-Steel-HMI-Enclosure-300H-x-400W-x-250D', 'https://www.tro.com.au/Galvanised-Steel-HMI-Enclosure-350H-x-450W-x-250D']
+2023-11-08T19:53:02Z info: ['https://www.tro.com.au/HMI-Enclosure-300H-x-300W-x-150D-Grey', 'https://www.tro.com.au/Galvanised-Steel-HMI-Enclosure-300H-x-400W-x-150D', 'https://www.tro.com.au/Galvanised-Steel-HMI-Enclosure-350H-x-450W-x-150D', 'https://www.tro.com.au/Galvanised-Steel-HMI-Enclosure-300H-x-400W-x-250D', 'https://www.tro.com.au/Galvanised-Steel-HMI-Enclosure-350H-x-450W-x-250D']
+2023-11-08T19:53:57Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:53:57Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:53:57Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:53:57Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:54:03Z info: ['https://www.tro.com.au/Support-Arm-Profile-Light-Duty-40kg-m-250mm-Length', 'https://www.tro.com.au/Support-Arm-Profile-Medium-Duty-60kg-m-250mm-Length', 'https://www.tro.com.au/Support-Arm-Mount-Light-Duty-Wall-Mounted', 'https://www.tro.com.au/Support-Arm-Profile-Light-Duty-40kg-m-500mm-Length', 'https://www.tro.com.au/Support-Arm-Adaptor-Light-Duty-90-Degree-Elbow']
+2023-11-08T19:54:03Z info: ['https://www.tro.com.au/Support-Arm-Profile-Light-Duty-40kg-m-250mm-Length', 'https://www.tro.com.au/Support-Arm-Profile-Medium-Duty-60kg-m-250mm-Length', 'https://www.tro.com.au/Support-Arm-Mount-Light-Duty-Wall-Mounted', 'https://www.tro.com.au/Support-Arm-Profile-Light-Duty-40kg-m-500mm-Length', 'https://www.tro.com.au/Support-Arm-Adaptor-Light-Duty-90-Degree-Elbow']
+2023-11-08T19:54:03Z info: ['https://www.tro.com.au/Support-Arm-Profile-Light-Duty-40kg-m-250mm-Length', 'https://www.tro.com.au/Support-Arm-Profile-Medium-Duty-60kg-m-250mm-Length', 'https://www.tro.com.au/Support-Arm-Mount-Light-Duty-Wall-Mounted', 'https://www.tro.com.au/Support-Arm-Profile-Light-Duty-40kg-m-500mm-Length', 'https://www.tro.com.au/Support-Arm-Adaptor-Light-Duty-90-Degree-Elbow']
+2023-11-08T19:54:03Z info: ['https://www.tro.com.au/Support-Arm-Profile-Light-Duty-40kg-m-250mm-Length', 'https://www.tro.com.au/Support-Arm-Profile-Medium-Duty-60kg-m-250mm-Length', 'https://www.tro.com.au/Support-Arm-Mount-Light-Duty-Wall-Mounted', 'https://www.tro.com.au/Support-Arm-Profile-Light-Duty-40kg-m-500mm-Length', 'https://www.tro.com.au/Support-Arm-Adaptor-Light-Duty-90-Degree-Elbow']
+2023-11-08T19:54:36Z info: Selector not found on page: https://www.tro.com.au/enclosures/consoles
+2023-11-08T19:54:36Z info: Selector not found on page: https://www.tro.com.au/enclosures/consoles
+2023-11-08T19:54:36Z info: Selector not found on page: https://www.tro.com.au/enclosures/consoles
+2023-11-08T19:54:36Z info: Selector not found on page: https://www.tro.com.au/enclosures/consoles
+2023-11-08T19:54:36Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:54:36Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:54:36Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:54:36Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:54:41Z info: ['https://www.tro.com.au/1000H-x-600W-x-450D-Console-IP66-20-Degree-Slope', 'https://www.tro.com.au/1000H-x-1000W-x-450D-Console-IP66-20-Degree-Slope']
+2023-11-08T19:54:41Z info: ['https://www.tro.com.au/1000H-x-600W-x-450D-Console-IP66-20-Degree-Slope', 'https://www.tro.com.au/1000H-x-1000W-x-450D-Console-IP66-20-Degree-Slope']
+2023-11-08T19:54:41Z info: ['https://www.tro.com.au/1000H-x-600W-x-450D-Console-IP66-20-Degree-Slope', 'https://www.tro.com.au/1000H-x-1000W-x-450D-Console-IP66-20-Degree-Slope']
+2023-11-08T19:54:41Z info: ['https://www.tro.com.au/1000H-x-600W-x-450D-Console-IP66-20-Degree-Slope', 'https://www.tro.com.au/1000H-x-1000W-x-450D-Console-IP66-20-Degree-Slope']
+2023-11-08T19:55:09Z info: Selector not found on page: https://www.tro.com.au/control-automation/pushbuttons-panel-switches
+2023-11-08T19:55:09Z info: Selector not found on page: https://www.tro.com.au/control-automation/pushbuttons-panel-switches
+2023-11-08T19:55:09Z info: Selector not found on page: https://www.tro.com.au/control-automation/pushbuttons-panel-switches
+2023-11-08T19:55:09Z info: Selector not found on page: https://www.tro.com.au/control-automation/pushbuttons-panel-switches
+2023-11-08T19:55:09Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:55:09Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:55:09Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:55:09Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:55:11Z info: []
+2023-11-08T19:55:11Z info: []
+2023-11-08T19:55:11Z info: []
+2023-11-08T19:55:11Z info: []
+2023-11-08T19:55:27Z info: Selector not found on page: https://www.tro.com.au/control-automation/relays
+2023-11-08T19:55:27Z info: Selector not found on page: https://www.tro.com.au/control-automation/relays
+2023-11-08T19:55:27Z info: Selector not found on page: https://www.tro.com.au/control-automation/relays
+2023-11-08T19:55:27Z info: Selector not found on page: https://www.tro.com.au/control-automation/relays
+2023-11-08T19:55:27Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:55:27Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:55:27Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:55:27Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:55:28Z info: []
+2023-11-08T19:55:28Z info: []
+2023-11-08T19:55:28Z info: []
+2023-11-08T19:55:28Z info: []
+2023-11-08T19:55:53Z info: Selector not found on page: https://www.tro.com.au/control-automation/motor-control
+2023-11-08T19:55:53Z info: Selector not found on page: https://www.tro.com.au/control-automation/motor-control
+2023-11-08T19:55:53Z info: Selector not found on page: https://www.tro.com.au/control-automation/motor-control
+2023-11-08T19:55:53Z info: Selector not found on page: https://www.tro.com.au/control-automation/motor-control
+2023-11-08T19:55:53Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:55:53Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:55:53Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:55:53Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:55:55Z info: []
+2023-11-08T19:55:55Z info: []
+2023-11-08T19:55:55Z info: []
+2023-11-08T19:55:55Z info: []
+2023-11-08T19:56:17Z info: Selector not found on page: https://www.tro.com.au/control-automation/monitoring
+2023-11-08T19:56:17Z info: Selector not found on page: https://www.tro.com.au/control-automation/monitoring
+2023-11-08T19:56:17Z info: Selector not found on page: https://www.tro.com.au/control-automation/monitoring
+2023-11-08T19:56:17Z info: Selector not found on page: https://www.tro.com.au/control-automation/monitoring
+2023-11-08T19:56:17Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:56:17Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:56:17Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:56:17Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:56:18Z info: []
+2023-11-08T19:56:18Z info: []
+2023-11-08T19:56:18Z info: []
+2023-11-08T19:56:18Z info: []
+2023-11-08T19:56:35Z info: Selector not found on page: https://www.tro.com.au/control-automation/remote-io
+2023-11-08T19:56:35Z info: Selector not found on page: https://www.tro.com.au/control-automation/remote-io
+2023-11-08T19:56:35Z info: Selector not found on page: https://www.tro.com.au/control-automation/remote-io
+2023-11-08T19:56:35Z info: Selector not found on page: https://www.tro.com.au/control-automation/remote-io
+2023-11-08T19:56:35Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:56:35Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:56:35Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:56:35Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:56:36Z info: ['https://www.tro.com.au/Weidmuller-Remote-I-O-Module-Connecting-Plug', 'https://www.tro.com.au/UR20-WL2000-IOT']
+2023-11-08T19:56:36Z info: ['https://www.tro.com.au/Weidmuller-Remote-I-O-Module-Connecting-Plug', 'https://www.tro.com.au/UR20-WL2000-IOT']
+2023-11-08T19:56:36Z info: ['https://www.tro.com.au/Weidmuller-Remote-I-O-Module-Connecting-Plug', 'https://www.tro.com.au/UR20-WL2000-IOT']
+2023-11-08T19:56:36Z info: ['https://www.tro.com.au/Weidmuller-Remote-I-O-Module-Connecting-Plug', 'https://www.tro.com.au/UR20-WL2000-IOT']
+2023-11-08T19:57:02Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:57:02Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:57:02Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:57:02Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:57:04Z info: ['https://www.tro.com.au/Delta-Basic-HMI-4.3-IP65-Colour', 'https://www.tro.com.au/Delta-Basic-HMI-4.3-IP65-Colour_2', 'https://www.tro.com.au/Delta-Basic-HMI-7-IP65-Colour', 'https://www.tro.com.au/Delta-Advanced-HMI-7-IP65-Colour', 'https://www.tro.com.au/Delta-Standard-HMI-7-IP65-Colour']
+2023-11-08T19:57:04Z info: ['https://www.tro.com.au/Delta-Basic-HMI-4.3-IP65-Colour', 'https://www.tro.com.au/Delta-Basic-HMI-4.3-IP65-Colour_2', 'https://www.tro.com.au/Delta-Basic-HMI-7-IP65-Colour', 'https://www.tro.com.au/Delta-Advanced-HMI-7-IP65-Colour', 'https://www.tro.com.au/Delta-Standard-HMI-7-IP65-Colour']
+2023-11-08T19:57:04Z info: ['https://www.tro.com.au/Delta-Basic-HMI-4.3-IP65-Colour', 'https://www.tro.com.au/Delta-Basic-HMI-4.3-IP65-Colour_2', 'https://www.tro.com.au/Delta-Basic-HMI-7-IP65-Colour', 'https://www.tro.com.au/Delta-Advanced-HMI-7-IP65-Colour', 'https://www.tro.com.au/Delta-Standard-HMI-7-IP65-Colour']
+2023-11-08T19:57:04Z info: ['https://www.tro.com.au/Delta-Basic-HMI-4.3-IP65-Colour', 'https://www.tro.com.au/Delta-Basic-HMI-4.3-IP65-Colour_2', 'https://www.tro.com.au/Delta-Basic-HMI-7-IP65-Colour', 'https://www.tro.com.au/Delta-Advanced-HMI-7-IP65-Colour', 'https://www.tro.com.au/Delta-Standard-HMI-7-IP65-Colour']
+2023-11-08T19:57:25Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:57:25Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:57:25Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:57:25Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:57:27Z info: ['https://www.tro.com.au/Giovenzana-Micro-Switch-with-Faston-Terminals', 'https://www.tro.com.au/Giovenzana-Limit-Switch-with-Roller-Plunger', 'https://www.tro.com.au/Giovenzana-Limit-Switch-with-Adjustable-Metal-Rod-Lever', 'https://www.tro.com.au/Giovenzana-Limit-Switch-with-18-PA-Roller-Lever', 'https://www.tro.com.au/Giovenzana-Limit-Switch-with-CATS-Whisker']
+2023-11-08T19:57:27Z info: ['https://www.tro.com.au/Giovenzana-Micro-Switch-with-Faston-Terminals', 'https://www.tro.com.au/Giovenzana-Limit-Switch-with-Roller-Plunger', 'https://www.tro.com.au/Giovenzana-Limit-Switch-with-Adjustable-Metal-Rod-Lever', 'https://www.tro.com.au/Giovenzana-Limit-Switch-with-18-PA-Roller-Lever', 'https://www.tro.com.au/Giovenzana-Limit-Switch-with-CATS-Whisker']
+2023-11-08T19:57:27Z info: ['https://www.tro.com.au/Giovenzana-Micro-Switch-with-Faston-Terminals', 'https://www.tro.com.au/Giovenzana-Limit-Switch-with-Roller-Plunger', 'https://www.tro.com.au/Giovenzana-Limit-Switch-with-Adjustable-Metal-Rod-Lever', 'https://www.tro.com.au/Giovenzana-Limit-Switch-with-18-PA-Roller-Lever', 'https://www.tro.com.au/Giovenzana-Limit-Switch-with-CATS-Whisker']
+2023-11-08T19:57:27Z info: ['https://www.tro.com.au/Giovenzana-Micro-Switch-with-Faston-Terminals', 'https://www.tro.com.au/Giovenzana-Limit-Switch-with-Roller-Plunger', 'https://www.tro.com.au/Giovenzana-Limit-Switch-with-Adjustable-Metal-Rod-Lever', 'https://www.tro.com.au/Giovenzana-Limit-Switch-with-18-PA-Roller-Lever', 'https://www.tro.com.au/Giovenzana-Limit-Switch-with-CATS-Whisker']
+2023-11-08T19:57:42Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:57:42Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:57:42Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:57:42Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:57:44Z info: ['https://www.tro.com.au/Giovenzana-Potentiometer-5k-', 'https://www.tro.com.au/Giovenzana-Potentiometer-50k-', 'https://www.tro.com.au/Giovenzana-Potentiometer-500k-', 'https://www.tro.com.au/Giovenzana-Potentiometer-2.5k-', 'https://www.tro.com.au/Giovenzana-Potentiometer-1k-']
+2023-11-08T19:57:44Z info: ['https://www.tro.com.au/Giovenzana-Potentiometer-5k-', 'https://www.tro.com.au/Giovenzana-Potentiometer-50k-', 'https://www.tro.com.au/Giovenzana-Potentiometer-500k-', 'https://www.tro.com.au/Giovenzana-Potentiometer-2.5k-', 'https://www.tro.com.au/Giovenzana-Potentiometer-1k-']
+2023-11-08T19:57:44Z info: ['https://www.tro.com.au/Giovenzana-Potentiometer-5k-', 'https://www.tro.com.au/Giovenzana-Potentiometer-50k-', 'https://www.tro.com.au/Giovenzana-Potentiometer-500k-', 'https://www.tro.com.au/Giovenzana-Potentiometer-2.5k-', 'https://www.tro.com.au/Giovenzana-Potentiometer-1k-']
+2023-11-08T19:57:44Z info: ['https://www.tro.com.au/Giovenzana-Potentiometer-5k-', 'https://www.tro.com.au/Giovenzana-Potentiometer-50k-', 'https://www.tro.com.au/Giovenzana-Potentiometer-500k-', 'https://www.tro.com.au/Giovenzana-Potentiometer-2.5k-', 'https://www.tro.com.au/Giovenzana-Potentiometer-1k-']
+2023-11-08T19:57:59Z info: Selector not found on page: https://www.tro.com.au/industrial-electrical/power-supply-ups
+2023-11-08T19:57:59Z info: Selector not found on page: https://www.tro.com.au/industrial-electrical/power-supply-ups
+2023-11-08T19:57:59Z info: Selector not found on page: https://www.tro.com.au/industrial-electrical/power-supply-ups
+2023-11-08T19:57:59Z info: Selector not found on page: https://www.tro.com.au/industrial-electrical/power-supply-ups
+2023-11-08T19:57:59Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:57:59Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:57:59Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:57:59Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:58:00Z info: []
+2023-11-08T19:58:00Z info: []
+2023-11-08T19:58:00Z info: []
+2023-11-08T19:58:00Z info: []
+2023-11-08T19:58:22Z info: Selector not found on page: https://www.tro.com.au/industrial-electrical/circuit-protection
+2023-11-08T19:58:22Z info: Selector not found on page: https://www.tro.com.au/industrial-electrical/circuit-protection
+2023-11-08T19:58:22Z info: Selector not found on page: https://www.tro.com.au/industrial-electrical/circuit-protection
+2023-11-08T19:58:22Z info: Selector not found on page: https://www.tro.com.au/industrial-electrical/circuit-protection
+2023-11-08T19:58:22Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:58:22Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:58:22Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:58:22Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:58:23Z info: []
+2023-11-08T19:58:23Z info: []
+2023-11-08T19:58:23Z info: []
+2023-11-08T19:58:23Z info: []
+2023-11-08T19:58:39Z info: Selector not found on page: https://www.tro.com.au/industrial-electrical/contactors-overloads
+2023-11-08T19:58:39Z info: Selector not found on page: https://www.tro.com.au/industrial-electrical/contactors-overloads
+2023-11-08T19:58:39Z info: Selector not found on page: https://www.tro.com.au/industrial-electrical/contactors-overloads
+2023-11-08T19:58:39Z info: Selector not found on page: https://www.tro.com.au/industrial-electrical/contactors-overloads
+2023-11-08T19:58:39Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:58:39Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:58:39Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:58:39Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:58:40Z info: ['https://www.tro.com.au/Manual-Motor-Starter-Auxiliary-Switch-Front-Mount-2NC_2', 'https://www.tro.com.au/Manual-Motor-Starter-Auxiliary-Switch-Front-Mount-1NO1NC_2', 'https://www.tro.com.au/Manual-Motor-Starter-Auxiliary-Switch-Front-Mount-2NO_2', 'https://www.tro.com.au/Modular-Heating-Lighting-Contactor-Auxiliary-2NO-MOC-AUX-2NO']
+2023-11-08T19:58:40Z info: ['https://www.tro.com.au/Manual-Motor-Starter-Auxiliary-Switch-Front-Mount-2NC_2', 'https://www.tro.com.au/Manual-Motor-Starter-Auxiliary-Switch-Front-Mount-1NO1NC_2', 'https://www.tro.com.au/Manual-Motor-Starter-Auxiliary-Switch-Front-Mount-2NO_2', 'https://www.tro.com.au/Modular-Heating-Lighting-Contactor-Auxiliary-2NO-MOC-AUX-2NO']
+2023-11-08T19:58:40Z info: ['https://www.tro.com.au/Manual-Motor-Starter-Auxiliary-Switch-Front-Mount-2NC_2', 'https://www.tro.com.au/Manual-Motor-Starter-Auxiliary-Switch-Front-Mount-1NO1NC_2', 'https://www.tro.com.au/Manual-Motor-Starter-Auxiliary-Switch-Front-Mount-2NO_2', 'https://www.tro.com.au/Modular-Heating-Lighting-Contactor-Auxiliary-2NO-MOC-AUX-2NO']
+2023-11-08T19:58:40Z info: ['https://www.tro.com.au/Manual-Motor-Starter-Auxiliary-Switch-Front-Mount-2NC_2', 'https://www.tro.com.au/Manual-Motor-Starter-Auxiliary-Switch-Front-Mount-1NO1NC_2', 'https://www.tro.com.au/Manual-Motor-Starter-Auxiliary-Switch-Front-Mount-2NO_2', 'https://www.tro.com.au/Modular-Heating-Lighting-Contactor-Auxiliary-2NO-MOC-AUX-2NO']
+2023-11-08T19:58:56Z info: Selector not found on page: https://www.tro.com.au/industrial-electrical/din-terminals
+2023-11-08T19:58:56Z info: Selector not found on page: https://www.tro.com.au/industrial-electrical/din-terminals
+2023-11-08T19:58:56Z info: Selector not found on page: https://www.tro.com.au/industrial-electrical/din-terminals
+2023-11-08T19:58:56Z info: Selector not found on page: https://www.tro.com.au/industrial-electrical/din-terminals
+2023-11-08T19:58:56Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:58:56Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:58:56Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:58:56Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:58:57Z info: []
+2023-11-08T19:58:57Z info: []
+2023-11-08T19:58:57Z info: []
+2023-11-08T19:58:57Z info: []
+2023-11-08T19:59:25Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:59:25Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:59:25Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:59:25Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T19:59:31Z info: ['https://www.tro.com.au/1-Module-Lid', 'https://www.tro.com.au/1-Module-Back-Box', 'https://www.tro.com.au/2-Module-Lid', 'https://www.tro.com.au/10-Flat-Pin-15-AMP-Plug-250V', 'https://www.tro.com.au/3-Flat-Pin-10-AMP-Plug-250V']
+2023-11-08T19:59:31Z info: ['https://www.tro.com.au/1-Module-Lid', 'https://www.tro.com.au/1-Module-Back-Box', 'https://www.tro.com.au/2-Module-Lid', 'https://www.tro.com.au/10-Flat-Pin-15-AMP-Plug-250V', 'https://www.tro.com.au/3-Flat-Pin-10-AMP-Plug-250V']
+2023-11-08T19:59:31Z info: ['https://www.tro.com.au/1-Module-Lid', 'https://www.tro.com.au/1-Module-Back-Box', 'https://www.tro.com.au/2-Module-Lid', 'https://www.tro.com.au/10-Flat-Pin-15-AMP-Plug-250V', 'https://www.tro.com.au/3-Flat-Pin-10-AMP-Plug-250V']
+2023-11-08T19:59:31Z info: ['https://www.tro.com.au/1-Module-Lid', 'https://www.tro.com.au/1-Module-Back-Box', 'https://www.tro.com.au/2-Module-Lid', 'https://www.tro.com.au/10-Flat-Pin-15-AMP-Plug-250V', 'https://www.tro.com.au/3-Flat-Pin-10-AMP-Plug-250V']
+2023-11-08T20:00:15Z info: Selector not found on page: https://www.tro.com.au/industrial-electrical/cable-accessories
+2023-11-08T20:00:15Z info: Selector not found on page: https://www.tro.com.au/industrial-electrical/cable-accessories
+2023-11-08T20:00:15Z info: Selector not found on page: https://www.tro.com.au/industrial-electrical/cable-accessories
+2023-11-08T20:00:15Z info: Selector not found on page: https://www.tro.com.au/industrial-electrical/cable-accessories
+2023-11-08T20:00:15Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:00:15Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:00:15Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:00:15Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:00:17Z info: []
+2023-11-08T20:00:17Z info: []
+2023-11-08T20:00:17Z info: []
+2023-11-08T20:00:17Z info: []
+2023-11-08T20:01:55Z info: Selector not found on page: https://www.tro.com.au/industrial-electrical/changeover-switches
+2023-11-08T20:01:55Z info: Selector not found on page: https://www.tro.com.au/industrial-electrical/changeover-switches
+2023-11-08T20:01:55Z info: Selector not found on page: https://www.tro.com.au/industrial-electrical/changeover-switches
+2023-11-08T20:01:55Z info: Selector not found on page: https://www.tro.com.au/industrial-electrical/changeover-switches
+2023-11-08T20:01:55Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:01:55Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:01:55Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:01:55Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:01:59Z info: []
+2023-11-08T20:01:59Z info: []
+2023-11-08T20:01:59Z info: []
+2023-11-08T20:01:59Z info: []
+2023-11-08T20:02:33Z info: Selector not found on page: https://www.tro.com.au/industrial-electrical/isolators
+2023-11-08T20:02:33Z info: Selector not found on page: https://www.tro.com.au/industrial-electrical/isolators
+2023-11-08T20:02:33Z info: Selector not found on page: https://www.tro.com.au/industrial-electrical/isolators
+2023-11-08T20:02:33Z info: Selector not found on page: https://www.tro.com.au/industrial-electrical/isolators
+2023-11-08T20:02:33Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:02:33Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:02:33Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:02:33Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:02:35Z info: []
+2023-11-08T20:02:35Z info: []
+2023-11-08T20:02:35Z info: []
+2023-11-08T20:02:35Z info: []
+2023-11-08T20:03:03Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:03:03Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:03:03Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:03:03Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:03:10Z info: ['https://www.tro.com.au/HDC-C-HD-SM1.5AG-CRIMP', 'https://www.tro.com.au/HDC-Insert-Male-16A-10-Pole-Size-4-HDC-HE-10-MC', 'https://www.tro.com.au/HDC-HE-6SS-HDC-Insert-Male-500V-24A-6-Pole-Screw-Connection-Size-3-Weidmuller', 'https://www.tro.com.au/HDC-Enclosure-10A-IP65', 'https://www.tro.com.au/HDC-HE-6BS-HDC-Insert-Female-500V-24A-6-Pole-Screw-Connection-Size-3-Weidmuller']
+2023-11-08T20:03:10Z info: ['https://www.tro.com.au/HDC-C-HD-SM1.5AG-CRIMP', 'https://www.tro.com.au/HDC-Insert-Male-16A-10-Pole-Size-4-HDC-HE-10-MC', 'https://www.tro.com.au/HDC-HE-6SS-HDC-Insert-Male-500V-24A-6-Pole-Screw-Connection-Size-3-Weidmuller', 'https://www.tro.com.au/HDC-Enclosure-10A-IP65', 'https://www.tro.com.au/HDC-HE-6BS-HDC-Insert-Female-500V-24A-6-Pole-Screw-Connection-Size-3-Weidmuller']
+2023-11-08T20:03:10Z info: ['https://www.tro.com.au/HDC-C-HD-SM1.5AG-CRIMP', 'https://www.tro.com.au/HDC-Insert-Male-16A-10-Pole-Size-4-HDC-HE-10-MC', 'https://www.tro.com.au/HDC-HE-6SS-HDC-Insert-Male-500V-24A-6-Pole-Screw-Connection-Size-3-Weidmuller', 'https://www.tro.com.au/HDC-Enclosure-10A-IP65', 'https://www.tro.com.au/HDC-HE-6BS-HDC-Insert-Female-500V-24A-6-Pole-Screw-Connection-Size-3-Weidmuller']
+2023-11-08T20:03:10Z info: ['https://www.tro.com.au/HDC-C-HD-SM1.5AG-CRIMP', 'https://www.tro.com.au/HDC-Insert-Male-16A-10-Pole-Size-4-HDC-HE-10-MC', 'https://www.tro.com.au/HDC-HE-6SS-HDC-Insert-Male-500V-24A-6-Pole-Screw-Connection-Size-3-Weidmuller', 'https://www.tro.com.au/HDC-Enclosure-10A-IP65', 'https://www.tro.com.au/HDC-HE-6BS-HDC-Insert-Female-500V-24A-6-Pole-Screw-Connection-Size-3-Weidmuller']
+2023-11-08T20:03:37Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:03:37Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:03:37Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:03:37Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:03:41Z info: ['https://www.tro.com.au/PVW-Vertical-Mounting-Base-for-P-Series-Beacons', 'https://www.tro.com.au/WIG-Bracket-for-Vertical-Mounting-of-WLG-BKG-FLG-DLG-BLG-Beacons', 'https://www.tro.com.au/ESK-Series-30mm-Panel-Mount-Buzzer-12-24VAC-DC-85dB', 'https://www.tro.com.au/ESK-Series-30mm-Panel-Mount-Buzzer-230-240VAC-85dB', 'https://www.tro.com.au/IBS-Series-30mm-Panel-Mount-Beacon-Steady-Flashing-Light-Red-12VAC-DC']
+2023-11-08T20:03:41Z info: ['https://www.tro.com.au/PVW-Vertical-Mounting-Base-for-P-Series-Beacons', 'https://www.tro.com.au/WIG-Bracket-for-Vertical-Mounting-of-WLG-BKG-FLG-DLG-BLG-Beacons', 'https://www.tro.com.au/ESK-Series-30mm-Panel-Mount-Buzzer-12-24VAC-DC-85dB', 'https://www.tro.com.au/ESK-Series-30mm-Panel-Mount-Buzzer-230-240VAC-85dB', 'https://www.tro.com.au/IBS-Series-30mm-Panel-Mount-Beacon-Steady-Flashing-Light-Red-12VAC-DC']
+2023-11-08T20:03:41Z info: ['https://www.tro.com.au/PVW-Vertical-Mounting-Base-for-P-Series-Beacons', 'https://www.tro.com.au/WIG-Bracket-for-Vertical-Mounting-of-WLG-BKG-FLG-DLG-BLG-Beacons', 'https://www.tro.com.au/ESK-Series-30mm-Panel-Mount-Buzzer-12-24VAC-DC-85dB', 'https://www.tro.com.au/ESK-Series-30mm-Panel-Mount-Buzzer-230-240VAC-85dB', 'https://www.tro.com.au/IBS-Series-30mm-Panel-Mount-Beacon-Steady-Flashing-Light-Red-12VAC-DC']
+2023-11-08T20:03:41Z info: ['https://www.tro.com.au/PVW-Vertical-Mounting-Base-for-P-Series-Beacons', 'https://www.tro.com.au/WIG-Bracket-for-Vertical-Mounting-of-WLG-BKG-FLG-DLG-BLG-Beacons', 'https://www.tro.com.au/ESK-Series-30mm-Panel-Mount-Buzzer-12-24VAC-DC-85dB', 'https://www.tro.com.au/ESK-Series-30mm-Panel-Mount-Buzzer-230-240VAC-85dB', 'https://www.tro.com.au/IBS-Series-30mm-Panel-Mount-Beacon-Steady-Flashing-Light-Red-12VAC-DC']
+2023-11-08T20:04:22Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:04:22Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:04:22Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:04:22Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:04:31Z info: ['https://www.tro.com.au/Slotted-DIN-Rail-130-Long-to-suit-200W-Enclosures-10-Pack', 'https://www.tro.com.au/Slotted-DIN-Rail-140-Long-to-suit-200W-Terminal-Boxes-10-Pack', 'https://www.tro.com.au/Slotted-DIN-Rail-230-Long-to-suit-300W-Enclosures-10-Pack', 'https://www.tro.com.au/Slotted-DIN-Rail-240-Long-to-suit-300W-Terminal-Boxes-10-Pack', 'https://www.tro.com.au/Slotted-DIN-Rail-330-Long-to-suit-400W-Enclosures-10-Pack']
+2023-11-08T20:04:31Z info: ['https://www.tro.com.au/Slotted-DIN-Rail-130-Long-to-suit-200W-Enclosures-10-Pack', 'https://www.tro.com.au/Slotted-DIN-Rail-140-Long-to-suit-200W-Terminal-Boxes-10-Pack', 'https://www.tro.com.au/Slotted-DIN-Rail-230-Long-to-suit-300W-Enclosures-10-Pack', 'https://www.tro.com.au/Slotted-DIN-Rail-240-Long-to-suit-300W-Terminal-Boxes-10-Pack', 'https://www.tro.com.au/Slotted-DIN-Rail-330-Long-to-suit-400W-Enclosures-10-Pack']
+2023-11-08T20:04:31Z info: ['https://www.tro.com.au/Slotted-DIN-Rail-130-Long-to-suit-200W-Enclosures-10-Pack', 'https://www.tro.com.au/Slotted-DIN-Rail-140-Long-to-suit-200W-Terminal-Boxes-10-Pack', 'https://www.tro.com.au/Slotted-DIN-Rail-230-Long-to-suit-300W-Enclosures-10-Pack', 'https://www.tro.com.au/Slotted-DIN-Rail-240-Long-to-suit-300W-Terminal-Boxes-10-Pack', 'https://www.tro.com.au/Slotted-DIN-Rail-330-Long-to-suit-400W-Enclosures-10-Pack']
+2023-11-08T20:04:31Z info: ['https://www.tro.com.au/Slotted-DIN-Rail-130-Long-to-suit-200W-Enclosures-10-Pack', 'https://www.tro.com.au/Slotted-DIN-Rail-140-Long-to-suit-200W-Terminal-Boxes-10-Pack', 'https://www.tro.com.au/Slotted-DIN-Rail-230-Long-to-suit-300W-Enclosures-10-Pack', 'https://www.tro.com.au/Slotted-DIN-Rail-240-Long-to-suit-300W-Terminal-Boxes-10-Pack', 'https://www.tro.com.au/Slotted-DIN-Rail-330-Long-to-suit-400W-Enclosures-10-Pack']
+2023-11-08T20:04:58Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:04:58Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:04:58Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:04:58Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:05:00Z info: ['https://www.tro.com.au/12P-250A-18mm-Pitch-Encapsulated-MCB-Chassis-to-Suit-BKN-B-BKJ-RKS-b-Breakers', 'https://www.tro.com.au/18P-250A-18mm-Pitch-Encapsulated-MCB-Chassis_2', 'https://www.tro.com.au/NY-BECR250-12DF-v2', 'https://www.tro.com.au/18P-250A-Hybrid-MCB-Chassis-6P-27mm-Pitch-12P-18mm-Pitch', 'https://www.tro.com.au/12P-250A-18mm-Pitch-Encapsulated-MCB-Chassis-Dual-Feed']
+2023-11-08T20:05:00Z info: ['https://www.tro.com.au/12P-250A-18mm-Pitch-Encapsulated-MCB-Chassis-to-Suit-BKN-B-BKJ-RKS-b-Breakers', 'https://www.tro.com.au/18P-250A-18mm-Pitch-Encapsulated-MCB-Chassis_2', 'https://www.tro.com.au/NY-BECR250-12DF-v2', 'https://www.tro.com.au/18P-250A-Hybrid-MCB-Chassis-6P-27mm-Pitch-12P-18mm-Pitch', 'https://www.tro.com.au/12P-250A-18mm-Pitch-Encapsulated-MCB-Chassis-Dual-Feed']
+2023-11-08T20:05:00Z info: ['https://www.tro.com.au/12P-250A-18mm-Pitch-Encapsulated-MCB-Chassis-to-Suit-BKN-B-BKJ-RKS-b-Breakers', 'https://www.tro.com.au/18P-250A-18mm-Pitch-Encapsulated-MCB-Chassis_2', 'https://www.tro.com.au/NY-BECR250-12DF-v2', 'https://www.tro.com.au/18P-250A-Hybrid-MCB-Chassis-6P-27mm-Pitch-12P-18mm-Pitch', 'https://www.tro.com.au/12P-250A-18mm-Pitch-Encapsulated-MCB-Chassis-Dual-Feed']
+2023-11-08T20:05:00Z info: ['https://www.tro.com.au/12P-250A-18mm-Pitch-Encapsulated-MCB-Chassis-to-Suit-BKN-B-BKJ-RKS-b-Breakers', 'https://www.tro.com.au/18P-250A-18mm-Pitch-Encapsulated-MCB-Chassis_2', 'https://www.tro.com.au/NY-BECR250-12DF-v2', 'https://www.tro.com.au/18P-250A-Hybrid-MCB-Chassis-6P-27mm-Pitch-12P-18mm-Pitch', 'https://www.tro.com.au/12P-250A-18mm-Pitch-Encapsulated-MCB-Chassis-Dual-Feed']
+2023-11-08T20:05:47Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:05:47Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:05:47Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:05:47Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:05:51Z info: ['https://www.tro.com.au/TM-202-15-VO-1000-sleeve-for-1.5-2.5mm-OD', 'https://www.tro.com.au/Brady-M210-M211-Magnet-Accessory', 'https://www.tro.com.au/Brady-BMP71-Cleaning-Kit', 'https://www.tro.com.au/Brady-BMP21-Plus-Series-B-499-Nylon-Cloth-Labels-9.53mm-x-4.88M-M21-375-499', 'https://www.tro.com.au/Brady-BMP61-M611-TLS220-Cleaning-Kit-5-Pack']
+2023-11-08T20:05:51Z info: ['https://www.tro.com.au/TM-202-15-VO-1000-sleeve-for-1.5-2.5mm-OD', 'https://www.tro.com.au/Brady-M210-M211-Magnet-Accessory', 'https://www.tro.com.au/Brady-BMP71-Cleaning-Kit', 'https://www.tro.com.au/Brady-BMP21-Plus-Series-B-499-Nylon-Cloth-Labels-9.53mm-x-4.88M-M21-375-499', 'https://www.tro.com.au/Brady-BMP61-M611-TLS220-Cleaning-Kit-5-Pack']
+2023-11-08T20:05:51Z info: ['https://www.tro.com.au/TM-202-15-VO-1000-sleeve-for-1.5-2.5mm-OD', 'https://www.tro.com.au/Brady-M210-M211-Magnet-Accessory', 'https://www.tro.com.au/Brady-BMP71-Cleaning-Kit', 'https://www.tro.com.au/Brady-BMP21-Plus-Series-B-499-Nylon-Cloth-Labels-9.53mm-x-4.88M-M21-375-499', 'https://www.tro.com.au/Brady-BMP61-M611-TLS220-Cleaning-Kit-5-Pack']
+2023-11-08T20:05:51Z info: ['https://www.tro.com.au/TM-202-15-VO-1000-sleeve-for-1.5-2.5mm-OD', 'https://www.tro.com.au/Brady-M210-M211-Magnet-Accessory', 'https://www.tro.com.au/Brady-BMP71-Cleaning-Kit', 'https://www.tro.com.au/Brady-BMP21-Plus-Series-B-499-Nylon-Cloth-Labels-9.53mm-x-4.88M-M21-375-499', 'https://www.tro.com.au/Brady-BMP61-M611-TLS220-Cleaning-Kit-5-Pack']
+2023-11-08T20:06:27Z info: Selector not found on page: https://www.tro.com.au/data/network-switches
+2023-11-08T20:06:27Z info: Selector not found on page: https://www.tro.com.au/data/network-switches
+2023-11-08T20:06:27Z info: Selector not found on page: https://www.tro.com.au/data/network-switches
+2023-11-08T20:06:27Z info: Selector not found on page: https://www.tro.com.au/data/network-switches
+2023-11-08T20:06:27Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:06:27Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:06:27Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:06:27Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:06:32Z info: []
+2023-11-08T20:06:32Z info: []
+2023-11-08T20:06:32Z info: []
+2023-11-08T20:06:32Z info: []
+2023-11-08T20:07:02Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:07:02Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:07:02Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:07:02Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:07:04Z info: ['https://www.tro.com.au/4RU-19-Data-Rack-Wall-Mounted-600W-x-300D-IP66', 'https://www.tro.com.au/4RU-19-Data-Rack-Wall-Mounted-600W-x-300D-Black', 'https://www.tro.com.au/6RU-19-Data-Rack-Wall-Mounted-600W-x-300D-IP66', 'https://www.tro.com.au/6RU-19-Data-Rack-Wall-Mounted-600W-x-300D-IP66-Black', 'https://www.tro.com.au/6RU-19-Data-Rack-Wall-Mounted-600W-x-400D-IP66']
+2023-11-08T20:07:04Z info: ['https://www.tro.com.au/4RU-19-Data-Rack-Wall-Mounted-600W-x-300D-IP66', 'https://www.tro.com.au/4RU-19-Data-Rack-Wall-Mounted-600W-x-300D-Black', 'https://www.tro.com.au/6RU-19-Data-Rack-Wall-Mounted-600W-x-300D-IP66', 'https://www.tro.com.au/6RU-19-Data-Rack-Wall-Mounted-600W-x-300D-IP66-Black', 'https://www.tro.com.au/6RU-19-Data-Rack-Wall-Mounted-600W-x-400D-IP66']
+2023-11-08T20:07:04Z info: ['https://www.tro.com.au/4RU-19-Data-Rack-Wall-Mounted-600W-x-300D-IP66', 'https://www.tro.com.au/4RU-19-Data-Rack-Wall-Mounted-600W-x-300D-Black', 'https://www.tro.com.au/6RU-19-Data-Rack-Wall-Mounted-600W-x-300D-IP66', 'https://www.tro.com.au/6RU-19-Data-Rack-Wall-Mounted-600W-x-300D-IP66-Black', 'https://www.tro.com.au/6RU-19-Data-Rack-Wall-Mounted-600W-x-400D-IP66']
+2023-11-08T20:07:04Z info: ['https://www.tro.com.au/4RU-19-Data-Rack-Wall-Mounted-600W-x-300D-IP66', 'https://www.tro.com.au/4RU-19-Data-Rack-Wall-Mounted-600W-x-300D-Black', 'https://www.tro.com.au/6RU-19-Data-Rack-Wall-Mounted-600W-x-300D-IP66', 'https://www.tro.com.au/6RU-19-Data-Rack-Wall-Mounted-600W-x-300D-IP66-Black', 'https://www.tro.com.au/6RU-19-Data-Rack-Wall-Mounted-600W-x-400D-IP66']
+2023-11-08T20:07:31Z info: Selector not found on page: https://www.tro.com.au/data/industrial-ethernet-routers
+2023-11-08T20:07:31Z info: Selector not found on page: https://www.tro.com.au/data/industrial-ethernet-routers
+2023-11-08T20:07:31Z info: Selector not found on page: https://www.tro.com.au/data/industrial-ethernet-routers
+2023-11-08T20:07:31Z info: Selector not found on page: https://www.tro.com.au/data/industrial-ethernet-routers
+2023-11-08T20:07:31Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:07:31Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:07:31Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:07:31Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:07:35Z info: ['https://www.tro.com.au/Security-NAT-Router-Gigabit-Ethernet-2x-RJ45-10-100-1000BaseTX-IP20-20-C.70-C-IE-SR-2GT-LAN-FN', 'https://www.tro.com.au/Security-NAT-VPN-U-link-Router-with-integrated-multi-band-modem-4G-3G-2G-Gigabit-Ethernet-2x-RJ45-10']
+2023-11-08T20:07:35Z info: ['https://www.tro.com.au/Security-NAT-Router-Gigabit-Ethernet-2x-RJ45-10-100-1000BaseTX-IP20-20-C.70-C-IE-SR-2GT-LAN-FN', 'https://www.tro.com.au/Security-NAT-VPN-U-link-Router-with-integrated-multi-band-modem-4G-3G-2G-Gigabit-Ethernet-2x-RJ45-10']
+2023-11-08T20:07:35Z info: ['https://www.tro.com.au/Security-NAT-Router-Gigabit-Ethernet-2x-RJ45-10-100-1000BaseTX-IP20-20-C.70-C-IE-SR-2GT-LAN-FN', 'https://www.tro.com.au/Security-NAT-VPN-U-link-Router-with-integrated-multi-band-modem-4G-3G-2G-Gigabit-Ethernet-2x-RJ45-10']
+2023-11-08T20:07:35Z info: ['https://www.tro.com.au/Security-NAT-Router-Gigabit-Ethernet-2x-RJ45-10-100-1000BaseTX-IP20-20-C.70-C-IE-SR-2GT-LAN-FN', 'https://www.tro.com.au/Security-NAT-VPN-U-link-Router-with-integrated-multi-band-modem-4G-3G-2G-Gigabit-Ethernet-2x-RJ45-10']
+2023-11-08T20:08:08Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:08:08Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:08:08Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:08:08Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:08:10Z info: ['https://www.tro.com.au/Limit-value-monitoring-Input-3-phase-voltage-Relay-output-ACT20P-VMR-3PH-ILP-H', 'https://www.tro.com.au/Signal-converter-isolator-Input-04-20-mA-Output-4-20-mA-ACT20M-CI-CO-S', 'https://www.tro.com.au/Signal-converter-isolator-Input-current-loop-feed-Input-04-20-mA-loop-powered-Output-04-20-mA-ACT20P', 'https://www.tro.com.au/Signal-converter-isolator-Output-current-loop-powered-Input-4-20-mA-Output-4-20-mA-loop-powered-ACT2', 'https://www.tro.com.au/Signal-converter-insulator-Configurable-with-sensor-supply-Input-I-U-Output-I-U-ACT20M-AI-AO-S']
+2023-11-08T20:08:10Z info: ['https://www.tro.com.au/Limit-value-monitoring-Input-3-phase-voltage-Relay-output-ACT20P-VMR-3PH-ILP-H', 'https://www.tro.com.au/Signal-converter-isolator-Input-04-20-mA-Output-4-20-mA-ACT20M-CI-CO-S', 'https://www.tro.com.au/Signal-converter-isolator-Input-current-loop-feed-Input-04-20-mA-loop-powered-Output-04-20-mA-ACT20P', 'https://www.tro.com.au/Signal-converter-isolator-Output-current-loop-powered-Input-4-20-mA-Output-4-20-mA-loop-powered-ACT2', 'https://www.tro.com.au/Signal-converter-insulator-Configurable-with-sensor-supply-Input-I-U-Output-I-U-ACT20M-AI-AO-S']
+2023-11-08T20:08:10Z info: ['https://www.tro.com.au/Limit-value-monitoring-Input-3-phase-voltage-Relay-output-ACT20P-VMR-3PH-ILP-H', 'https://www.tro.com.au/Signal-converter-isolator-Input-04-20-mA-Output-4-20-mA-ACT20M-CI-CO-S', 'https://www.tro.com.au/Signal-converter-isolator-Input-current-loop-feed-Input-04-20-mA-loop-powered-Output-04-20-mA-ACT20P', 'https://www.tro.com.au/Signal-converter-isolator-Output-current-loop-powered-Input-4-20-mA-Output-4-20-mA-loop-powered-ACT2', 'https://www.tro.com.au/Signal-converter-insulator-Configurable-with-sensor-supply-Input-I-U-Output-I-U-ACT20M-AI-AO-S']
+2023-11-08T20:08:10Z info: ['https://www.tro.com.au/Limit-value-monitoring-Input-3-phase-voltage-Relay-output-ACT20P-VMR-3PH-ILP-H', 'https://www.tro.com.au/Signal-converter-isolator-Input-04-20-mA-Output-4-20-mA-ACT20M-CI-CO-S', 'https://www.tro.com.au/Signal-converter-isolator-Input-current-loop-feed-Input-04-20-mA-loop-powered-Output-04-20-mA-ACT20P', 'https://www.tro.com.au/Signal-converter-isolator-Output-current-loop-powered-Input-4-20-mA-Output-4-20-mA-loop-powered-ACT2', 'https://www.tro.com.au/Signal-converter-insulator-Configurable-with-sensor-supply-Input-I-U-Output-I-U-ACT20M-AI-AO-S']
+2023-11-08T20:08:35Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:08:35Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:08:35Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:08:35Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:08:38Z info: ['https://www.tro.com.au/Green-Cat.6A-Patch-Cable-Cable-0.5M', 'https://www.tro.com.au/Yellow-Cat.6A-Patch-Cable-Cable-0.5M', 'https://www.tro.com.au/Magenta-Cat.6A-Patch-Cable-Cable-0.5M', 'https://www.tro.com.au/Red-Cat.6A-Patch-Cable-Cable-0.5M', 'https://www.tro.com.au/Grey-Cat.6A-Patch-Cable-Cable-0.5M']
+2023-11-08T20:08:38Z info: ['https://www.tro.com.au/Green-Cat.6A-Patch-Cable-Cable-0.5M', 'https://www.tro.com.au/Yellow-Cat.6A-Patch-Cable-Cable-0.5M', 'https://www.tro.com.au/Magenta-Cat.6A-Patch-Cable-Cable-0.5M', 'https://www.tro.com.au/Red-Cat.6A-Patch-Cable-Cable-0.5M', 'https://www.tro.com.au/Grey-Cat.6A-Patch-Cable-Cable-0.5M']
+2023-11-08T20:08:38Z info: ['https://www.tro.com.au/Green-Cat.6A-Patch-Cable-Cable-0.5M', 'https://www.tro.com.au/Yellow-Cat.6A-Patch-Cable-Cable-0.5M', 'https://www.tro.com.au/Magenta-Cat.6A-Patch-Cable-Cable-0.5M', 'https://www.tro.com.au/Red-Cat.6A-Patch-Cable-Cable-0.5M', 'https://www.tro.com.au/Grey-Cat.6A-Patch-Cable-Cable-0.5M']
+2023-11-08T20:08:38Z info: ['https://www.tro.com.au/Green-Cat.6A-Patch-Cable-Cable-0.5M', 'https://www.tro.com.au/Yellow-Cat.6A-Patch-Cable-Cable-0.5M', 'https://www.tro.com.au/Magenta-Cat.6A-Patch-Cable-Cable-0.5M', 'https://www.tro.com.au/Red-Cat.6A-Patch-Cable-Cable-0.5M', 'https://www.tro.com.au/Grey-Cat.6A-Patch-Cable-Cable-0.5M']
+2023-11-08T20:08:59Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:08:59Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:08:59Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:08:59Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:09:02Z info: ['https://www.tro.com.au/RJ45-insert-socket-Bulkhead-inserts-coupler-IE-BI-RJ45-C', 'https://www.tro.com.au/FrontCom-Micro-RJ45-module-TIA-568A-IE-FCM-RJ45-FJ-A', 'https://www.tro.com.au/FrontCom-Micro-RJ45-coupling-IE-FCM-RJ45-C', 'https://www.tro.com.au/RJ45-plug-with-piercing-contacts-straight-Cat.6A-IE-PS-RJ45-FH-180-A-1.13', 'https://www.tro.com.au/RJ45-IDC-plug-Cat.6A-IE-PS-RJ45-FH-BK-COPPER']
+2023-11-08T20:09:02Z info: ['https://www.tro.com.au/RJ45-insert-socket-Bulkhead-inserts-coupler-IE-BI-RJ45-C', 'https://www.tro.com.au/FrontCom-Micro-RJ45-module-TIA-568A-IE-FCM-RJ45-FJ-A', 'https://www.tro.com.au/FrontCom-Micro-RJ45-coupling-IE-FCM-RJ45-C', 'https://www.tro.com.au/RJ45-plug-with-piercing-contacts-straight-Cat.6A-IE-PS-RJ45-FH-180-A-1.13', 'https://www.tro.com.au/RJ45-IDC-plug-Cat.6A-IE-PS-RJ45-FH-BK-COPPER']
+2023-11-08T20:09:02Z info: ['https://www.tro.com.au/RJ45-insert-socket-Bulkhead-inserts-coupler-IE-BI-RJ45-C', 'https://www.tro.com.au/FrontCom-Micro-RJ45-module-TIA-568A-IE-FCM-RJ45-FJ-A', 'https://www.tro.com.au/FrontCom-Micro-RJ45-coupling-IE-FCM-RJ45-C', 'https://www.tro.com.au/RJ45-plug-with-piercing-contacts-straight-Cat.6A-IE-PS-RJ45-FH-180-A-1.13', 'https://www.tro.com.au/RJ45-IDC-plug-Cat.6A-IE-PS-RJ45-FH-BK-COPPER']
+2023-11-08T20:09:02Z info: ['https://www.tro.com.au/RJ45-insert-socket-Bulkhead-inserts-coupler-IE-BI-RJ45-C', 'https://www.tro.com.au/FrontCom-Micro-RJ45-module-TIA-568A-IE-FCM-RJ45-FJ-A', 'https://www.tro.com.au/FrontCom-Micro-RJ45-coupling-IE-FCM-RJ45-C', 'https://www.tro.com.au/RJ45-plug-with-piercing-contacts-straight-Cat.6A-IE-PS-RJ45-FH-180-A-1.13', 'https://www.tro.com.au/RJ45-IDC-plug-Cat.6A-IE-PS-RJ45-FH-BK-COPPER']
+2023-11-08T20:09:31Z info: Selector not found on page: https://www.tro.com.au/data/data-surge-protection
+2023-11-08T20:09:31Z info: Selector not found on page: https://www.tro.com.au/data/data-surge-protection
+2023-11-08T20:09:31Z info: Selector not found on page: https://www.tro.com.au/data/data-surge-protection
+2023-11-08T20:09:31Z info: Selector not found on page: https://www.tro.com.au/data/data-surge-protection
+2023-11-08T20:09:31Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:09:31Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:09:31Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:09:31Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:09:35Z info: ['https://www.tro.com.au/Terminal-Rail-Fixing-Surge-Protection-48V-1A-VDATA-CAT13']
+2023-11-08T20:09:35Z info: ['https://www.tro.com.au/Terminal-Rail-Fixing-Surge-Protection-48V-1A-VDATA-CAT13']
+2023-11-08T20:09:35Z info: ['https://www.tro.com.au/Terminal-Rail-Fixing-Surge-Protection-48V-1A-VDATA-CAT13']
+2023-11-08T20:09:35Z info: ['https://www.tro.com.au/Terminal-Rail-Fixing-Surge-Protection-48V-1A-VDATA-CAT13']
+2023-11-08T20:10:16Z info: Selector not found on page: https://www.tro.com.au/data/wireless-access-points
+2023-11-08T20:10:16Z info: Selector not found on page: https://www.tro.com.au/data/wireless-access-points
+2023-11-08T20:10:16Z info: Selector not found on page: https://www.tro.com.au/data/wireless-access-points
+2023-11-08T20:10:16Z info: Selector not found on page: https://www.tro.com.au/data/wireless-access-points
+2023-11-08T20:10:16Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:10:16Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:10:16Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:10:16Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:10:21Z info: ['https://www.tro.com.au/Wireless-Access-Point-Client-IEEE-802.11-a-b-g-n-IP30-0-C.60-C-IE-WL-BL-AP-CL-EU']
+2023-11-08T20:10:21Z info: ['https://www.tro.com.au/Wireless-Access-Point-Client-IEEE-802.11-a-b-g-n-IP30-0-C.60-C-IE-WL-BL-AP-CL-EU']
+2023-11-08T20:10:21Z info: ['https://www.tro.com.au/Wireless-Access-Point-Client-IEEE-802.11-a-b-g-n-IP30-0-C.60-C-IE-WL-BL-AP-CL-EU']
+2023-11-08T20:10:21Z info: ['https://www.tro.com.au/Wireless-Access-Point-Client-IEEE-802.11-a-b-g-n-IP30-0-C.60-C-IE-WL-BL-AP-CL-EU']
+2023-11-08T20:10:55Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:10:55Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:10:55Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:10:55Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:11:00Z info: ['https://www.tro.com.au/Enclosure-Lock-To-Suit-E-xxW-Enclosures', 'https://www.tro.com.au/4-Way-IP65-Enclosure-127x200x120-Transparent-Door', 'https://www.tro.com.au/Enclosure-4-way-IP66NW-Clear-Cover-Spring-Return-Lid', 'https://www.tro.com.au/Enclosure-4-way-IP66NW-Opaque-Cover-Spring-Return-Lid', 'https://www.tro.com.au/8-Way-IP65-Enclosure-200x200x120-Transparent-Door']
+2023-11-08T20:11:00Z info: ['https://www.tro.com.au/Enclosure-Lock-To-Suit-E-xxW-Enclosures', 'https://www.tro.com.au/4-Way-IP65-Enclosure-127x200x120-Transparent-Door', 'https://www.tro.com.au/Enclosure-4-way-IP66NW-Clear-Cover-Spring-Return-Lid', 'https://www.tro.com.au/Enclosure-4-way-IP66NW-Opaque-Cover-Spring-Return-Lid', 'https://www.tro.com.au/8-Way-IP65-Enclosure-200x200x120-Transparent-Door']
+2023-11-08T20:11:00Z info: ['https://www.tro.com.au/Enclosure-Lock-To-Suit-E-xxW-Enclosures', 'https://www.tro.com.au/4-Way-IP65-Enclosure-127x200x120-Transparent-Door', 'https://www.tro.com.au/Enclosure-4-way-IP66NW-Clear-Cover-Spring-Return-Lid', 'https://www.tro.com.au/Enclosure-4-way-IP66NW-Opaque-Cover-Spring-Return-Lid', 'https://www.tro.com.au/8-Way-IP65-Enclosure-200x200x120-Transparent-Door']
+2023-11-08T20:11:00Z info: ['https://www.tro.com.au/Enclosure-Lock-To-Suit-E-xxW-Enclosures', 'https://www.tro.com.au/4-Way-IP65-Enclosure-127x200x120-Transparent-Door', 'https://www.tro.com.au/Enclosure-4-way-IP66NW-Clear-Cover-Spring-Return-Lid', 'https://www.tro.com.au/Enclosure-4-way-IP66NW-Opaque-Cover-Spring-Return-Lid', 'https://www.tro.com.au/8-Way-IP65-Enclosure-200x200x120-Transparent-Door']
+2023-11-08T20:11:54Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:11:54Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:11:54Z info: Product URLs saved to products/product-urls.txt
+2023-11-08T20:11:54Z info: Product URLs saved to products/product-urls.txt

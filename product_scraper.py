@@ -65,41 +65,55 @@ def save_urls_to_txt(urls, base_url):
 
     logging.info(f'Product URLs saved to {file_name}')
 
-def extract_category_urls(page="https://tro.com.au", selector="a.header-menu-level2-anchor"):
+def extract_category_urls(page="https://tro.com.au", selector="a.header-menu-level2-anchor", filename="category_urls.txt"):
     """
-    Extracts all URLs from the given page by CSS selector.
+    Extracts all URLs from the given page by CSS selector, saves new URLs to 'category_urls.txt', and returns all URLs.
 
     Parameters:
         page (str): The URL of the webpage to scrape.
         selector (str): The CSS selector used to find the elements containing the URLs.
+        filename (str): Name of the text file to save the URLs.
 
     Returns:
-        urls (list): A list containing the extracted URLs.
+        urls (list): A list containing all extracted URLs.
     """
     driver = webdriver.Firefox(options=options)
-    urls = []
+    new_urls = set()
+    existing_urls = set()
     
     try:
         driver.get(page)
-        
-        # Wait for the page to be sufficiently loaded to ensure all elements are present
         WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, selector)))
-
-        # Use JavaScript to extract all the href attributes from elements matching the selector
         script = f"return Array.from(document.querySelectorAll('{selector}')).map(a => a.href);"
-        urls = driver.execute_script(script)
-        
+        extracted_urls = driver.execute_script(script)
+        urls = set(filter(lambda url: url.startswith('http'), extracted_urls))
     except NoSuchElementException:
-        logging.info(f"Selector not found on page: {page}")
+        logging.error(f"Selector not found on page: {page}")
     except TimeoutException:
-        logging.info(f"Page load timed out for URL: {page}")
+        logging.error(f"Page load timed out for URL: {page}")
     finally:
         driver.quit()
+    
+    # Read existing URLs from the file if it exists
+    if os.path.exists(filename):
+        with open(filename, 'r') as file:
+            existing_urls = set(file.read().splitlines())
 
-    # Filter out any non-URLs or empty strings that may have been captured
-    urls = [url for url in urls if isinstance(url, str) and url.startswith('http')]
-    logging.info(f"Category URLs: {urls}")
-    return urls
+    # Identify any new URLs
+    new_urls = urls - existing_urls
+
+    # Append new URLs to the file
+    if new_urls:
+        with open(filename, 'a') as file:
+            for url in new_urls:
+                file.write(url + '\n')
+        logging.info(f"Added {len(new_urls)} new URLs to '{filename}'.")
+
+    # Combine existing and newly extracted URLs for the return value
+    all_urls = list(urls.union(existing_urls))
+    
+    logging.info(f"Total URLs returned: {len(all_urls)}.")
+    return all_urls
 
 def extract_product_urls(base_url, selector, next_button_selector=None, max_pages=None, max_products=None):
     driver = webdriver.Firefox(options=options)
@@ -268,6 +282,23 @@ def print_product_list(product_list):
         for key, value in product_info.items():
             logging.info(f"{key.capitalize()}: {value}")
 
+def get_urls_from_file(filename="category_urls.txt"):
+    """
+    Reads URLs from a given file if it exists.
+
+    Parameters:
+        filename (str): The name of the file to read the URLs from.
+
+    Returns:
+        urls (list): A list containing all the URLs from the file.
+    """
+    if os.path.exists(filename):
+        with open(filename, 'r') as file:
+            urls = file.read().splitlines()
+        return urls
+    else:
+        return None
+
 if __name__ == '__main__':
     base_url = 'https://www.tro.com.au/enclosures/wall-mount-enclosures/steel-wall-mount-enclosures'
     selector = "a.facets-item-cell-grid-title"
@@ -275,7 +306,15 @@ if __name__ == '__main__':
     max_pages = 1
     max_products = 5
 
-    urls = extract_category_urls()
+    # Check to retrieve the URLs from the category_urls.txt file
+    urls = get_urls_from_file()
+
+    # If the file doesn't exist or is empty, run the extract_category_urls() function
+    if not urls:
+        urls = extract_category_urls()
+
+    # Limit urls to the first 5 elements of the list
+    urls = urls[:5]
 
     for base_url in urls:
         product_urls = extract_product_urls(base_url, selector, next_button_selector, max_pages=max_pages, max_products=max_products)

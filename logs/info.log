@@ -1219,3 +1219,11 @@ Kit Includes:
 
 2023-11-08T19:38:26Z info: Failed to retrieve datasheets - Message: 
 
+2023-11-08T19:41:36Z info: A web element became stale while extracting URLs from the page: https://tro.com.au
+2023-11-08T19:41:36Z info: A web element became stale while extracting URLs from the page: https://tro.com.au
+2023-11-08T19:41:36Z info: A web element became stale while extracting URLs from the page: https://tro.com.au
+2023-11-08T19:41:36Z info: A web element became stale while extracting URLs from the page: https://tro.com.au
+2023-11-08T19:41:51Z info: Category Urls: ['https://www.tro.com.au/enclosures/wall-mount-enclosures', 'https://www.tro.com.au/enclosures/sloping-roof-enclosures']
+2023-11-08T19:41:51Z info: Category Urls: ['https://www.tro.com.au/enclosures/wall-mount-enclosures', 'https://www.tro.com.au/enclosures/sloping-roof-enclosures']
+2023-11-08T19:41:51Z info: Category Urls: ['https://www.tro.com.au/enclosures/wall-mount-enclosures', 'https://www.tro.com.au/enclosures/sloping-roof-enclosures']
+2023-11-08T19:41:51Z info: Category Urls: ['https://www.tro.com.au/enclosures/wall-mount-enclosures', 'https://www.tro.com.au/enclosures/sloping-roof-enclosures']

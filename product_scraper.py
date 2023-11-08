@@ -82,26 +82,23 @@ def extract_category_urls(page="https://tro.com.au", selector="a.header-menu-lev
     try:
         driver.get(page)
         
-        # Wait for the elements to be fully loaded
-        WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, selector)))
-        
-        # Re-find and get the href attribute immediately to avoid stale references
-        elements = driver.find_elements(By.CSS_SELECTOR, selector)
-        for element in elements:
-            href = element.get_attribute("href")
-            if href:
-                urls.append(href)
+        # Wait for the page to be sufficiently loaded to ensure all elements are present
+        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, selector)))
+
+        # Use JavaScript to extract all the href attributes from elements matching the selector
+        script = f"return Array.from(document.querySelectorAll('{selector}')).map(a => a.href);"
+        urls = driver.execute_script(script)
         
     except NoSuchElementException:
         logging.info(f"Selector not found on page: {page}")
     except TimeoutException:
         logging.info(f"Page load timed out for URL: {page}")
-    except StaleElementReferenceException:
-        logging.info(f"A web element became stale while extracting URLs from the page: {page}")
     finally:
         driver.quit()
 
-    logging.info(f"Category Urls: {urls}")
+    # Filter out any non-URLs or empty strings that may have been captured
+    urls = [url for url in urls if isinstance(url, str) and url.startswith('http')]
+    logging.info(f"Category URLs: {urls}")
     return urls
 
 def extract_product_urls(base_url, selector, next_button_selector=None, max_pages=None, max_products=None):

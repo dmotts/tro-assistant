@@ -1,15 +1,15 @@
-# %%
 import os
 import json
 import time
 import shutil
 import datetime
 
-# %%
 from config import setup_logging
 from selenium.webdriver.firefox.options import Options
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from Product import Product
 from app import add_to_db
@@ -64,6 +64,40 @@ def save_urls_to_txt(urls, base_url):
         file.writelines(f"{url}\n" for url in unique_urls)
 
     logging.info(f'Product URLs saved to {file_name}')
+
+def extract_category_urls(page="https://tro.com.au", selector="a.header-menu-level2-anchor"):
+    """
+    Extracts all URLs from the given page by CSS selector.
+
+    Parameters:
+        page (str): The URL of the webpage to scrape.
+        selector (str): The CSS selector used to find the elements containing the URLs.
+
+    Returns:
+        urls (list): A list containing the extracted URLs.
+    """
+    driver = webdriver.Firefox(options=options)
+    urls = []
+    
+    try:
+        driver.get(page)
+        
+        # Wait for the elements to be loaded and find them by CSS selector
+        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, selector)))
+        elements = driver.find_elements(By.CSS_SELECTOR, selector)
+
+        # Use a generator expression to get all "href" attributes from the elements
+        urls.extend(element.get_attribute("href") for element in elements if element.get_attribute("href"))
+        
+    except NoSuchElementException:
+        logging.info(f"Selector not found on page: {page}")
+    except TimeoutException:
+        logging.info(f"Page load timed out for URL: {page}")
+    finally:
+        driver.quit()
+
+    logging.info(f"Category Urls: {urls}")
+    return urls
 
 def extract_product_urls(base_url, selector, next_button_selector=None, max_pages=None, max_products=None):
     driver = webdriver.Firefox(options=options)
@@ -235,7 +269,6 @@ def print_product_list(product_list):
         for key, value in product_info.items():
             logging.info(f"{key.capitalize()}: {value}")
 
-# %%
 if __name__ == '__main__':
     base_url = 'https://www.tro.com.au/enclosures/wall-mount-enclosures/steel-wall-mount-enclosures'
     selector = "a.facets-item-cell-grid-title"
@@ -243,21 +276,16 @@ if __name__ == '__main__':
     max_pages = 1
     max_products = 5
 
-   
-
-# %%
- urls = [
+    urls = [
         'https://www.tro.com.au/industrial-electrical/contactors-overloads/thermal-overloads'
     ]
 
-# %%
-    for base_url in urls:
-        product_urls = extract_product_urls(base_url, selector, next_button_selector, max_pages=max_pages, max_products=max_products)
-        logging.info(product_urls)
-
-    product_info_list = scrape_products()
-    print_product_list(product_info_list)
-   
-
-# %%
-    add_to_db()
+  #  for base_url in urls:
+  #      product_urls = extract_product_urls(base_url, selector, next_button_selector, max_pages=max_pages, max_products=max_products)
+  #      logging.info(product_urls)
+#
+  #  product_info_list = scrape_products()
+  #  print_product_list(product_info_list)
+  # 
+  #  add_to_db()
+    extract_category_urls()
